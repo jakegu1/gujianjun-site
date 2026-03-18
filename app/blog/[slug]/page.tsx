@@ -66,7 +66,7 @@ export default async function PostPage({
           </div>
         </header>
 
-        <article className="prose prose-invert prose-lg max-w-none prose-headings:text-white prose-a:text-[#f15a65] prose-strong:text-white prose-code:text-[#f15a65]">
+        <article className="article-prose max-w-none">
           <MDXRemote source={post.content} />
         </article>
       </div>
