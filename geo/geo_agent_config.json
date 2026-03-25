@@ -1,0 +1,2962 @@
+{
+  "project": "GEO Tutorial Series",
+  "base_url": "https://gujianjun.net/geo",
+  "total_articles": 60,
+  "total_words": 199000,
+  "schema_requirements": {
+    "article_schema": true,
+    "faq_schema": true,
+    "author_schema": true,
+    "breadcrumb_schema": true
+  },
+  "global_instructions": {
+    "tone": "Authoritative but accessible. Technical depth with practical examples.",
+    "audience": "Digital marketers, SEO professionals, content strategists transitioning to GEO",
+    "internal_link_density": "3-7 internal links per article, naturally placed",
+    "external_sources": "Cite original research papers, official documentation, and industry studies",
+    "cta": "Each article should encourage reading the next logical article in the learning path",
+    "faq_per_article": "Minimum 3 FAQs with schema markup",
+    "code_examples": "Include when relevant (schema JSON-LD, robots.txt, etc.)",
+    "images": "Suggest diagram/infographic placeholders in each article"
+  },
+  "pillars": [
+    {
+      "name": "Hub",
+      "article_count": 1,
+      "total_words": 5000
+    },
+    {
+      "name": "Foundations",
+      "article_count": 5,
+      "total_words": 17000
+    },
+    {
+      "name": "AI Technical",
+      "article_count": 7,
+      "total_words": 23000
+    },
+    {
+      "name": "Strategy",
+      "article_count": 7,
+      "total_words": 25000
+    },
+    {
+      "name": "On-Page GEO",
+      "article_count": 7,
+      "total_words": 23000
+    },
+    {
+      "name": "Technical GEO",
+      "article_count": 6,
+      "total_words": 19000
+    },
+    {
+      "name": "Multi-Platform",
+      "article_count": 6,
+      "total_words": 19000
+    },
+    {
+      "name": "Measurement",
+      "article_count": 5,
+      "total_words": 16500
+    },
+    {
+      "name": "Advanced",
+      "article_count": 8,
+      "total_words": 25500
+    },
+    {
+      "name": "Workflow",
+      "article_count": 4,
+      "total_words": 12500
+    },
+    {
+      "name": "Case Studies",
+      "article_count": 4,
+      "total_words": 13500
+    }
+  ],
+  "articles": [
+    {
+      "id": "P0-01",
+      "pillar": "Hub",
+      "title": "The Complete Guide to GEO (Generative Engine Optimization)",
+      "slug": "geo-guide",
+      "url": "https://gujianjun.net/geo/geo-guide/",
+      "type": "Pillar Hub",
+      "priority": 1,
+      "target_words": 5000,
+      "content_brief": "Ultimate hub page linking to all GEO subtopics. Defines GEO, explains why it matters, and provides a learning roadmap.",
+      "suggested_h2s": [
+        "What is GEO",
+        "Why GEO Matters in 2025-2026",
+        "GEO vs Traditional SEO",
+        "How This Guide is Organized",
+        "Who This Guide is For"
+      ],
+      "internal_links": [
+        {
+          "id": "P1-01",
+          "title": "What is GEO? Generative Engine Optimization Explained",
+          "url": "https://gujianjun.net/geo/what-is-geo/"
+        },
+        {
+          "id": "P1-02",
+          "title": "GEO vs SEO: Key Differences, Overlaps, and How They Work Together",
+          "url": "https://gujianjun.net/geo/geo-vs-seo/"
+        },
+        {
+          "id": "P2-02",
+          "title": "RAG (Retrieval-Augmented Generation) Explained: The Engine Behind AI Search",
+          "url": "https://gujianjun.net/geo/rag-explained/"
+        },
+        {
+          "id": "P3-01",
+          "title": "GEO Content Strategy: A Complete Framework for AI Visibility",
+          "url": "https://gujianjun.net/geo/geo-content-strategy-framework/"
+        },
+        {
+          "id": "P4-01",
+          "title": "On-Page GEO Optimization: The Complete Checklist",
+          "url": "https://gujianjun.net/geo/on-page-geo-optimization/"
+        },
+        {
+          "id": "P5-01",
+          "title": "Technical GEO: The Complete Guide to AI-Ready Website Architecture",
+          "url": "https://gujianjun.net/geo/technical-geo-guide/"
+        },
+        {
+          "id": "P6-01",
+          "title": "Platform-Specific GEO: Optimizing for Every AI Search Engine",
+          "url": "https://gujianjun.net/geo/platform-specific-geo/"
+        },
+        {
+          "id": "P7-01",
+          "title": "Measuring GEO Success: KPIs, Metrics, and What Actually Matters",
+          "url": "https://gujianjun.net/geo/measuring-geo-success-kpis/"
+        },
+        {
+          "id": "P8-01",
+          "title": "Entity SEO for GEO: Knowledge Graphs, Entities, and AI Understanding",
+          "url": "https://gujianjun.net/geo/entity-seo-geo-knowledge-graphs/"
+        },
+        {
+          "id": "P9-01",
+          "title": "Integrating GEO into Your Existing SEO Workflow",
+          "url": "https://gujianjun.net/geo/integrating-geo-seo-workflow/"
+        },
+        {
+          "id": "P10-01",
+          "title": "GEO Case Studies: Real Results from AI Search Optimization",
+          "url": "https://gujianjun.net/geo/geo-case-studies/"
+        },
+        {
+          "id": "P1-05",
+          "title": "The GEO Glossary: 50+ Terms Every Practitioner Should Know",
+          "url": "https://gujianjun.net/geo/geo-glossary/"
+        }
+      ],
+      "example_guidance": "60% third-party industry examples, 30% GoEast overview, 10% personal site. This is the entry point — establish breadth and credibility across verticals."
+    },
+    {
+      "id": "P1-01",
+      "pillar": "Foundations",
+      "title": "What is GEO? Generative Engine Optimization Explained",
+      "slug": "what-is-geo",
+      "url": "https://gujianjun.net/geo/what-is-geo/",
+      "type": "Pillar",
+      "priority": 1,
+      "target_words": 3500,
+      "content_brief": "Definitive explainer of GEO - optimizing content to appear in AI-generated answers from ChatGPT, Perplexity, Google AI Overviews, etc.",
+      "suggested_h2s": [
+        "Definition of GEO",
+        "How GEO Differs from SEO",
+        "The AI Search Landscape",
+        "Key GEO Concepts",
+        "Getting Started with GEO"
+      ],
+      "internal_links": [
+        {
+          "id": "P0-01",
+          "title": "The Complete Guide to GEO (Generative Engine Optimization)",
+          "url": "https://gujianjun.net/geo/geo-guide/"
+        },
+        {
+          "id": "P1-02",
+          "title": "GEO vs SEO: Key Differences, Overlaps, and How They Work Together",
+          "url": "https://gujianjun.net/geo/geo-vs-seo/"
+        },
+        {
+          "id": "P1-03",
+          "title": "How AI Search Engines Work: Perplexity, ChatGPT, Google AI Overviews",
+          "url": "https://gujianjun.net/geo/how-ai-search-engines-work/"
+        },
+        {
+          "id": "P2-02",
+          "title": "RAG (Retrieval-Augmented Generation) Explained: The Engine Behind AI Search",
+          "url": "https://gujianjun.net/geo/rag-explained/"
+        },
+        {
+          "id": "P3-01",
+          "title": "GEO Content Strategy: A Complete Framework for AI Visibility",
+          "url": "https://gujianjun.net/geo/geo-content-strategy-framework/"
+        },
+        {
+          "id": "P1-05",
+          "title": "The GEO Glossary: 50+ Terms Every Practitioner Should Know",
+          "url": "https://gujianjun.net/geo/geo-glossary/"
+        }
+      ],
+      "example_guidance": "60% third-party/industry examples (use well-known brands like HubSpot, Shopify, NYT). 30% GoEast for 'here's what this means in practice' moments. 10% side projects max. These are educational articles — prioritize objectivity."
+    },
+    {
+      "id": "P1-02",
+      "pillar": "Foundations",
+      "title": "GEO vs SEO: Key Differences, Overlaps, and How They Work Together",
+      "slug": "geo-vs-seo",
+      "url": "https://gujianjun.net/geo/geo-vs-seo/",
+      "type": "Comparison",
+      "priority": 1,
+      "target_words": 3000,
+      "content_brief": "Side-by-side comparison of GEO and SEO strategies, ranking factors, and workflows.",
+      "suggested_h2s": [
+        "How Search Has Changed",
+        "SEO Ranking Factors vs GEO Citation Factors",
+        "Content Strategy Differences",
+        "Technical Differences",
+        "Integrating Both"
+      ],
+      "internal_links": [
+        {
+          "id": "P1-01",
+          "title": "What is GEO? Generative Engine Optimization Explained",
+          "url": "https://gujianjun.net/geo/what-is-geo/"
+        },
+        {
+          "id": "P1-03",
+          "title": "How AI Search Engines Work: Perplexity, ChatGPT, Google AI Overviews",
+          "url": "https://gujianjun.net/geo/how-ai-search-engines-work/"
+        },
+        {
+          "id": "P3-01",
+          "title": "GEO Content Strategy: A Complete Framework for AI Visibility",
+          "url": "https://gujianjun.net/geo/geo-content-strategy-framework/"
+        },
+        {
+          "id": "P4-01",
+          "title": "On-Page GEO Optimization: The Complete Checklist",
+          "url": "https://gujianjun.net/geo/on-page-geo-optimization/"
+        },
+        {
+          "id": "P5-01",
+          "title": "Technical GEO: The Complete Guide to AI-Ready Website Architecture",
+          "url": "https://gujianjun.net/geo/technical-geo-guide/"
+        },
+        {
+          "id": "P9-01",
+          "title": "Integrating GEO into Your Existing SEO Workflow",
+          "url": "https://gujianjun.net/geo/integrating-geo-seo-workflow/"
+        }
+      ],
+      "example_guidance": "60% third-party/industry examples (use well-known brands like HubSpot, Shopify, NYT). 30% GoEast for 'here's what this means in practice' moments. 10% side projects max. These are educational articles — prioritize objectivity."
+    },
+    {
+      "id": "P1-03",
+      "pillar": "Foundations",
+      "title": "How AI Search Engines Work: Perplexity, ChatGPT, Google AI Overviews",
+      "slug": "how-ai-search-engines-work",
+      "url": "https://gujianjun.net/geo/how-ai-search-engines-work/",
+      "type": "Explainer",
+      "priority": 1,
+      "target_words": 4000,
+      "content_brief": "Deep dive into the mechanics of major AI search platforms - how they retrieve, rank, and cite sources.",
+      "suggested_h2s": [
+        "Google AI Overviews",
+        "ChatGPT and SearchGPT",
+        "Perplexity AI",
+        "Bing Copilot",
+        "Claude Search",
+        "How Each Platform Selects Sources"
+      ],
+      "internal_links": [
+        {
+          "id": "P1-01",
+          "title": "What is GEO? Generative Engine Optimization Explained",
+          "url": "https://gujianjun.net/geo/what-is-geo/"
+        },
+        {
+          "id": "P2-02",
+          "title": "RAG (Retrieval-Augmented Generation) Explained: The Engine Behind AI Search",
+          "url": "https://gujianjun.net/geo/rag-explained/"
+        },
+        {
+          "id": "P6-02",
+          "title": "How to Optimize for Google AI Overviews (SGE)",
+          "url": "https://gujianjun.net/geo/optimize-google-ai-overviews/"
+        },
+        {
+          "id": "P6-03",
+          "title": "How to Optimize for ChatGPT Search and SearchGPT",
+          "url": "https://gujianjun.net/geo/optimize-chatgpt-search/"
+        },
+        {
+          "id": "P6-04",
+          "title": "How to Optimize for Perplexity AI",
+          "url": "https://gujianjun.net/geo/optimize-perplexity-ai/"
+        },
+        {
+          "id": "P6-05",
+          "title": "Optimizing for Bing Copilot, Claude Search, and Other AI Assistants",
+          "url": "https://gujianjun.net/geo/optimize-bing-copilot-claude/"
+        }
+      ],
+      "example_guidance": "60% third-party/industry examples (use well-known brands like HubSpot, Shopify, NYT). 30% GoEast for 'here's what this means in practice' moments. 10% side projects max. These are educational articles — prioritize objectivity."
+    },
+    {
+      "id": "P1-04",
+      "pillar": "Foundations",
+      "title": "Zero-Click Search and the Rise of AI Answers: What It Means for Your Traffic",
+      "slug": "zero-click-search-ai-answers",
+      "url": "https://gujianjun.net/geo/zero-click-search-ai-answers/",
+      "type": "Analysis",
+      "priority": 2,
+      "target_words": 2500,
+      "content_brief": "Data-driven analysis of how AI answers are reshaping search behavior and organic CTR.",
+      "suggested_h2s": [
+        "Zero-Click Search Data",
+        "Impact on Organic Traffic",
+        "New Metrics That Matter",
+        "Adapting Your Strategy"
+      ],
+      "internal_links": [
+        {
+          "id": "P1-01",
+          "title": "What is GEO? Generative Engine Optimization Explained",
+          "url": "https://gujianjun.net/geo/what-is-geo/"
+        },
+        {
+          "id": "P1-02",
+          "title": "GEO vs SEO: Key Differences, Overlaps, and How They Work Together",
+          "url": "https://gujianjun.net/geo/geo-vs-seo/"
+        },
+        {
+          "id": "P7-01",
+          "title": "Measuring GEO Success: KPIs, Metrics, and What Actually Matters",
+          "url": "https://gujianjun.net/geo/measuring-geo-success-kpis/"
+        },
+        {
+          "id": "P3-01",
+          "title": "GEO Content Strategy: A Complete Framework for AI Visibility",
+          "url": "https://gujianjun.net/geo/geo-content-strategy-framework/"
+        }
+      ],
+      "example_guidance": "60% third-party/industry examples (use well-known brands like HubSpot, Shopify, NYT). 30% GoEast for 'here's what this means in practice' moments. 10% side projects max. These are educational articles — prioritize objectivity."
+    },
+    {
+      "id": "P1-05",
+      "pillar": "Foundations",
+      "title": "The GEO Glossary: 50+ Terms Every Practitioner Should Know",
+      "slug": "geo-glossary",
+      "url": "https://gujianjun.net/geo/geo-glossary/",
+      "type": "Reference",
+      "priority": 2,
+      "target_words": 4000,
+      "content_brief": "Comprehensive glossary covering RAG, embeddings, chunking, reranking, and all GEO-specific terminology.",
+      "suggested_h2s": [
+        "A-E",
+        "F-K",
+        "L-R",
+        "S-Z"
+      ],
+      "internal_links": [
+        {
+          "id": "P0-01",
+          "title": "The Complete Guide to GEO (Generative Engine Optimization)",
+          "url": "https://gujianjun.net/geo/geo-guide/"
+        },
+        {
+          "id": "P2-02",
+          "title": "RAG (Retrieval-Augmented Generation) Explained: The Engine Behind AI Search",
+          "url": "https://gujianjun.net/geo/rag-explained/"
+        },
+        {
+          "id": "P2-03",
+          "title": "Vector Embeddings for GEO: How AI Understands Your Content",
+          "url": "https://gujianjun.net/geo/vector-embeddings-geo/"
+        },
+        {
+          "id": "P2-04",
+          "title": "Content Chunking Strategies: How AI Breaks Down Your Pages",
+          "url": "https://gujianjun.net/geo/content-chunking-strategies/"
+        },
+        {
+          "id": "P2-05",
+          "title": "Hybrid Search: BM25, Vector Search, and How AI Retrieval Actually Works",
+          "url": "https://gujianjun.net/geo/hybrid-search-bm25-vector/"
+        },
+        {
+          "id": "P2-06",
+          "title": "How AI Decides Which Sources to Cite: Reranking and Trust Signals",
+          "url": "https://gujianjun.net/geo/ai-citation-reranking-trust/"
+        }
+      ],
+      "example_guidance": "60% third-party/industry examples (use well-known brands like HubSpot, Shopify, NYT). 30% GoEast for 'here's what this means in practice' moments. 10% side projects max. These are educational articles — prioritize objectivity."
+    },
+    {
+      "id": "P2-01",
+      "pillar": "AI Technical",
+      "title": "How Large Language Models Generate Answers: A Marketer's Guide",
+      "slug": "how-llms-generate-answers",
+      "url": "https://gujianjun.net/geo/how-llms-generate-answers/",
+      "type": "Explainer",
+      "priority": 1,
+      "target_words": 3500,
+      "content_brief": "Non-engineer explanation of how LLMs process queries, retrieve information, and generate responses.",
+      "suggested_h2s": [
+        "What is a Large Language Model",
+        "Training vs Inference",
+        "Context Windows Explained",
+        "How LLMs Use Your Content",
+        "Implications for Content Creators"
+      ],
+      "internal_links": [
+        {
+          "id": "P1-01",
+          "title": "What is GEO? Generative Engine Optimization Explained",
+          "url": "https://gujianjun.net/geo/what-is-geo/"
+        },
+        {
+          "id": "P2-02",
+          "title": "RAG (Retrieval-Augmented Generation) Explained: The Engine Behind AI Search",
+          "url": "https://gujianjun.net/geo/rag-explained/"
+        },
+        {
+          "id": "P2-03",
+          "title": "Vector Embeddings for GEO: How AI Understands Your Content",
+          "url": "https://gujianjun.net/geo/vector-embeddings-geo/"
+        },
+        {
+          "id": "P2-07",
+          "title": "AI Knowledge Cutoffs, Grounding, and Real-Time Search: What Gets Retrieved",
+          "url": "https://gujianjun.net/geo/ai-knowledge-cutoff-grounding/"
+        },
+        {
+          "id": "P1-05",
+          "title": "The GEO Glossary: 50+ Terms Every Practitioner Should Know",
+          "url": "https://gujianjun.net/geo/geo-glossary/"
+        }
+      ],
+      "example_guidance": "70% neutral technical explanations with industry-agnostic examples. 20% GoEast for 'I tested this' anecdotes. 10% hypothetical scenarios across verticals. Keep the focus on teaching, not selling."
+    },
+    {
+      "id": "P2-02",
+      "pillar": "AI Technical",
+      "title": "RAG (Retrieval-Augmented Generation) Explained: The Engine Behind AI Search",
+      "slug": "rag-explained",
+      "url": "https://gujianjun.net/geo/rag-explained/",
+      "type": "Pillar",
+      "priority": 1,
+      "target_words": 4500,
+      "content_brief": "Complete guide to RAG pipelines - how AI search engines retrieve and use external content to generate answers.",
+      "suggested_h2s": [
+        "What is RAG",
+        "The RAG Pipeline Step by Step",
+        "Indexing Phase",
+        "Retrieval Phase",
+        "Generation Phase",
+        "Why RAG Matters for GEO"
+      ],
+      "internal_links": [
+        {
+          "id": "P2-01",
+          "title": "How Large Language Models Generate Answers: A Marketer's Guide",
+          "url": "https://gujianjun.net/geo/how-llms-generate-answers/"
+        },
+        {
+          "id": "P2-03",
+          "title": "Vector Embeddings for GEO: How AI Understands Your Content",
+          "url": "https://gujianjun.net/geo/vector-embeddings-geo/"
+        },
+        {
+          "id": "P2-04",
+          "title": "Content Chunking Strategies: How AI Breaks Down Your Pages",
+          "url": "https://gujianjun.net/geo/content-chunking-strategies/"
+        },
+        {
+          "id": "P2-05",
+          "title": "Hybrid Search: BM25, Vector Search, and How AI Retrieval Actually Works",
+          "url": "https://gujianjun.net/geo/hybrid-search-bm25-vector/"
+        },
+        {
+          "id": "P2-06",
+          "title": "How AI Decides Which Sources to Cite: Reranking and Trust Signals",
+          "url": "https://gujianjun.net/geo/ai-citation-reranking-trust/"
+        },
+        {
+          "id": "P1-03",
+          "title": "How AI Search Engines Work: Perplexity, ChatGPT, Google AI Overviews",
+          "url": "https://gujianjun.net/geo/how-ai-search-engines-work/"
+        },
+        {
+          "id": "P3-04",
+          "title": "Content Formats That AI Search Engines Prefer to Cite",
+          "url": "https://gujianjun.net/geo/content-formats-ai-prefers/"
+        }
+      ],
+      "example_guidance": "70% neutral technical explanations with industry-agnostic examples. 20% GoEast for 'I tested this' anecdotes. 10% hypothetical scenarios across verticals. Keep the focus on teaching, not selling."
+    },
+    {
+      "id": "P2-03",
+      "pillar": "AI Technical",
+      "title": "Vector Embeddings for GEO: How AI Understands Your Content",
+      "slug": "vector-embeddings-geo",
+      "url": "https://gujianjun.net/geo/vector-embeddings-geo/",
+      "type": "Deep Dive",
+      "priority": 2,
+      "target_words": 3000,
+      "content_brief": "How content gets converted to vector embeddings and why semantic similarity determines AI citations.",
+      "suggested_h2s": [
+        "What Are Vector Embeddings",
+        "How Content Gets Embedded",
+        "Semantic Similarity",
+        "Embedding Models Used by Search Engines",
+        "Optimizing for Better Embeddings"
+      ],
+      "internal_links": [
+        {
+          "id": "P2-02",
+          "title": "RAG (Retrieval-Augmented Generation) Explained: The Engine Behind AI Search",
+          "url": "https://gujianjun.net/geo/rag-explained/"
+        },
+        {
+          "id": "P2-05",
+          "title": "Hybrid Search: BM25, Vector Search, and How AI Retrieval Actually Works",
+          "url": "https://gujianjun.net/geo/hybrid-search-bm25-vector/"
+        },
+        {
+          "id": "P2-04",
+          "title": "Content Chunking Strategies: How AI Breaks Down Your Pages",
+          "url": "https://gujianjun.net/geo/content-chunking-strategies/"
+        },
+        {
+          "id": "P1-05",
+          "title": "The GEO Glossary: 50+ Terms Every Practitioner Should Know",
+          "url": "https://gujianjun.net/geo/geo-glossary/"
+        }
+      ],
+      "example_guidance": "70% neutral technical explanations with industry-agnostic examples. 20% GoEast for 'I tested this' anecdotes. 10% hypothetical scenarios across verticals. Keep the focus on teaching, not selling."
+    },
+    {
+      "id": "P2-04",
+      "pillar": "AI Technical",
+      "title": "Content Chunking Strategies: How AI Breaks Down Your Pages",
+      "slug": "content-chunking-strategies",
+      "url": "https://gujianjun.net/geo/content-chunking-strategies/",
+      "type": "Technical",
+      "priority": 2,
+      "target_words": 3000,
+      "content_brief": "How AI systems chunk web content and how your content structure affects which chunks get retrieved.",
+      "suggested_h2s": [
+        "What is Chunking",
+        "Common Chunking Methods",
+        "How Chunk Size Affects Retrieval",
+        "Structuring Content for Optimal Chunking",
+        "Testing Your Content's Chunkability"
+      ],
+      "internal_links": [
+        {
+          "id": "P2-02",
+          "title": "RAG (Retrieval-Augmented Generation) Explained: The Engine Behind AI Search",
+          "url": "https://gujianjun.net/geo/rag-explained/"
+        },
+        {
+          "id": "P2-03",
+          "title": "Vector Embeddings for GEO: How AI Understands Your Content",
+          "url": "https://gujianjun.net/geo/vector-embeddings-geo/"
+        },
+        {
+          "id": "P4-03",
+          "title": "Writing AI-Citable Content: Structure, Style, and Formatting",
+          "url": "https://gujianjun.net/geo/writing-ai-citable-content/"
+        },
+        {
+          "id": "P4-04",
+          "title": "Optimizing Headers, Lists, and Tables for AI Extraction",
+          "url": "https://gujianjun.net/geo/headers-lists-tables-ai/"
+        }
+      ],
+      "example_guidance": "70% neutral technical explanations with industry-agnostic examples. 20% GoEast for 'I tested this' anecdotes. 10% hypothetical scenarios across verticals. Keep the focus on teaching, not selling."
+    },
+    {
+      "id": "P2-05",
+      "pillar": "AI Technical",
+      "title": "Hybrid Search: BM25, Vector Search, and How AI Retrieval Actually Works",
+      "slug": "hybrid-search-bm25-vector",
+      "url": "https://gujianjun.net/geo/hybrid-search-bm25-vector/",
+      "type": "Technical",
+      "priority": 3,
+      "target_words": 3000,
+      "content_brief": "How modern AI search uses both keyword (BM25) and semantic (vector) retrieval, and what that means for content optimization.",
+      "suggested_h2s": [
+        "BM25 Keyword Matching",
+        "Dense Vector Retrieval",
+        "Hybrid Search Architecture",
+        "Reciprocal Rank Fusion",
+        "Practical Implications for GEO"
+      ],
+      "internal_links": [
+        {
+          "id": "P2-02",
+          "title": "RAG (Retrieval-Augmented Generation) Explained: The Engine Behind AI Search",
+          "url": "https://gujianjun.net/geo/rag-explained/"
+        },
+        {
+          "id": "P2-03",
+          "title": "Vector Embeddings for GEO: How AI Understands Your Content",
+          "url": "https://gujianjun.net/geo/vector-embeddings-geo/"
+        },
+        {
+          "id": "P2-06",
+          "title": "How AI Decides Which Sources to Cite: Reranking and Trust Signals",
+          "url": "https://gujianjun.net/geo/ai-citation-reranking-trust/"
+        },
+        {
+          "id": "P1-05",
+          "title": "The GEO Glossary: 50+ Terms Every Practitioner Should Know",
+          "url": "https://gujianjun.net/geo/geo-glossary/"
+        }
+      ],
+      "example_guidance": "70% neutral technical explanations with industry-agnostic examples. 20% GoEast for 'I tested this' anecdotes. 10% hypothetical scenarios across verticals. Keep the focus on teaching, not selling."
+    },
+    {
+      "id": "P2-06",
+      "pillar": "AI Technical",
+      "title": "How AI Decides Which Sources to Cite: Reranking and Trust Signals",
+      "slug": "ai-citation-reranking-trust",
+      "url": "https://gujianjun.net/geo/ai-citation-reranking-trust/",
+      "type": "Deep Dive",
+      "priority": 2,
+      "target_words": 3500,
+      "content_brief": "The reranking and trust evaluation process that determines which sources appear in AI-generated answers.",
+      "suggested_h2s": [
+        "The Citation Decision Pipeline",
+        "Cross-Encoder Reranking",
+        "Source Authority Signals",
+        "Freshness and Recency",
+        "Citation Position and Prominence",
+        "Building Citation-Worthy Content"
+      ],
+      "internal_links": [
+        {
+          "id": "P2-02",
+          "title": "RAG (Retrieval-Augmented Generation) Explained: The Engine Behind AI Search",
+          "url": "https://gujianjun.net/geo/rag-explained/"
+        },
+        {
+          "id": "P2-05",
+          "title": "Hybrid Search: BM25, Vector Search, and How AI Retrieval Actually Works",
+          "url": "https://gujianjun.net/geo/hybrid-search-bm25-vector/"
+        },
+        {
+          "id": "P3-05",
+          "title": "E-E-A-T for GEO: Building Authority That AI Trusts",
+          "url": "https://gujianjun.net/geo/eeat-for-geo/"
+        },
+        {
+          "id": "P4-06",
+          "title": "Using Statistics, Data, and Original Research to Win AI Citations",
+          "url": "https://gujianjun.net/geo/statistics-data-ai-citations/"
+        },
+        {
+          "id": "P8-07",
+          "title": "Digital PR and Link Building for GEO",
+          "url": "https://gujianjun.net/geo/digital-pr-link-building-geo/"
+        }
+      ],
+      "example_guidance": "70% neutral technical explanations with industry-agnostic examples. 20% GoEast for 'I tested this' anecdotes. 10% hypothetical scenarios across verticals. Keep the focus on teaching, not selling."
+    },
+    {
+      "id": "P2-07",
+      "pillar": "AI Technical",
+      "title": "AI Knowledge Cutoffs, Grounding, and Real-Time Search: What Gets Retrieved",
+      "slug": "ai-knowledge-cutoff-grounding",
+      "url": "https://gujianjun.net/geo/ai-knowledge-cutoff-grounding/",
+      "type": "Explainer",
+      "priority": 3,
+      "target_words": 2500,
+      "content_brief": "Understanding the difference between parametric knowledge and retrieved knowledge, and how grounding works.",
+      "suggested_h2s": [
+        "Parametric vs Retrieved Knowledge",
+        "Knowledge Cutoff Dates by Platform",
+        "How Grounding Works",
+        "When AI Searches vs Uses Memory",
+        "Implications for Content Timing"
+      ],
+      "internal_links": [
+        {
+          "id": "P2-01",
+          "title": "How Large Language Models Generate Answers: A Marketer's Guide",
+          "url": "https://gujianjun.net/geo/how-llms-generate-answers/"
+        },
+        {
+          "id": "P2-02",
+          "title": "RAG (Retrieval-Augmented Generation) Explained: The Engine Behind AI Search",
+          "url": "https://gujianjun.net/geo/rag-explained/"
+        },
+        {
+          "id": "P5-06",
+          "title": "Content Freshness Signals: How AI Search Evaluates Recency",
+          "url": "https://gujianjun.net/geo/content-freshness-signals-geo/"
+        },
+        {
+          "id": "P1-03",
+          "title": "How AI Search Engines Work: Perplexity, ChatGPT, Google AI Overviews",
+          "url": "https://gujianjun.net/geo/how-ai-search-engines-work/"
+        }
+      ],
+      "example_guidance": "70% neutral technical explanations with industry-agnostic examples. 20% GoEast for 'I tested this' anecdotes. 10% hypothetical scenarios across verticals. Keep the focus on teaching, not selling."
+    },
+    {
+      "id": "P3-01",
+      "pillar": "Strategy",
+      "title": "GEO Content Strategy: A Complete Framework for AI Visibility",
+      "slug": "geo-content-strategy-framework",
+      "url": "https://gujianjun.net/geo/geo-content-strategy-framework/",
+      "type": "Pillar",
+      "priority": 1,
+      "target_words": 5000,
+      "content_brief": "End-to-end strategic framework for building a GEO content program from audit to execution.",
+      "suggested_h2s": [
+        "Audit Your Current AI Visibility",
+        "Define GEO Goals and KPIs",
+        "Query Research for AI Search",
+        "Content Gap Analysis",
+        "Content Creation Workflow",
+        "Measurement and Iteration"
+      ],
+      "internal_links": [
+        {
+          "id": "P0-01",
+          "title": "The Complete Guide to GEO (Generative Engine Optimization)",
+          "url": "https://gujianjun.net/geo/geo-guide/"
+        },
+        {
+          "id": "P3-02",
+          "title": "GEO Query Research: Finding What People Ask AI",
+          "url": "https://gujianjun.net/geo/geo-query-research/"
+        },
+        {
+          "id": "P3-03",
+          "title": "AI Query Intent: Understanding What Users Really Want from AI Answers",
+          "url": "https://gujianjun.net/geo/ai-query-intent/"
+        },
+        {
+          "id": "P3-04",
+          "title": "Content Formats That AI Search Engines Prefer to Cite",
+          "url": "https://gujianjun.net/geo/content-formats-ai-prefers/"
+        },
+        {
+          "id": "P3-05",
+          "title": "E-E-A-T for GEO: Building Authority That AI Trusts",
+          "url": "https://gujianjun.net/geo/eeat-for-geo/"
+        },
+        {
+          "id": "P3-06",
+          "title": "Topical Authority for GEO: Why Depth Beats Breadth in AI Search",
+          "url": "https://gujianjun.net/geo/topical-authority-geo/"
+        },
+        {
+          "id": "P3-07",
+          "title": "GEO Audit: How to Assess Your Current AI Search Visibility",
+          "url": "https://gujianjun.net/geo/geo-audit-guide/"
+        },
+        {
+          "id": "P4-01",
+          "title": "On-Page GEO Optimization: The Complete Checklist",
+          "url": "https://gujianjun.net/geo/on-page-geo-optimization/"
+        },
+        {
+          "id": "P7-01",
+          "title": "Measuring GEO Success: KPIs, Metrics, and What Actually Matters",
+          "url": "https://gujianjun.net/geo/measuring-geo-success-kpis/"
+        }
+      ],
+      "example_guidance": "50% third-party examples (SaaS, e-commerce, publishers, local businesses). 40% GoEast as the running case study for hands-on strategy. 10% side projects where relevant (Shopify store for content strategy, personal site for topical authority)."
+    },
+    {
+      "id": "P3-02",
+      "pillar": "Strategy",
+      "title": "GEO Query Research: Finding What People Ask AI",
+      "slug": "geo-query-research",
+      "url": "https://gujianjun.net/geo/geo-query-research/",
+      "type": "How-To",
+      "priority": 1,
+      "target_words": 3500,
+      "content_brief": "Methods and tools for discovering the queries people use in AI search engines, and how they differ from traditional keywords.",
+      "suggested_h2s": [
+        "AI Queries vs Search Keywords",
+        "Query Research Methods",
+        "Tools for GEO Query Discovery",
+        "Categorizing Query Types",
+        "Building a GEO Query Map"
+      ],
+      "internal_links": [
+        {
+          "id": "P3-01",
+          "title": "GEO Content Strategy: A Complete Framework for AI Visibility",
+          "url": "https://gujianjun.net/geo/geo-content-strategy-framework/"
+        },
+        {
+          "id": "P3-03",
+          "title": "AI Query Intent: Understanding What Users Really Want from AI Answers",
+          "url": "https://gujianjun.net/geo/ai-query-intent/"
+        },
+        {
+          "id": "P3-04",
+          "title": "Content Formats That AI Search Engines Prefer to Cite",
+          "url": "https://gujianjun.net/geo/content-formats-ai-prefers/"
+        },
+        {
+          "id": "P7-02",
+          "title": "GEO Tools: The Best Software for Tracking AI Search Visibility",
+          "url": "https://gujianjun.net/geo/geo-tools-ai-visibility/"
+        }
+      ],
+      "example_guidance": "50% third-party examples (SaaS, e-commerce, publishers, local businesses). 40% GoEast as the running case study for hands-on strategy. 10% side projects where relevant (Shopify store for content strategy, personal site for topical authority)."
+    },
+    {
+      "id": "P3-03",
+      "pillar": "Strategy",
+      "title": "AI Query Intent: Understanding What Users Really Want from AI Answers",
+      "slug": "ai-query-intent",
+      "url": "https://gujianjun.net/geo/ai-query-intent/",
+      "type": "Analysis",
+      "priority": 2,
+      "target_words": 3000,
+      "content_brief": "How query intent differs in AI search and how to map content to AI-specific intent patterns.",
+      "suggested_h2s": [
+        "Traditional Intent vs AI Intent",
+        "Exploratory Queries",
+        "Comparative Queries",
+        "Decision-Support Queries",
+        "Multi-Step Research Queries",
+        "Mapping Content to AI Intent"
+      ],
+      "internal_links": [
+        {
+          "id": "P3-02",
+          "title": "GEO Query Research: Finding What People Ask AI",
+          "url": "https://gujianjun.net/geo/geo-query-research/"
+        },
+        {
+          "id": "P3-04",
+          "title": "Content Formats That AI Search Engines Prefer to Cite",
+          "url": "https://gujianjun.net/geo/content-formats-ai-prefers/"
+        },
+        {
+          "id": "P1-03",
+          "title": "How AI Search Engines Work: Perplexity, ChatGPT, Google AI Overviews",
+          "url": "https://gujianjun.net/geo/how-ai-search-engines-work/"
+        },
+        {
+          "id": "P2-01",
+          "title": "How Large Language Models Generate Answers: A Marketer's Guide",
+          "url": "https://gujianjun.net/geo/how-llms-generate-answers/"
+        }
+      ],
+      "example_guidance": "50% third-party examples (SaaS, e-commerce, publishers, local businesses). 40% GoEast as the running case study for hands-on strategy. 10% side projects where relevant (Shopify store for content strategy, personal site for topical authority)."
+    },
+    {
+      "id": "P3-04",
+      "pillar": "Strategy",
+      "title": "Content Formats That AI Search Engines Prefer to Cite",
+      "slug": "content-formats-ai-prefers",
+      "url": "https://gujianjun.net/geo/content-formats-ai-prefers/",
+      "type": "Research",
+      "priority": 1,
+      "target_words": 3000,
+      "content_brief": "Data-backed analysis of which content formats (lists, tables, Q&A, how-to, etc.) get cited most by AI.",
+      "suggested_h2s": [
+        "Research on AI Citation Patterns",
+        "Definitive Statements and Factual Claims",
+        "Structured Lists and Tables",
+        "Statistical Data and Original Research",
+        "Expert Quotes and First-Person Insights",
+        "Step-by-Step Instructions"
+      ],
+      "internal_links": [
+        {
+          "id": "P3-01",
+          "title": "GEO Content Strategy: A Complete Framework for AI Visibility",
+          "url": "https://gujianjun.net/geo/geo-content-strategy-framework/"
+        },
+        {
+          "id": "P4-03",
+          "title": "Writing AI-Citable Content: Structure, Style, and Formatting",
+          "url": "https://gujianjun.net/geo/writing-ai-citable-content/"
+        },
+        {
+          "id": "P4-04",
+          "title": "Optimizing Headers, Lists, and Tables for AI Extraction",
+          "url": "https://gujianjun.net/geo/headers-lists-tables-ai/"
+        },
+        {
+          "id": "P4-05",
+          "title": "FAQ and Q&A Content Strategy for GEO",
+          "url": "https://gujianjun.net/geo/faq-qa-content-geo/"
+        },
+        {
+          "id": "P4-06",
+          "title": "Using Statistics, Data, and Original Research to Win AI Citations",
+          "url": "https://gujianjun.net/geo/statistics-data-ai-citations/"
+        },
+        {
+          "id": "P2-04",
+          "title": "Content Chunking Strategies: How AI Breaks Down Your Pages",
+          "url": "https://gujianjun.net/geo/content-chunking-strategies/"
+        }
+      ],
+      "example_guidance": "50% third-party examples (SaaS, e-commerce, publishers, local businesses). 40% GoEast as the running case study for hands-on strategy. 10% side projects where relevant (Shopify store for content strategy, personal site for topical authority)."
+    },
+    {
+      "id": "P3-05",
+      "pillar": "Strategy",
+      "title": "E-E-A-T for GEO: Building Authority That AI Trusts",
+      "slug": "eeat-for-geo",
+      "url": "https://gujianjun.net/geo/eeat-for-geo/",
+      "type": "Strategy",
+      "priority": 1,
+      "target_words": 3500,
+      "content_brief": "How Experience, Expertise, Authoritativeness, and Trustworthiness apply specifically to GEO.",
+      "suggested_h2s": [
+        "How AI Evaluates E-E-A-T",
+        "Experience Signals for AI",
+        "Expertise Indicators",
+        "Authority Building for AI Citations",
+        "Trust Factors in AI Search",
+        "Actionable E-E-A-T Checklist"
+      ],
+      "internal_links": [
+        {
+          "id": "P3-01",
+          "title": "GEO Content Strategy: A Complete Framework for AI Visibility",
+          "url": "https://gujianjun.net/geo/geo-content-strategy-framework/"
+        },
+        {
+          "id": "P4-07",
+          "title": "Author Authority and Byline Optimization for GEO",
+          "url": "https://gujianjun.net/geo/author-authority-byline-geo/"
+        },
+        {
+          "id": "P8-01",
+          "title": "Entity SEO for GEO: Knowledge Graphs, Entities, and AI Understanding",
+          "url": "https://gujianjun.net/geo/entity-seo-geo-knowledge-graphs/"
+        },
+        {
+          "id": "P8-07",
+          "title": "Digital PR and Link Building for GEO",
+          "url": "https://gujianjun.net/geo/digital-pr-link-building-geo/"
+        },
+        {
+          "id": "P2-06",
+          "title": "How AI Decides Which Sources to Cite: Reranking and Trust Signals",
+          "url": "https://gujianjun.net/geo/ai-citation-reranking-trust/"
+        }
+      ],
+      "example_guidance": "50% third-party examples (SaaS, e-commerce, publishers, local businesses). 40% GoEast as the running case study for hands-on strategy. 10% side projects where relevant (Shopify store for content strategy, personal site for topical authority)."
+    },
+    {
+      "id": "P3-06",
+      "pillar": "Strategy",
+      "title": "Topical Authority for GEO: Why Depth Beats Breadth in AI Search",
+      "slug": "topical-authority-geo",
+      "url": "https://gujianjun.net/geo/topical-authority-geo/",
+      "type": "Strategy",
+      "priority": 1,
+      "target_words": 3000,
+      "content_brief": "How building topical depth and comprehensive content clusters improves AI citation rates.",
+      "suggested_h2s": [
+        "What is Topical Authority",
+        "How AI Evaluates Topic Coverage",
+        "Content Cluster Architecture",
+        "Internal Linking for Topical Authority",
+        "Measuring Your Topical Authority Score"
+      ],
+      "internal_links": [
+        {
+          "id": "P3-01",
+          "title": "GEO Content Strategy: A Complete Framework for AI Visibility",
+          "url": "https://gujianjun.net/geo/geo-content-strategy-framework/"
+        },
+        {
+          "id": "P3-05",
+          "title": "E-E-A-T for GEO: Building Authority That AI Trusts",
+          "url": "https://gujianjun.net/geo/eeat-for-geo/"
+        },
+        {
+          "id": "P8-01",
+          "title": "Entity SEO for GEO: Knowledge Graphs, Entities, and AI Understanding",
+          "url": "https://gujianjun.net/geo/entity-seo-geo-knowledge-graphs/"
+        },
+        {
+          "id": "P9-04",
+          "title": "GEO Content Calendar: Planning and Prioritizing AI-Optimized Content",
+          "url": "https://gujianjun.net/geo/geo-content-calendar/"
+        },
+        {
+          "id": "P0-01",
+          "title": "The Complete Guide to GEO (Generative Engine Optimization)",
+          "url": "https://gujianjun.net/geo/geo-guide/"
+        }
+      ],
+      "example_guidance": "50% third-party examples (SaaS, e-commerce, publishers, local businesses). 40% GoEast as the running case study for hands-on strategy. 10% side projects where relevant (Shopify store for content strategy, personal site for topical authority)."
+    },
+    {
+      "id": "P3-07",
+      "pillar": "Strategy",
+      "title": "GEO Audit: How to Assess Your Current AI Search Visibility",
+      "slug": "geo-audit-guide",
+      "url": "https://gujianjun.net/geo/geo-audit-guide/",
+      "type": "How-To",
+      "priority": 1,
+      "target_words": 4000,
+      "content_brief": "Step-by-step audit process to evaluate how visible your content is in AI-generated answers.",
+      "suggested_h2s": [
+        "Pre-Audit Setup",
+        "Manual AI Search Testing",
+        "Crawl Bot Access Check",
+        "Content Structure Analysis",
+        "Technical GEO Health",
+        "Competitive AI Visibility Analysis",
+        "Audit Template Download"
+      ],
+      "internal_links": [
+        {
+          "id": "P3-01",
+          "title": "GEO Content Strategy: A Complete Framework for AI Visibility",
+          "url": "https://gujianjun.net/geo/geo-content-strategy-framework/"
+        },
+        {
+          "id": "P5-01",
+          "title": "Technical GEO: The Complete Guide to AI-Ready Website Architecture",
+          "url": "https://gujianjun.net/geo/technical-geo-guide/"
+        },
+        {
+          "id": "P7-01",
+          "title": "Measuring GEO Success: KPIs, Metrics, and What Actually Matters",
+          "url": "https://gujianjun.net/geo/measuring-geo-success-kpis/"
+        },
+        {
+          "id": "P7-02",
+          "title": "GEO Tools: The Best Software for Tracking AI Search Visibility",
+          "url": "https://gujianjun.net/geo/geo-tools-ai-visibility/"
+        },
+        {
+          "id": "P5-02",
+          "title": "Robots.txt and AI Crawlers: Managing GPTBot, CCBot, and Others",
+          "url": "https://gujianjun.net/geo/robots-txt-ai-crawlers/"
+        }
+      ],
+      "example_guidance": "50% third-party examples (SaaS, e-commerce, publishers, local businesses). 40% GoEast as the running case study for hands-on strategy. 10% side projects where relevant (Shopify store for content strategy, personal site for topical authority)."
+    },
+    {
+      "id": "P4-01",
+      "pillar": "On-Page GEO",
+      "title": "On-Page GEO Optimization: The Complete Checklist",
+      "slug": "on-page-geo-optimization",
+      "url": "https://gujianjun.net/geo/on-page-geo-optimization/",
+      "type": "Pillar",
+      "priority": 1,
+      "target_words": 4500,
+      "content_brief": "Comprehensive on-page optimization checklist for making content AI-citable.",
+      "suggested_h2s": [
+        "Content Structure Optimization",
+        "Writing AI-Citable Paragraphs",
+        "Header Hierarchy for AI",
+        "Lists and Tables Optimization",
+        "FAQ and Q&A Sections",
+        "Data and Statistics",
+        "Author and Source Attribution",
+        "On-Page GEO Checklist"
+      ],
+      "internal_links": [
+        {
+          "id": "P0-01",
+          "title": "The Complete Guide to GEO (Generative Engine Optimization)",
+          "url": "https://gujianjun.net/geo/geo-guide/"
+        },
+        {
+          "id": "P4-02",
+          "title": "Schema Markup for GEO: Structured Data That AI Understands",
+          "url": "https://gujianjun.net/geo/schema-markup-geo/"
+        },
+        {
+          "id": "P4-03",
+          "title": "Writing AI-Citable Content: Structure, Style, and Formatting",
+          "url": "https://gujianjun.net/geo/writing-ai-citable-content/"
+        },
+        {
+          "id": "P4-04",
+          "title": "Optimizing Headers, Lists, and Tables for AI Extraction",
+          "url": "https://gujianjun.net/geo/headers-lists-tables-ai/"
+        },
+        {
+          "id": "P4-05",
+          "title": "FAQ and Q&A Content Strategy for GEO",
+          "url": "https://gujianjun.net/geo/faq-qa-content-geo/"
+        },
+        {
+          "id": "P4-06",
+          "title": "Using Statistics, Data, and Original Research to Win AI Citations",
+          "url": "https://gujianjun.net/geo/statistics-data-ai-citations/"
+        },
+        {
+          "id": "P4-07",
+          "title": "Author Authority and Byline Optimization for GEO",
+          "url": "https://gujianjun.net/geo/author-authority-byline-geo/"
+        },
+        {
+          "id": "P3-01",
+          "title": "GEO Content Strategy: A Complete Framework for AI Visibility",
+          "url": "https://gujianjun.net/geo/geo-content-strategy-framework/"
+        },
+        {
+          "id": "P9-02",
+          "title": "GEO Content Brief Template: How to Brief Writers for AI-Optimized Content",
+          "url": "https://gujianjun.net/geo/geo-content-brief-template/"
+        }
+      ],
+      "example_guidance": "40% before/after examples from diverse industries. 40% GoEast pages as worked examples (HSK page, course pages, FAQ sections). 20% code snippets that are industry-agnostic. Show the GoEast work but always extract the universal principle."
+    },
+    {
+      "id": "P4-02",
+      "pillar": "On-Page GEO",
+      "title": "Schema Markup for GEO: Structured Data That AI Understands",
+      "slug": "schema-markup-geo",
+      "url": "https://gujianjun.net/geo/schema-markup-geo/",
+      "type": "Technical How-To",
+      "priority": 1,
+      "target_words": 4000,
+      "content_brief": "Which schema types matter for GEO, implementation guides, and how structured data feeds AI understanding.",
+      "suggested_h2s": [
+        "Why Schema Matters for GEO",
+        "Article and WebPage Schema",
+        "FAQ Schema",
+        "HowTo Schema",
+        "Organization and Person Schema",
+        "Product and Review Schema",
+        "Testing and Validation",
+        "Schema Code Examples"
+      ],
+      "internal_links": [
+        {
+          "id": "P4-01",
+          "title": "On-Page GEO Optimization: The Complete Checklist",
+          "url": "https://gujianjun.net/geo/on-page-geo-optimization/"
+        },
+        {
+          "id": "P5-01",
+          "title": "Technical GEO: The Complete Guide to AI-Ready Website Architecture",
+          "url": "https://gujianjun.net/geo/technical-geo-guide/"
+        },
+        {
+          "id": "P8-01",
+          "title": "Entity SEO for GEO: Knowledge Graphs, Entities, and AI Understanding",
+          "url": "https://gujianjun.net/geo/entity-seo-geo-knowledge-graphs/"
+        },
+        {
+          "id": "P4-05",
+          "title": "FAQ and Q&A Content Strategy for GEO",
+          "url": "https://gujianjun.net/geo/faq-qa-content-geo/"
+        },
+        {
+          "id": "P9-03",
+          "title": "GEO and WordPress: Plugin, Theme, and Configuration Guide",
+          "url": "https://gujianjun.net/geo/geo-wordpress-optimization/"
+        }
+      ],
+      "example_guidance": "40% before/after examples from diverse industries. 40% GoEast pages as worked examples (HSK page, course pages, FAQ sections). 20% code snippets that are industry-agnostic. Show the GoEast work but always extract the universal principle."
+    },
+    {
+      "id": "P4-03",
+      "pillar": "On-Page GEO",
+      "title": "Writing AI-Citable Content: Structure, Style, and Formatting",
+      "slug": "writing-ai-citable-content",
+      "url": "https://gujianjun.net/geo/writing-ai-citable-content/",
+      "type": "How-To",
+      "priority": 1,
+      "target_words": 3500,
+      "content_brief": "Practical writing techniques that increase the probability of your content being cited by AI.",
+      "suggested_h2s": [
+        "The AI-Citable Paragraph",
+        "Clear Definitions and Statements",
+        "First-Sentence Summary Technique",
+        "Specificity Over Generality",
+        "Quotability and Snippet Optimization",
+        "Before and After Examples"
+      ],
+      "internal_links": [
+        {
+          "id": "P4-01",
+          "title": "On-Page GEO Optimization: The Complete Checklist",
+          "url": "https://gujianjun.net/geo/on-page-geo-optimization/"
+        },
+        {
+          "id": "P2-04",
+          "title": "Content Chunking Strategies: How AI Breaks Down Your Pages",
+          "url": "https://gujianjun.net/geo/content-chunking-strategies/"
+        },
+        {
+          "id": "P3-04",
+          "title": "Content Formats That AI Search Engines Prefer to Cite",
+          "url": "https://gujianjun.net/geo/content-formats-ai-prefers/"
+        },
+        {
+          "id": "P4-04",
+          "title": "Optimizing Headers, Lists, and Tables for AI Extraction",
+          "url": "https://gujianjun.net/geo/headers-lists-tables-ai/"
+        },
+        {
+          "id": "P9-02",
+          "title": "GEO Content Brief Template: How to Brief Writers for AI-Optimized Content",
+          "url": "https://gujianjun.net/geo/geo-content-brief-template/"
+        }
+      ],
+      "example_guidance": "40% before/after examples from diverse industries. 40% GoEast pages as worked examples (HSK page, course pages, FAQ sections). 20% code snippets that are industry-agnostic. Show the GoEast work but always extract the universal principle."
+    },
+    {
+      "id": "P4-04",
+      "pillar": "On-Page GEO",
+      "title": "Optimizing Headers, Lists, and Tables for AI Extraction",
+      "slug": "headers-lists-tables-ai",
+      "url": "https://gujianjun.net/geo/headers-lists-tables-ai/",
+      "type": "How-To",
+      "priority": 2,
+      "target_words": 3000,
+      "content_brief": "Tactical guide to structuring HTML elements that AI systems can easily parse and extract.",
+      "suggested_h2s": [
+        "Header Hierarchy Best Practices",
+        "Descriptive vs Generic Headers",
+        "Ordered vs Unordered Lists",
+        "Table Markup for AI",
+        "Comparison Tables",
+        "Data Tables with Source Attribution"
+      ],
+      "internal_links": [
+        {
+          "id": "P4-01",
+          "title": "On-Page GEO Optimization: The Complete Checklist",
+          "url": "https://gujianjun.net/geo/on-page-geo-optimization/"
+        },
+        {
+          "id": "P4-03",
+          "title": "Writing AI-Citable Content: Structure, Style, and Formatting",
+          "url": "https://gujianjun.net/geo/writing-ai-citable-content/"
+        },
+        {
+          "id": "P2-04",
+          "title": "Content Chunking Strategies: How AI Breaks Down Your Pages",
+          "url": "https://gujianjun.net/geo/content-chunking-strategies/"
+        },
+        {
+          "id": "P3-04",
+          "title": "Content Formats That AI Search Engines Prefer to Cite",
+          "url": "https://gujianjun.net/geo/content-formats-ai-prefers/"
+        }
+      ],
+      "example_guidance": "40% before/after examples from diverse industries. 40% GoEast pages as worked examples (HSK page, course pages, FAQ sections). 20% code snippets that are industry-agnostic. Show the GoEast work but always extract the universal principle."
+    },
+    {
+      "id": "P4-05",
+      "pillar": "On-Page GEO",
+      "title": "FAQ and Q&A Content Strategy for GEO",
+      "slug": "faq-qa-content-geo",
+      "url": "https://gujianjun.net/geo/faq-qa-content-geo/",
+      "type": "How-To",
+      "priority": 2,
+      "target_words": 2500,
+      "content_brief": "How to create FAQ and Q&A content that AI search engines extract and cite.",
+      "suggested_h2s": [
+        "Why FAQ Content Works for GEO",
+        "FAQ Schema Implementation",
+        "Writing AI-Optimized Answers",
+        "Question Research for FAQ",
+        "Placement and Structure Tips"
+      ],
+      "internal_links": [
+        {
+          "id": "P4-01",
+          "title": "On-Page GEO Optimization: The Complete Checklist",
+          "url": "https://gujianjun.net/geo/on-page-geo-optimization/"
+        },
+        {
+          "id": "P4-02",
+          "title": "Schema Markup for GEO: Structured Data That AI Understands",
+          "url": "https://gujianjun.net/geo/schema-markup-geo/"
+        },
+        {
+          "id": "P3-02",
+          "title": "GEO Query Research: Finding What People Ask AI",
+          "url": "https://gujianjun.net/geo/geo-query-research/"
+        },
+        {
+          "id": "P6-02",
+          "title": "How to Optimize for Google AI Overviews (SGE)",
+          "url": "https://gujianjun.net/geo/optimize-google-ai-overviews/"
+        }
+      ],
+      "example_guidance": "40% before/after examples from diverse industries. 40% GoEast pages as worked examples (HSK page, course pages, FAQ sections). 20% code snippets that are industry-agnostic. Show the GoEast work but always extract the universal principle."
+    },
+    {
+      "id": "P4-06",
+      "pillar": "On-Page GEO",
+      "title": "Using Statistics, Data, and Original Research to Win AI Citations",
+      "slug": "statistics-data-ai-citations",
+      "url": "https://gujianjun.net/geo/statistics-data-ai-citations/",
+      "type": "Strategy",
+      "priority": 2,
+      "target_words": 3000,
+      "content_brief": "How original data, surveys, and statistical claims dramatically increase AI citation rates.",
+      "suggested_h2s": [
+        "Why AI Loves Data",
+        "Types of Citable Statistics",
+        "Presenting Data for AI Extraction",
+        "Original Research as GEO Strategy",
+        "Data Attribution and Sourcing",
+        "Case Study: Data-Driven Content Performance"
+      ],
+      "internal_links": [
+        {
+          "id": "P4-01",
+          "title": "On-Page GEO Optimization: The Complete Checklist",
+          "url": "https://gujianjun.net/geo/on-page-geo-optimization/"
+        },
+        {
+          "id": "P3-04",
+          "title": "Content Formats That AI Search Engines Prefer to Cite",
+          "url": "https://gujianjun.net/geo/content-formats-ai-prefers/"
+        },
+        {
+          "id": "P2-06",
+          "title": "How AI Decides Which Sources to Cite: Reranking and Trust Signals",
+          "url": "https://gujianjun.net/geo/ai-citation-reranking-trust/"
+        },
+        {
+          "id": "P8-07",
+          "title": "Digital PR and Link Building for GEO",
+          "url": "https://gujianjun.net/geo/digital-pr-link-building-geo/"
+        },
+        {
+          "id": "P10-02",
+          "title": "GEO Before and After: Content Optimization Examples with Results",
+          "url": "https://gujianjun.net/geo/geo-before-after-examples/"
+        }
+      ],
+      "example_guidance": "40% before/after examples from diverse industries. 40% GoEast pages as worked examples (HSK page, course pages, FAQ sections). 20% code snippets that are industry-agnostic. Show the GoEast work but always extract the universal principle."
+    },
+    {
+      "id": "P4-07",
+      "pillar": "On-Page GEO",
+      "title": "Author Authority and Byline Optimization for GEO",
+      "slug": "author-authority-byline-geo",
+      "url": "https://gujianjun.net/geo/author-authority-byline-geo/",
+      "type": "How-To",
+      "priority": 3,
+      "target_words": 2500,
+      "content_brief": "How author pages, bylines, and personal branding affect AI citation decisions.",
+      "suggested_h2s": [
+        "Author as Trust Signal",
+        "Building Author Entity",
+        "Author Schema Markup",
+        "Author Page Best Practices",
+        "Cross-Platform Author Authority"
+      ],
+      "internal_links": [
+        {
+          "id": "P4-01",
+          "title": "On-Page GEO Optimization: The Complete Checklist",
+          "url": "https://gujianjun.net/geo/on-page-geo-optimization/"
+        },
+        {
+          "id": "P3-05",
+          "title": "E-E-A-T for GEO: Building Authority That AI Trusts",
+          "url": "https://gujianjun.net/geo/eeat-for-geo/"
+        },
+        {
+          "id": "P8-01",
+          "title": "Entity SEO for GEO: Knowledge Graphs, Entities, and AI Understanding",
+          "url": "https://gujianjun.net/geo/entity-seo-geo-knowledge-graphs/"
+        },
+        {
+          "id": "P4-02",
+          "title": "Schema Markup for GEO: Structured Data That AI Understands",
+          "url": "https://gujianjun.net/geo/schema-markup-geo/"
+        }
+      ],
+      "example_guidance": "40% before/after examples from diverse industries. 40% GoEast pages as worked examples (HSK page, course pages, FAQ sections). 20% code snippets that are industry-agnostic. Show the GoEast work but always extract the universal principle."
+    },
+    {
+      "id": "P5-01",
+      "pillar": "Technical GEO",
+      "title": "Technical GEO: The Complete Guide to AI-Ready Website Architecture",
+      "slug": "technical-geo-guide",
+      "url": "https://gujianjun.net/geo/technical-geo-guide/",
+      "type": "Pillar",
+      "priority": 1,
+      "target_words": 5000,
+      "content_brief": "Comprehensive technical guide covering crawlability, indexability, and site architecture for AI search engines.",
+      "suggested_h2s": [
+        "AI Crawler Landscape",
+        "Robots.txt Configuration",
+        "Sitemap Optimization",
+        "Crawl Budget for AI Bots",
+        "Page Speed and Rendering",
+        "Site Architecture for GEO",
+        "Structured Data Implementation",
+        "Technical GEO Checklist"
+      ],
+      "internal_links": [
+        {
+          "id": "P0-01",
+          "title": "The Complete Guide to GEO (Generative Engine Optimization)",
+          "url": "https://gujianjun.net/geo/geo-guide/"
+        },
+        {
+          "id": "P5-02",
+          "title": "Robots.txt and AI Crawlers: Managing GPTBot, CCBot, and Others",
+          "url": "https://gujianjun.net/geo/robots-txt-ai-crawlers/"
+        },
+        {
+          "id": "P5-03",
+          "title": "Should You Block or Allow AI Crawlers? A Strategic Decision Framework",
+          "url": "https://gujianjun.net/geo/block-allow-ai-crawlers/"
+        },
+        {
+          "id": "P5-04",
+          "title": "XML Sitemaps, Indexing, and AI Discoverability",
+          "url": "https://gujianjun.net/geo/xml-sitemaps-ai-discoverability/"
+        },
+        {
+          "id": "P5-05",
+          "title": "Page Speed, Rendering, and Core Web Vitals for GEO",
+          "url": "https://gujianjun.net/geo/page-speed-rendering-geo/"
+        },
+        {
+          "id": "P5-06",
+          "title": "Content Freshness Signals: How AI Search Evaluates Recency",
+          "url": "https://gujianjun.net/geo/content-freshness-signals-geo/"
+        },
+        {
+          "id": "P3-07",
+          "title": "GEO Audit: How to Assess Your Current AI Search Visibility",
+          "url": "https://gujianjun.net/geo/geo-audit-guide/"
+        }
+      ],
+      "example_guidance": "50% GoEast's actual technical setup (robots.txt, page speed data, crawler access decisions) — this is where site-specific data is most credible. 30% general technical examples any site can follow. 20% tool-specific screenshots/configs."
+    },
+    {
+      "id": "P5-02",
+      "pillar": "Technical GEO",
+      "title": "Robots.txt and AI Crawlers: Managing GPTBot, CCBot, and Others",
+      "slug": "robots-txt-ai-crawlers",
+      "url": "https://gujianjun.net/geo/robots-txt-ai-crawlers/",
+      "type": "Technical How-To",
+      "priority": 1,
+      "target_words": 3500,
+      "content_brief": "Complete guide to configuring robots.txt for AI crawlers - who they are, what they do, and how to control access.",
+      "suggested_h2s": [
+        "List of AI Crawlers and Their User Agents",
+        "GPTBot (OpenAI)",
+        "CCBot (Common Crawl)",
+        "ClaudeBot (Anthropic)",
+        "Google-Extended",
+        "PerplexityBot",
+        "Robots.txt Configuration Examples",
+        "Strategic Access Decisions"
+      ],
+      "internal_links": [
+        {
+          "id": "P5-01",
+          "title": "Technical GEO: The Complete Guide to AI-Ready Website Architecture",
+          "url": "https://gujianjun.net/geo/technical-geo-guide/"
+        },
+        {
+          "id": "P5-03",
+          "title": "Should You Block or Allow AI Crawlers? A Strategic Decision Framework",
+          "url": "https://gujianjun.net/geo/block-allow-ai-crawlers/"
+        },
+        {
+          "id": "P1-03",
+          "title": "How AI Search Engines Work: Perplexity, ChatGPT, Google AI Overviews",
+          "url": "https://gujianjun.net/geo/how-ai-search-engines-work/"
+        },
+        {
+          "id": "P3-07",
+          "title": "GEO Audit: How to Assess Your Current AI Search Visibility",
+          "url": "https://gujianjun.net/geo/geo-audit-guide/"
+        }
+      ],
+      "example_guidance": "50% GoEast's actual technical setup (robots.txt, page speed data, crawler access decisions) — this is where site-specific data is most credible. 30% general technical examples any site can follow. 20% tool-specific screenshots/configs."
+    },
+    {
+      "id": "P5-03",
+      "pillar": "Technical GEO",
+      "title": "Should You Block or Allow AI Crawlers? A Strategic Decision Framework",
+      "slug": "block-allow-ai-crawlers",
+      "url": "https://gujianjun.net/geo/block-allow-ai-crawlers/",
+      "type": "Analysis",
+      "priority": 2,
+      "target_words": 3000,
+      "content_brief": "Framework for deciding which AI crawlers to allow, block, or restrict based on your business model.",
+      "suggested_h2s": [
+        "The Strategic Tradeoff",
+        "Business Model Considerations",
+        "Content Type Analysis",
+        "Publisher vs Service Business",
+        "Selective Access Strategy",
+        "Monitoring Crawler Behavior"
+      ],
+      "internal_links": [
+        {
+          "id": "P5-02",
+          "title": "Robots.txt and AI Crawlers: Managing GPTBot, CCBot, and Others",
+          "url": "https://gujianjun.net/geo/robots-txt-ai-crawlers/"
+        },
+        {
+          "id": "P5-01",
+          "title": "Technical GEO: The Complete Guide to AI-Ready Website Architecture",
+          "url": "https://gujianjun.net/geo/technical-geo-guide/"
+        },
+        {
+          "id": "P1-04",
+          "title": "Zero-Click Search and the Rise of AI Answers: What It Means for Your Traffic",
+          "url": "https://gujianjun.net/geo/zero-click-search-ai-answers/"
+        },
+        {
+          "id": "P3-01",
+          "title": "GEO Content Strategy: A Complete Framework for AI Visibility",
+          "url": "https://gujianjun.net/geo/geo-content-strategy-framework/"
+        }
+      ],
+      "example_guidance": "50% GoEast's actual technical setup (robots.txt, page speed data, crawler access decisions) — this is where site-specific data is most credible. 30% general technical examples any site can follow. 20% tool-specific screenshots/configs."
+    },
+    {
+      "id": "P5-04",
+      "pillar": "Technical GEO",
+      "title": "XML Sitemaps, Indexing, and AI Discoverability",
+      "slug": "xml-sitemaps-ai-discoverability",
+      "url": "https://gujianjun.net/geo/xml-sitemaps-ai-discoverability/",
+      "type": "Technical",
+      "priority": 2,
+      "target_words": 2500,
+      "content_brief": "How sitemaps and indexing signals affect AI search engine discovery of your content.",
+      "suggested_h2s": [
+        "Sitemaps for AI Crawlers",
+        "Priority and Freshness Signals",
+        "Lastmod and Change Frequency",
+        "News Sitemaps for AI",
+        "Monitoring AI Crawl Activity"
+      ],
+      "internal_links": [
+        {
+          "id": "P5-01",
+          "title": "Technical GEO: The Complete Guide to AI-Ready Website Architecture",
+          "url": "https://gujianjun.net/geo/technical-geo-guide/"
+        },
+        {
+          "id": "P5-02",
+          "title": "Robots.txt and AI Crawlers: Managing GPTBot, CCBot, and Others",
+          "url": "https://gujianjun.net/geo/robots-txt-ai-crawlers/"
+        },
+        {
+          "id": "P5-05",
+          "title": "Page Speed, Rendering, and Core Web Vitals for GEO",
+          "url": "https://gujianjun.net/geo/page-speed-rendering-geo/"
+        }
+      ],
+      "example_guidance": "50% GoEast's actual technical setup (robots.txt, page speed data, crawler access decisions) — this is where site-specific data is most credible. 30% general technical examples any site can follow. 20% tool-specific screenshots/configs."
+    },
+    {
+      "id": "P5-05",
+      "pillar": "Technical GEO",
+      "title": "Page Speed, Rendering, and Core Web Vitals for GEO",
+      "slug": "page-speed-rendering-geo",
+      "url": "https://gujianjun.net/geo/page-speed-rendering-geo/",
+      "type": "Technical",
+      "priority": 3,
+      "target_words": 2500,
+      "content_brief": "How page performance and rendering affect AI crawler access and content extraction.",
+      "suggested_h2s": [
+        "AI Crawlers and JavaScript Rendering",
+        "Server-Side Rendering for AI",
+        "Page Speed Impact on AI Crawling",
+        "Core Web Vitals and GEO",
+        "CDN and Caching for AI Bots"
+      ],
+      "internal_links": [
+        {
+          "id": "P5-01",
+          "title": "Technical GEO: The Complete Guide to AI-Ready Website Architecture",
+          "url": "https://gujianjun.net/geo/technical-geo-guide/"
+        },
+        {
+          "id": "P5-04",
+          "title": "XML Sitemaps, Indexing, and AI Discoverability",
+          "url": "https://gujianjun.net/geo/xml-sitemaps-ai-discoverability/"
+        },
+        {
+          "id": "P9-03",
+          "title": "GEO and WordPress: Plugin, Theme, and Configuration Guide",
+          "url": "https://gujianjun.net/geo/geo-wordpress-optimization/"
+        }
+      ],
+      "example_guidance": "50% GoEast's actual technical setup (robots.txt, page speed data, crawler access decisions) — this is where site-specific data is most credible. 30% general technical examples any site can follow. 20% tool-specific screenshots/configs."
+    },
+    {
+      "id": "P5-06",
+      "pillar": "Technical GEO",
+      "title": "Content Freshness Signals: How AI Search Evaluates Recency",
+      "slug": "content-freshness-signals-geo",
+      "url": "https://gujianjun.net/geo/content-freshness-signals-geo/",
+      "type": "Strategy",
+      "priority": 2,
+      "target_words": 2500,
+      "content_brief": "How AI search engines determine content freshness and when to prefer newer content.",
+      "suggested_h2s": [
+        "Freshness Signals AI Uses",
+        "Publication and Modified Dates",
+        "Content Decay and Updates",
+        "Evergreen vs Time-Sensitive Content",
+        "Update Frequency Strategy"
+      ],
+      "internal_links": [
+        {
+          "id": "P5-01",
+          "title": "Technical GEO: The Complete Guide to AI-Ready Website Architecture",
+          "url": "https://gujianjun.net/geo/technical-geo-guide/"
+        },
+        {
+          "id": "P2-07",
+          "title": "AI Knowledge Cutoffs, Grounding, and Real-Time Search: What Gets Retrieved",
+          "url": "https://gujianjun.net/geo/ai-knowledge-cutoff-grounding/"
+        },
+        {
+          "id": "P8-08",
+          "title": "Content Refresh and Update Strategy for Maintaining AI Citations",
+          "url": "https://gujianjun.net/geo/content-refresh-ai-citations/"
+        },
+        {
+          "id": "P4-01",
+          "title": "On-Page GEO Optimization: The Complete Checklist",
+          "url": "https://gujianjun.net/geo/on-page-geo-optimization/"
+        }
+      ],
+      "example_guidance": "50% GoEast's actual technical setup (robots.txt, page speed data, crawler access decisions) — this is where site-specific data is most credible. 30% general technical examples any site can follow. 20% tool-specific screenshots/configs."
+    },
+    {
+      "id": "P6-01",
+      "pillar": "Multi-Platform",
+      "title": "Platform-Specific GEO: Optimizing for Every AI Search Engine",
+      "slug": "platform-specific-geo",
+      "url": "https://gujianjun.net/geo/platform-specific-geo/",
+      "type": "Pillar",
+      "priority": 1,
+      "target_words": 4000,
+      "content_brief": "Overview of how GEO strategy varies across different AI search platforms.",
+      "suggested_h2s": [
+        "Platform Landscape Overview",
+        "Shared vs Platform-Specific Factors",
+        "Cross-Platform Strategy",
+        "Prioritizing Platforms for Your Business"
+      ],
+      "internal_links": [
+        {
+          "id": "P0-01",
+          "title": "The Complete Guide to GEO (Generative Engine Optimization)",
+          "url": "https://gujianjun.net/geo/geo-guide/"
+        },
+        {
+          "id": "P6-02",
+          "title": "How to Optimize for Google AI Overviews (SGE)",
+          "url": "https://gujianjun.net/geo/optimize-google-ai-overviews/"
+        },
+        {
+          "id": "P6-03",
+          "title": "How to Optimize for ChatGPT Search and SearchGPT",
+          "url": "https://gujianjun.net/geo/optimize-chatgpt-search/"
+        },
+        {
+          "id": "P6-04",
+          "title": "How to Optimize for Perplexity AI",
+          "url": "https://gujianjun.net/geo/optimize-perplexity-ai/"
+        },
+        {
+          "id": "P6-05",
+          "title": "Optimizing for Bing Copilot, Claude Search, and Other AI Assistants",
+          "url": "https://gujianjun.net/geo/optimize-bing-copilot-claude/"
+        },
+        {
+          "id": "P6-06",
+          "title": "GEO for Voice Assistants and Conversational AI",
+          "url": "https://gujianjun.net/geo/geo-voice-assistants/"
+        },
+        {
+          "id": "P1-03",
+          "title": "How AI Search Engines Work: Perplexity, ChatGPT, Google AI Overviews",
+          "url": "https://gujianjun.net/geo/how-ai-search-engines-work/"
+        }
+      ],
+      "example_guidance": "70% third-party examples across industries — test queries about restaurants, SaaS tools, travel destinations, not just language schools. 20% GoEast queries as ONE data point among many. 10% Chinese AI platforms (Doubao, Kimi) as Jake's unique angle."
+    },
+    {
+      "id": "P6-02",
+      "pillar": "Multi-Platform",
+      "title": "How to Optimize for Google AI Overviews (SGE)",
+      "slug": "optimize-google-ai-overviews",
+      "url": "https://gujianjun.net/geo/optimize-google-ai-overviews/",
+      "type": "Platform Guide",
+      "priority": 1,
+      "target_words": 3500,
+      "content_brief": "Specific tactics for appearing in Google's AI Overviews and SGE results.",
+      "suggested_h2s": [
+        "How AI Overviews Work",
+        "Which Queries Trigger AI Overviews",
+        "Source Selection Criteria",
+        "Content Optimization Tactics",
+        "Monitoring Your AI Overview Presence",
+        "AIO and Featured Snippets"
+      ],
+      "internal_links": [
+        {
+          "id": "P6-01",
+          "title": "Platform-Specific GEO: Optimizing for Every AI Search Engine",
+          "url": "https://gujianjun.net/geo/platform-specific-geo/"
+        },
+        {
+          "id": "P1-03",
+          "title": "How AI Search Engines Work: Perplexity, ChatGPT, Google AI Overviews",
+          "url": "https://gujianjun.net/geo/how-ai-search-engines-work/"
+        },
+        {
+          "id": "P4-01",
+          "title": "On-Page GEO Optimization: The Complete Checklist",
+          "url": "https://gujianjun.net/geo/on-page-geo-optimization/"
+        },
+        {
+          "id": "P4-05",
+          "title": "FAQ and Q&A Content Strategy for GEO",
+          "url": "https://gujianjun.net/geo/faq-qa-content-geo/"
+        },
+        {
+          "id": "P7-03",
+          "title": "GA4 for GEO: Tracking AI Referral Traffic and User Behavior",
+          "url": "https://gujianjun.net/geo/ga4-geo-ai-referral-traffic/"
+        }
+      ],
+      "example_guidance": "70% third-party examples across industries — test queries about restaurants, SaaS tools, travel destinations, not just language schools. 20% GoEast queries as ONE data point among many. 10% Chinese AI platforms (Doubao, Kimi) as Jake's unique angle."
+    },
+    {
+      "id": "P6-03",
+      "pillar": "Multi-Platform",
+      "title": "How to Optimize for ChatGPT Search and SearchGPT",
+      "slug": "optimize-chatgpt-search",
+      "url": "https://gujianjun.net/geo/optimize-chatgpt-search/",
+      "type": "Platform Guide",
+      "priority": 1,
+      "target_words": 3000,
+      "content_brief": "Strategies for getting your content cited in ChatGPT and SearchGPT responses.",
+      "suggested_h2s": [
+        "How ChatGPT Search Works",
+        "SearchGPT Architecture",
+        "Content Criteria for Citations",
+        "Optimization Tactics",
+        "ChatGPT Plugins and Browsing"
+      ],
+      "internal_links": [
+        {
+          "id": "P6-01",
+          "title": "Platform-Specific GEO: Optimizing for Every AI Search Engine",
+          "url": "https://gujianjun.net/geo/platform-specific-geo/"
+        },
+        {
+          "id": "P1-03",
+          "title": "How AI Search Engines Work: Perplexity, ChatGPT, Google AI Overviews",
+          "url": "https://gujianjun.net/geo/how-ai-search-engines-work/"
+        },
+        {
+          "id": "P5-02",
+          "title": "Robots.txt and AI Crawlers: Managing GPTBot, CCBot, and Others",
+          "url": "https://gujianjun.net/geo/robots-txt-ai-crawlers/"
+        },
+        {
+          "id": "P2-02",
+          "title": "RAG (Retrieval-Augmented Generation) Explained: The Engine Behind AI Search",
+          "url": "https://gujianjun.net/geo/rag-explained/"
+        }
+      ],
+      "example_guidance": "70% third-party examples across industries — test queries about restaurants, SaaS tools, travel destinations, not just language schools. 20% GoEast queries as ONE data point among many. 10% Chinese AI platforms (Doubao, Kimi) as Jake's unique angle."
+    },
+    {
+      "id": "P6-04",
+      "pillar": "Multi-Platform",
+      "title": "How to Optimize for Perplexity AI",
+      "slug": "optimize-perplexity-ai",
+      "url": "https://gujianjun.net/geo/optimize-perplexity-ai/",
+      "type": "Platform Guide",
+      "priority": 1,
+      "target_words": 3000,
+      "content_brief": "Perplexity-specific optimization strategies and how its citation system works.",
+      "suggested_h2s": [
+        "How Perplexity Retrieves Sources",
+        "Perplexity's Citation Model",
+        "Pro Search vs Quick Search",
+        "Content Optimization for Perplexity",
+        "Monitoring Perplexity Citations"
+      ],
+      "internal_links": [
+        {
+          "id": "P6-01",
+          "title": "Platform-Specific GEO: Optimizing for Every AI Search Engine",
+          "url": "https://gujianjun.net/geo/platform-specific-geo/"
+        },
+        {
+          "id": "P1-03",
+          "title": "How AI Search Engines Work: Perplexity, ChatGPT, Google AI Overviews",
+          "url": "https://gujianjun.net/geo/how-ai-search-engines-work/"
+        },
+        {
+          "id": "P2-06",
+          "title": "How AI Decides Which Sources to Cite: Reranking and Trust Signals",
+          "url": "https://gujianjun.net/geo/ai-citation-reranking-trust/"
+        },
+        {
+          "id": "P4-06",
+          "title": "Using Statistics, Data, and Original Research to Win AI Citations",
+          "url": "https://gujianjun.net/geo/statistics-data-ai-citations/"
+        }
+      ],
+      "example_guidance": "70% third-party examples across industries — test queries about restaurants, SaaS tools, travel destinations, not just language schools. 20% GoEast queries as ONE data point among many. 10% Chinese AI platforms (Doubao, Kimi) as Jake's unique angle."
+    },
+    {
+      "id": "P6-05",
+      "pillar": "Multi-Platform",
+      "title": "Optimizing for Bing Copilot, Claude Search, and Other AI Assistants",
+      "slug": "optimize-bing-copilot-claude",
+      "url": "https://gujianjun.net/geo/optimize-bing-copilot-claude/",
+      "type": "Platform Guide",
+      "priority": 2,
+      "target_words": 3000,
+      "content_brief": "GEO strategies for Bing Copilot, Claude, and emerging AI search platforms.",
+      "suggested_h2s": [
+        "Bing Copilot",
+        "Claude and Anthropic Search",
+        "Emerging AI Search Platforms",
+        "Common Optimization Patterns"
+      ],
+      "internal_links": [
+        {
+          "id": "P6-01",
+          "title": "Platform-Specific GEO: Optimizing for Every AI Search Engine",
+          "url": "https://gujianjun.net/geo/platform-specific-geo/"
+        },
+        {
+          "id": "P1-03",
+          "title": "How AI Search Engines Work: Perplexity, ChatGPT, Google AI Overviews",
+          "url": "https://gujianjun.net/geo/how-ai-search-engines-work/"
+        },
+        {
+          "id": "P6-02",
+          "title": "How to Optimize for Google AI Overviews (SGE)",
+          "url": "https://gujianjun.net/geo/optimize-google-ai-overviews/"
+        },
+        {
+          "id": "P6-03",
+          "title": "How to Optimize for ChatGPT Search and SearchGPT",
+          "url": "https://gujianjun.net/geo/optimize-chatgpt-search/"
+        },
+        {
+          "id": "P6-04",
+          "title": "How to Optimize for Perplexity AI",
+          "url": "https://gujianjun.net/geo/optimize-perplexity-ai/"
+        }
+      ],
+      "example_guidance": "70% third-party examples across industries — test queries about restaurants, SaaS tools, travel destinations, not just language schools. 20% GoEast queries as ONE data point among many. 10% Chinese AI platforms (Doubao, Kimi) as Jake's unique angle."
+    },
+    {
+      "id": "P6-06",
+      "pillar": "Multi-Platform",
+      "title": "GEO for Voice Assistants and Conversational AI",
+      "slug": "geo-voice-assistants",
+      "url": "https://gujianjun.net/geo/geo-voice-assistants/",
+      "type": "Emerging",
+      "priority": 3,
+      "target_words": 2500,
+      "content_brief": "How GEO principles apply to voice-based AI assistants and conversational interfaces.",
+      "suggested_h2s": [
+        "Voice Search vs AI Search",
+        "Conversational Query Patterns",
+        "Optimizing for Voice AI",
+        "The Future of Voice and AI Search"
+      ],
+      "internal_links": [
+        {
+          "id": "P6-01",
+          "title": "Platform-Specific GEO: Optimizing for Every AI Search Engine",
+          "url": "https://gujianjun.net/geo/platform-specific-geo/"
+        },
+        {
+          "id": "P3-03",
+          "title": "AI Query Intent: Understanding What Users Really Want from AI Answers",
+          "url": "https://gujianjun.net/geo/ai-query-intent/"
+        },
+        {
+          "id": "P1-03",
+          "title": "How AI Search Engines Work: Perplexity, ChatGPT, Google AI Overviews",
+          "url": "https://gujianjun.net/geo/how-ai-search-engines-work/"
+        }
+      ],
+      "example_guidance": "70% third-party examples across industries — test queries about restaurants, SaaS tools, travel destinations, not just language schools. 20% GoEast queries as ONE data point among many. 10% Chinese AI platforms (Doubao, Kimi) as Jake's unique angle."
+    },
+    {
+      "id": "P7-01",
+      "pillar": "Measurement",
+      "title": "Measuring GEO Success: KPIs, Metrics, and What Actually Matters",
+      "slug": "measuring-geo-success-kpis",
+      "url": "https://gujianjun.net/geo/measuring-geo-success-kpis/",
+      "type": "Pillar",
+      "priority": 1,
+      "target_words": 4000,
+      "content_brief": "Complete measurement framework for GEO including new metrics beyond traditional SEO KPIs.",
+      "suggested_h2s": [
+        "Why Traditional SEO Metrics Fall Short",
+        "GEO-Specific KPIs",
+        "AI Citation Rate",
+        "AI Referral Traffic",
+        "Brand Mention Tracking",
+        "Share of AI Voice",
+        "Building a GEO Dashboard"
+      ],
+      "internal_links": [
+        {
+          "id": "P0-01",
+          "title": "The Complete Guide to GEO (Generative Engine Optimization)",
+          "url": "https://gujianjun.net/geo/geo-guide/"
+        },
+        {
+          "id": "P7-02",
+          "title": "GEO Tools: The Best Software for Tracking AI Search Visibility",
+          "url": "https://gujianjun.net/geo/geo-tools-ai-visibility/"
+        },
+        {
+          "id": "P7-03",
+          "title": "GA4 for GEO: Tracking AI Referral Traffic and User Behavior",
+          "url": "https://gujianjun.net/geo/ga4-geo-ai-referral-traffic/"
+        },
+        {
+          "id": "P7-04",
+          "title": "Monitoring AI Citations and Brand Mentions Across Platforms",
+          "url": "https://gujianjun.net/geo/monitoring-ai-citations-brand-mentions/"
+        },
+        {
+          "id": "P7-05",
+          "title": "GEO Reporting: Templates, Dashboards, and Stakeholder Communication",
+          "url": "https://gujianjun.net/geo/geo-reporting-templates/"
+        },
+        {
+          "id": "P3-01",
+          "title": "GEO Content Strategy: A Complete Framework for AI Visibility",
+          "url": "https://gujianjun.net/geo/geo-content-strategy-framework/"
+        },
+        {
+          "id": "P3-07",
+          "title": "GEO Audit: How to Assess Your Current AI Search Visibility",
+          "url": "https://gujianjun.net/geo/geo-audit-guide/"
+        }
+      ],
+      "example_guidance": "50% GoEast GA4/Looker Studio data as the running case study. 30% tool configurations that apply to any site. 20% industry benchmarks and third-party data."
+    },
+    {
+      "id": "P7-02",
+      "pillar": "Measurement",
+      "title": "GEO Tools: The Best Software for Tracking AI Search Visibility",
+      "slug": "geo-tools-ai-visibility",
+      "url": "https://gujianjun.net/geo/geo-tools-ai-visibility/",
+      "type": "Review",
+      "priority": 1,
+      "target_words": 3500,
+      "content_brief": "Comprehensive review of tools available for monitoring and measuring GEO performance.",
+      "suggested_h2s": [
+        "AI Search Monitoring Tools",
+        "Citation Tracking Platforms",
+        "Brand Mention Tools",
+        "Traditional SEO Tools with GEO Features",
+        "Free vs Paid Options",
+        "Tool Stack Recommendations"
+      ],
+      "internal_links": [
+        {
+          "id": "P7-01",
+          "title": "Measuring GEO Success: KPIs, Metrics, and What Actually Matters",
+          "url": "https://gujianjun.net/geo/measuring-geo-success-kpis/"
+        },
+        {
+          "id": "P7-03",
+          "title": "GA4 for GEO: Tracking AI Referral Traffic and User Behavior",
+          "url": "https://gujianjun.net/geo/ga4-geo-ai-referral-traffic/"
+        },
+        {
+          "id": "P7-04",
+          "title": "Monitoring AI Citations and Brand Mentions Across Platforms",
+          "url": "https://gujianjun.net/geo/monitoring-ai-citations-brand-mentions/"
+        },
+        {
+          "id": "P3-07",
+          "title": "GEO Audit: How to Assess Your Current AI Search Visibility",
+          "url": "https://gujianjun.net/geo/geo-audit-guide/"
+        }
+      ],
+      "example_guidance": "50% GoEast GA4/Looker Studio data as the running case study. 30% tool configurations that apply to any site. 20% industry benchmarks and third-party data."
+    },
+    {
+      "id": "P7-03",
+      "pillar": "Measurement",
+      "title": "GA4 for GEO: Tracking AI Referral Traffic and User Behavior",
+      "slug": "ga4-geo-ai-referral-traffic",
+      "url": "https://gujianjun.net/geo/ga4-geo-ai-referral-traffic/",
+      "type": "How-To",
+      "priority": 1,
+      "target_words": 3500,
+      "content_brief": "GA4 setup and configuration for identifying and analyzing traffic from AI search sources.",
+      "suggested_h2s": [
+        "Identifying AI Referral Sources in GA4",
+        "Custom Channel Groups for AI Traffic",
+        "UTM Strategies for AI Tracking",
+        "Custom Reports for GEO",
+        "GA4 Explorations for AI Traffic Analysis",
+        "GTM Configuration for AI Source Detection"
+      ],
+      "internal_links": [
+        {
+          "id": "P7-01",
+          "title": "Measuring GEO Success: KPIs, Metrics, and What Actually Matters",
+          "url": "https://gujianjun.net/geo/measuring-geo-success-kpis/"
+        },
+        {
+          "id": "P7-02",
+          "title": "GEO Tools: The Best Software for Tracking AI Search Visibility",
+          "url": "https://gujianjun.net/geo/geo-tools-ai-visibility/"
+        },
+        {
+          "id": "P7-05",
+          "title": "GEO Reporting: Templates, Dashboards, and Stakeholder Communication",
+          "url": "https://gujianjun.net/geo/geo-reporting-templates/"
+        },
+        {
+          "id": "P6-02",
+          "title": "How to Optimize for Google AI Overviews (SGE)",
+          "url": "https://gujianjun.net/geo/optimize-google-ai-overviews/"
+        }
+      ],
+      "example_guidance": "50% GoEast GA4/Looker Studio data as the running case study. 30% tool configurations that apply to any site. 20% industry benchmarks and third-party data."
+    },
+    {
+      "id": "P7-04",
+      "pillar": "Measurement",
+      "title": "Monitoring AI Citations and Brand Mentions Across Platforms",
+      "slug": "monitoring-ai-citations-brand-mentions",
+      "url": "https://gujianjun.net/geo/monitoring-ai-citations-brand-mentions/",
+      "type": "How-To",
+      "priority": 2,
+      "target_words": 3000,
+      "content_brief": "Methods for tracking when and how AI mentions your brand or cites your content.",
+      "suggested_h2s": [
+        "Manual Citation Monitoring",
+        "Automated Monitoring Tools",
+        "Prompt Libraries for Testing",
+        "Tracking Citation Accuracy",
+        "Competitor Citation Analysis",
+        "Building a Citation Report"
+      ],
+      "internal_links": [
+        {
+          "id": "P7-01",
+          "title": "Measuring GEO Success: KPIs, Metrics, and What Actually Matters",
+          "url": "https://gujianjun.net/geo/measuring-geo-success-kpis/"
+        },
+        {
+          "id": "P7-02",
+          "title": "GEO Tools: The Best Software for Tracking AI Search Visibility",
+          "url": "https://gujianjun.net/geo/geo-tools-ai-visibility/"
+        },
+        {
+          "id": "P8-07",
+          "title": "Digital PR and Link Building for GEO",
+          "url": "https://gujianjun.net/geo/digital-pr-link-building-geo/"
+        },
+        {
+          "id": "P10-01",
+          "title": "GEO Case Studies: Real Results from AI Search Optimization",
+          "url": "https://gujianjun.net/geo/geo-case-studies/"
+        }
+      ],
+      "example_guidance": "50% GoEast GA4/Looker Studio data as the running case study. 30% tool configurations that apply to any site. 20% industry benchmarks and third-party data."
+    },
+    {
+      "id": "P7-05",
+      "pillar": "Measurement",
+      "title": "GEO Reporting: Templates, Dashboards, and Stakeholder Communication",
+      "slug": "geo-reporting-templates",
+      "url": "https://gujianjun.net/geo/geo-reporting-templates/",
+      "type": "Resource",
+      "priority": 3,
+      "target_words": 2500,
+      "content_brief": "Ready-to-use reporting templates and frameworks for communicating GEO results to stakeholders.",
+      "suggested_h2s": [
+        "Monthly GEO Report Template",
+        "Executive Summary Format",
+        "Looker Studio GEO Dashboard",
+        "Combining GEO and SEO Reporting",
+        "ROI Framework for GEO"
+      ],
+      "internal_links": [
+        {
+          "id": "P7-01",
+          "title": "Measuring GEO Success: KPIs, Metrics, and What Actually Matters",
+          "url": "https://gujianjun.net/geo/measuring-geo-success-kpis/"
+        },
+        {
+          "id": "P7-03",
+          "title": "GA4 for GEO: Tracking AI Referral Traffic and User Behavior",
+          "url": "https://gujianjun.net/geo/ga4-geo-ai-referral-traffic/"
+        },
+        {
+          "id": "P9-04",
+          "title": "GEO Content Calendar: Planning and Prioritizing AI-Optimized Content",
+          "url": "https://gujianjun.net/geo/geo-content-calendar/"
+        }
+      ],
+      "example_guidance": "50% GoEast GA4/Looker Studio data as the running case study. 30% tool configurations that apply to any site. 20% industry benchmarks and third-party data."
+    },
+    {
+      "id": "P8-01",
+      "pillar": "Advanced",
+      "title": "Entity SEO for GEO: Knowledge Graphs, Entities, and AI Understanding",
+      "slug": "entity-seo-geo-knowledge-graphs",
+      "url": "https://gujianjun.net/geo/entity-seo-geo-knowledge-graphs/",
+      "type": "Advanced",
+      "priority": 1,
+      "target_words": 4000,
+      "content_brief": "How entity-based optimization and knowledge graph presence influence AI citation decisions.",
+      "suggested_h2s": [
+        "What Are Entities in AI Context",
+        "Knowledge Graphs and AI Search",
+        "Building Your Entity",
+        "Entity Optimization Tactics",
+        "Wikidata and Wikipedia",
+        "Schema for Entity Building",
+        "Measuring Entity Strength"
+      ],
+      "internal_links": [
+        {
+          "id": "P0-01",
+          "title": "The Complete Guide to GEO (Generative Engine Optimization)",
+          "url": "https://gujianjun.net/geo/geo-guide/"
+        },
+        {
+          "id": "P3-05",
+          "title": "E-E-A-T for GEO: Building Authority That AI Trusts",
+          "url": "https://gujianjun.net/geo/eeat-for-geo/"
+        },
+        {
+          "id": "P4-07",
+          "title": "Author Authority and Byline Optimization for GEO",
+          "url": "https://gujianjun.net/geo/author-authority-byline-geo/"
+        },
+        {
+          "id": "P4-02",
+          "title": "Schema Markup for GEO: Structured Data That AI Understands",
+          "url": "https://gujianjun.net/geo/schema-markup-geo/"
+        },
+        {
+          "id": "P2-06",
+          "title": "How AI Decides Which Sources to Cite: Reranking and Trust Signals",
+          "url": "https://gujianjun.net/geo/ai-citation-reranking-trust/"
+        },
+        {
+          "id": "P8-07",
+          "title": "Digital PR and Link Building for GEO",
+          "url": "https://gujianjun.net/geo/digital-pr-link-building-geo/"
+        }
+      ],
+      "example_guidance": "Match the vertical: use Shopify store for e-commerce GEO (P8-05), GoEast for local business GEO (P8-04), hypothetical SaaS examples for B2B (P8-06). Entity article (P8-01) should use a mix. Digital PR article should use third-party case studies primarily."
+    },
+    {
+      "id": "P8-02",
+      "pillar": "Advanced",
+      "title": "Programmatic GEO: Scaling AI-Optimized Content with Automation",
+      "slug": "programmatic-geo-automation",
+      "url": "https://gujianjun.net/geo/programmatic-geo-automation/",
+      "type": "Advanced",
+      "priority": 2,
+      "target_words": 3500,
+      "content_brief": "How to use AI tools and automation to scale GEO content production without sacrificing quality.",
+      "suggested_h2s": [
+        "Programmatic Content for GEO",
+        "AI-Assisted Content Workflows",
+        "Template-Based GEO Content",
+        "Quality Control at Scale",
+        "Tools for Programmatic GEO",
+        "Risks and Pitfalls"
+      ],
+      "internal_links": [
+        {
+          "id": "P3-01",
+          "title": "GEO Content Strategy: A Complete Framework for AI Visibility",
+          "url": "https://gujianjun.net/geo/geo-content-strategy-framework/"
+        },
+        {
+          "id": "P4-01",
+          "title": "On-Page GEO Optimization: The Complete Checklist",
+          "url": "https://gujianjun.net/geo/on-page-geo-optimization/"
+        },
+        {
+          "id": "P9-02",
+          "title": "GEO Content Brief Template: How to Brief Writers for AI-Optimized Content",
+          "url": "https://gujianjun.net/geo/geo-content-brief-template/"
+        },
+        {
+          "id": "P9-04",
+          "title": "GEO Content Calendar: Planning and Prioritizing AI-Optimized Content",
+          "url": "https://gujianjun.net/geo/geo-content-calendar/"
+        },
+        {
+          "id": "P3-04",
+          "title": "Content Formats That AI Search Engines Prefer to Cite",
+          "url": "https://gujianjun.net/geo/content-formats-ai-prefers/"
+        }
+      ],
+      "example_guidance": "Match the vertical: use Shopify store for e-commerce GEO (P8-05), GoEast for local business GEO (P8-04), hypothetical SaaS examples for B2B (P8-06). Entity article (P8-01) should use a mix. Digital PR article should use third-party case studies primarily."
+    },
+    {
+      "id": "P8-03",
+      "pillar": "Advanced",
+      "title": "International and Multilingual GEO Strategy",
+      "slug": "international-multilingual-geo",
+      "url": "https://gujianjun.net/geo/international-multilingual-geo/",
+      "type": "Advanced",
+      "priority": 2,
+      "target_words": 3000,
+      "content_brief": "How to execute GEO across multiple languages and markets.",
+      "suggested_h2s": [
+        "AI Search by Market",
+        "Language-Specific AI Platforms",
+        "Multilingual Content Optimization",
+        "Hreflang and AI",
+        "Cultural Considerations",
+        "China-Specific AI Search (Doubao, Kimi, etc.)"
+      ],
+      "internal_links": [
+        {
+          "id": "P6-01",
+          "title": "Platform-Specific GEO: Optimizing for Every AI Search Engine",
+          "url": "https://gujianjun.net/geo/platform-specific-geo/"
+        },
+        {
+          "id": "P3-01",
+          "title": "GEO Content Strategy: A Complete Framework for AI Visibility",
+          "url": "https://gujianjun.net/geo/geo-content-strategy-framework/"
+        },
+        {
+          "id": "P8-04",
+          "title": "GEO for Local Businesses: Getting Cited in 'Near Me' AI Answers",
+          "url": "https://gujianjun.net/geo/geo-local-business/"
+        },
+        {
+          "id": "P4-03",
+          "title": "Writing AI-Citable Content: Structure, Style, and Formatting",
+          "url": "https://gujianjun.net/geo/writing-ai-citable-content/"
+        }
+      ],
+      "example_guidance": "Match the vertical: use Shopify store for e-commerce GEO (P8-05), GoEast for local business GEO (P8-04), hypothetical SaaS examples for B2B (P8-06). Entity article (P8-01) should use a mix. Digital PR article should use third-party case studies primarily."
+    },
+    {
+      "id": "P8-04",
+      "pillar": "Advanced",
+      "title": "GEO for Local Businesses: Getting Cited in 'Near Me' AI Answers",
+      "slug": "geo-local-business",
+      "url": "https://gujianjun.net/geo/geo-local-business/",
+      "type": "Vertical",
+      "priority": 2,
+      "target_words": 3000,
+      "content_brief": "Local GEO strategies for businesses targeting geographic-specific AI queries.",
+      "suggested_h2s": [
+        "How AI Handles Local Queries",
+        "Google Business Profile and AI",
+        "Local Content Optimization",
+        "Review Signals for AI",
+        "NAP Consistency in AI Era",
+        "Local GEO Checklist"
+      ],
+      "internal_links": [
+        {
+          "id": "P8-01",
+          "title": "Entity SEO for GEO: Knowledge Graphs, Entities, and AI Understanding",
+          "url": "https://gujianjun.net/geo/entity-seo-geo-knowledge-graphs/"
+        },
+        {
+          "id": "P4-02",
+          "title": "Schema Markup for GEO: Structured Data That AI Understands",
+          "url": "https://gujianjun.net/geo/schema-markup-geo/"
+        },
+        {
+          "id": "P6-02",
+          "title": "How to Optimize for Google AI Overviews (SGE)",
+          "url": "https://gujianjun.net/geo/optimize-google-ai-overviews/"
+        },
+        {
+          "id": "P3-07",
+          "title": "GEO Audit: How to Assess Your Current AI Search Visibility",
+          "url": "https://gujianjun.net/geo/geo-audit-guide/"
+        }
+      ],
+      "example_guidance": "Match the vertical: use Shopify store for e-commerce GEO (P8-05), GoEast for local business GEO (P8-04), hypothetical SaaS examples for B2B (P8-06). Entity article (P8-01) should use a mix. Digital PR article should use third-party case studies primarily."
+    },
+    {
+      "id": "P8-05",
+      "pillar": "Advanced",
+      "title": "GEO for E-Commerce: Product Page Optimization for AI Search",
+      "slug": "geo-ecommerce-product-pages",
+      "url": "https://gujianjun.net/geo/geo-ecommerce-product-pages/",
+      "type": "Vertical",
+      "priority": 2,
+      "target_words": 3500,
+      "content_brief": "E-commerce specific GEO tactics for product pages, category pages, and product comparison content.",
+      "suggested_h2s": [
+        "How AI Recommends Products",
+        "Product Schema for GEO",
+        "Writing AI-Citable Product Descriptions",
+        "Comparison Content Strategy",
+        "Review and UGC for GEO",
+        "Shopping-Specific AI Platforms"
+      ],
+      "internal_links": [
+        {
+          "id": "P4-02",
+          "title": "Schema Markup for GEO: Structured Data That AI Understands",
+          "url": "https://gujianjun.net/geo/schema-markup-geo/"
+        },
+        {
+          "id": "P4-01",
+          "title": "On-Page GEO Optimization: The Complete Checklist",
+          "url": "https://gujianjun.net/geo/on-page-geo-optimization/"
+        },
+        {
+          "id": "P8-01",
+          "title": "Entity SEO for GEO: Knowledge Graphs, Entities, and AI Understanding",
+          "url": "https://gujianjun.net/geo/entity-seo-geo-knowledge-graphs/"
+        },
+        {
+          "id": "P3-04",
+          "title": "Content Formats That AI Search Engines Prefer to Cite",
+          "url": "https://gujianjun.net/geo/content-formats-ai-prefers/"
+        },
+        {
+          "id": "P6-02",
+          "title": "How to Optimize for Google AI Overviews (SGE)",
+          "url": "https://gujianjun.net/geo/optimize-google-ai-overviews/"
+        }
+      ],
+      "example_guidance": "Match the vertical: use Shopify store for e-commerce GEO (P8-05), GoEast for local business GEO (P8-04), hypothetical SaaS examples for B2B (P8-06). Entity article (P8-01) should use a mix. Digital PR article should use third-party case studies primarily."
+    },
+    {
+      "id": "P8-06",
+      "pillar": "Advanced",
+      "title": "GEO for SaaS and B2B: Winning High-Intent AI Queries",
+      "slug": "geo-saas-b2b",
+      "url": "https://gujianjun.net/geo/geo-saas-b2b/",
+      "type": "Vertical",
+      "priority": 2,
+      "target_words": 3000,
+      "content_brief": "B2B and SaaS-specific GEO strategies for product comparison, feature, and solution queries.",
+      "suggested_h2s": [
+        "B2B AI Query Landscape",
+        "Software Comparison Optimization",
+        "Feature Pages for GEO",
+        "Case Study Content for AI Citations",
+        "Thought Leadership and GEO",
+        "Integration and API Documentation"
+      ],
+      "internal_links": [
+        {
+          "id": "P8-01",
+          "title": "Entity SEO for GEO: Knowledge Graphs, Entities, and AI Understanding",
+          "url": "https://gujianjun.net/geo/entity-seo-geo-knowledge-graphs/"
+        },
+        {
+          "id": "P3-04",
+          "title": "Content Formats That AI Search Engines Prefer to Cite",
+          "url": "https://gujianjun.net/geo/content-formats-ai-prefers/"
+        },
+        {
+          "id": "P4-06",
+          "title": "Using Statistics, Data, and Original Research to Win AI Citations",
+          "url": "https://gujianjun.net/geo/statistics-data-ai-citations/"
+        },
+        {
+          "id": "P8-07",
+          "title": "Digital PR and Link Building for GEO",
+          "url": "https://gujianjun.net/geo/digital-pr-link-building-geo/"
+        },
+        {
+          "id": "P6-01",
+          "title": "Platform-Specific GEO: Optimizing for Every AI Search Engine",
+          "url": "https://gujianjun.net/geo/platform-specific-geo/"
+        }
+      ],
+      "example_guidance": "Match the vertical: use Shopify store for e-commerce GEO (P8-05), GoEast for local business GEO (P8-04), hypothetical SaaS examples for B2B (P8-06). Entity article (P8-01) should use a mix. Digital PR article should use third-party case studies primarily."
+    },
+    {
+      "id": "P8-07",
+      "pillar": "Advanced",
+      "title": "Digital PR and Link Building for GEO",
+      "slug": "digital-pr-link-building-geo",
+      "url": "https://gujianjun.net/geo/digital-pr-link-building-geo/",
+      "type": "Strategy",
+      "priority": 2,
+      "target_words": 3000,
+      "content_brief": "How digital PR, backlinks, and brand mentions influence AI citation authority.",
+      "suggested_h2s": [
+        "Links as AI Trust Signals",
+        "Digital PR for AI Visibility",
+        "Brand Mentions and Entity Strength",
+        "HARO and Expert Commentary",
+        "Creating Citable Assets",
+        "Measuring PR Impact on GEO"
+      ],
+      "internal_links": [
+        {
+          "id": "P3-05",
+          "title": "E-E-A-T for GEO: Building Authority That AI Trusts",
+          "url": "https://gujianjun.net/geo/eeat-for-geo/"
+        },
+        {
+          "id": "P8-01",
+          "title": "Entity SEO for GEO: Knowledge Graphs, Entities, and AI Understanding",
+          "url": "https://gujianjun.net/geo/entity-seo-geo-knowledge-graphs/"
+        },
+        {
+          "id": "P2-06",
+          "title": "How AI Decides Which Sources to Cite: Reranking and Trust Signals",
+          "url": "https://gujianjun.net/geo/ai-citation-reranking-trust/"
+        },
+        {
+          "id": "P7-04",
+          "title": "Monitoring AI Citations and Brand Mentions Across Platforms",
+          "url": "https://gujianjun.net/geo/monitoring-ai-citations-brand-mentions/"
+        }
+      ],
+      "example_guidance": "Match the vertical: use Shopify store for e-commerce GEO (P8-05), GoEast for local business GEO (P8-04), hypothetical SaaS examples for B2B (P8-06). Entity article (P8-01) should use a mix. Digital PR article should use third-party case studies primarily."
+    },
+    {
+      "id": "P8-08",
+      "pillar": "Advanced",
+      "title": "Content Refresh and Update Strategy for Maintaining AI Citations",
+      "slug": "content-refresh-ai-citations",
+      "url": "https://gujianjun.net/geo/content-refresh-ai-citations/",
+      "type": "Strategy",
+      "priority": 2,
+      "target_words": 2500,
+      "content_brief": "How to maintain and improve AI citations through strategic content updates.",
+      "suggested_h2s": [
+        "Content Decay in AI Search",
+        "When to Update Content",
+        "Update vs Rewrite",
+        "Freshness Signals That Matter",
+        "Monitoring Citation Loss",
+        "Content Maintenance Calendar"
+      ],
+      "internal_links": [
+        {
+          "id": "P5-06",
+          "title": "Content Freshness Signals: How AI Search Evaluates Recency",
+          "url": "https://gujianjun.net/geo/content-freshness-signals-geo/"
+        },
+        {
+          "id": "P7-01",
+          "title": "Measuring GEO Success: KPIs, Metrics, and What Actually Matters",
+          "url": "https://gujianjun.net/geo/measuring-geo-success-kpis/"
+        },
+        {
+          "id": "P9-04",
+          "title": "GEO Content Calendar: Planning and Prioritizing AI-Optimized Content",
+          "url": "https://gujianjun.net/geo/geo-content-calendar/"
+        },
+        {
+          "id": "P3-01",
+          "title": "GEO Content Strategy: A Complete Framework for AI Visibility",
+          "url": "https://gujianjun.net/geo/geo-content-strategy-framework/"
+        }
+      ],
+      "example_guidance": "Match the vertical: use Shopify store for e-commerce GEO (P8-05), GoEast for local business GEO (P8-04), hypothetical SaaS examples for B2B (P8-06). Entity article (P8-01) should use a mix. Digital PR article should use third-party case studies primarily."
+    },
+    {
+      "id": "P9-01",
+      "pillar": "Workflow",
+      "title": "Integrating GEO into Your Existing SEO Workflow",
+      "slug": "integrating-geo-seo-workflow",
+      "url": "https://gujianjun.net/geo/integrating-geo-seo-workflow/",
+      "type": "How-To",
+      "priority": 1,
+      "target_words": 3500,
+      "content_brief": "Practical guide to adding GEO steps into existing SEO processes without starting from scratch.",
+      "suggested_h2s": [
+        "Where GEO Fits in Your Workflow",
+        "Modifying Your Content Brief",
+        "Adding GEO to Technical Audits",
+        "Team Roles and Responsibilities",
+        "Timeline for GEO Integration",
+        "Change Management Tips"
+      ],
+      "internal_links": [
+        {
+          "id": "P0-01",
+          "title": "The Complete Guide to GEO (Generative Engine Optimization)",
+          "url": "https://gujianjun.net/geo/geo-guide/"
+        },
+        {
+          "id": "P3-01",
+          "title": "GEO Content Strategy: A Complete Framework for AI Visibility",
+          "url": "https://gujianjun.net/geo/geo-content-strategy-framework/"
+        },
+        {
+          "id": "P3-07",
+          "title": "GEO Audit: How to Assess Your Current AI Search Visibility",
+          "url": "https://gujianjun.net/geo/geo-audit-guide/"
+        },
+        {
+          "id": "P9-02",
+          "title": "GEO Content Brief Template: How to Brief Writers for AI-Optimized Content",
+          "url": "https://gujianjun.net/geo/geo-content-brief-template/"
+        },
+        {
+          "id": "P9-03",
+          "title": "GEO and WordPress: Plugin, Theme, and Configuration Guide",
+          "url": "https://gujianjun.net/geo/geo-wordpress-optimization/"
+        },
+        {
+          "id": "P9-04",
+          "title": "GEO Content Calendar: Planning and Prioritizing AI-Optimized Content",
+          "url": "https://gujianjun.net/geo/geo-content-calendar/"
+        },
+        {
+          "id": "P7-01",
+          "title": "Measuring GEO Success: KPIs, Metrics, and What Actually Matters",
+          "url": "https://gujianjun.net/geo/measuring-geo-success-kpis/"
+        }
+      ],
+      "example_guidance": "60% GoEast workflow as the primary case study — these articles are about how Jake actually integrates GEO into daily work. 30% generalized templates/checklists any team can use. 10% WordPress-specific configs from GoEast."
+    },
+    {
+      "id": "P9-02",
+      "pillar": "Workflow",
+      "title": "GEO Content Brief Template: How to Brief Writers for AI-Optimized Content",
+      "slug": "geo-content-brief-template",
+      "url": "https://gujianjun.net/geo/geo-content-brief-template/",
+      "type": "Template",
+      "priority": 1,
+      "target_words": 3000,
+      "content_brief": "Ready-to-use content brief template that includes GEO-specific requirements for writers.",
+      "suggested_h2s": [
+        "Standard Brief Elements",
+        "GEO-Specific Additions",
+        "Structure Requirements",
+        "Citation-Worthy Elements",
+        "FAQ and Schema Requirements",
+        "Brief Template Download"
+      ],
+      "internal_links": [
+        {
+          "id": "P9-01",
+          "title": "Integrating GEO into Your Existing SEO Workflow",
+          "url": "https://gujianjun.net/geo/integrating-geo-seo-workflow/"
+        },
+        {
+          "id": "P4-01",
+          "title": "On-Page GEO Optimization: The Complete Checklist",
+          "url": "https://gujianjun.net/geo/on-page-geo-optimization/"
+        },
+        {
+          "id": "P4-03",
+          "title": "Writing AI-Citable Content: Structure, Style, and Formatting",
+          "url": "https://gujianjun.net/geo/writing-ai-citable-content/"
+        },
+        {
+          "id": "P3-04",
+          "title": "Content Formats That AI Search Engines Prefer to Cite",
+          "url": "https://gujianjun.net/geo/content-formats-ai-prefers/"
+        },
+        {
+          "id": "P8-02",
+          "title": "Programmatic GEO: Scaling AI-Optimized Content with Automation",
+          "url": "https://gujianjun.net/geo/programmatic-geo-automation/"
+        }
+      ],
+      "example_guidance": "60% GoEast workflow as the primary case study — these articles are about how Jake actually integrates GEO into daily work. 30% generalized templates/checklists any team can use. 10% WordPress-specific configs from GoEast."
+    },
+    {
+      "id": "P9-03",
+      "pillar": "Workflow",
+      "title": "GEO and WordPress: Plugin, Theme, and Configuration Guide",
+      "slug": "geo-wordpress-optimization",
+      "url": "https://gujianjun.net/geo/geo-wordpress-optimization/",
+      "type": "CMS Guide",
+      "priority": 1,
+      "target_words": 3500,
+      "content_brief": "WordPress-specific GEO implementation guide covering plugins, themes, and configuration.",
+      "suggested_h2s": [
+        "Essential Plugins for GEO",
+        "Yoast/RankMath Schema Settings",
+        "FAQ Block Configuration",
+        "Author Page Optimization",
+        "Speed Optimization for AI Crawlers",
+        "WordPress GEO Checklist"
+      ],
+      "internal_links": [
+        {
+          "id": "P9-01",
+          "title": "Integrating GEO into Your Existing SEO Workflow",
+          "url": "https://gujianjun.net/geo/integrating-geo-seo-workflow/"
+        },
+        {
+          "id": "P5-01",
+          "title": "Technical GEO: The Complete Guide to AI-Ready Website Architecture",
+          "url": "https://gujianjun.net/geo/technical-geo-guide/"
+        },
+        {
+          "id": "P4-02",
+          "title": "Schema Markup for GEO: Structured Data That AI Understands",
+          "url": "https://gujianjun.net/geo/schema-markup-geo/"
+        },
+        {
+          "id": "P5-05",
+          "title": "Page Speed, Rendering, and Core Web Vitals for GEO",
+          "url": "https://gujianjun.net/geo/page-speed-rendering-geo/"
+        },
+        {
+          "id": "P5-02",
+          "title": "Robots.txt and AI Crawlers: Managing GPTBot, CCBot, and Others",
+          "url": "https://gujianjun.net/geo/robots-txt-ai-crawlers/"
+        }
+      ],
+      "example_guidance": "60% GoEast workflow as the primary case study — these articles are about how Jake actually integrates GEO into daily work. 30% generalized templates/checklists any team can use. 10% WordPress-specific configs from GoEast."
+    },
+    {
+      "id": "P9-04",
+      "pillar": "Workflow",
+      "title": "GEO Content Calendar: Planning and Prioritizing AI-Optimized Content",
+      "slug": "geo-content-calendar",
+      "url": "https://gujianjun.net/geo/geo-content-calendar/",
+      "type": "Template",
+      "priority": 2,
+      "target_words": 2500,
+      "content_brief": "Framework for building a content calendar that balances SEO and GEO priorities.",
+      "suggested_h2s": [
+        "Audit-Driven Prioritization",
+        "Quick Win vs Long-Term Topics",
+        "Balancing SEO and GEO",
+        "Monthly Planning Template",
+        "Quarterly Review Process"
+      ],
+      "internal_links": [
+        {
+          "id": "P9-01",
+          "title": "Integrating GEO into Your Existing SEO Workflow",
+          "url": "https://gujianjun.net/geo/integrating-geo-seo-workflow/"
+        },
+        {
+          "id": "P3-01",
+          "title": "GEO Content Strategy: A Complete Framework for AI Visibility",
+          "url": "https://gujianjun.net/geo/geo-content-strategy-framework/"
+        },
+        {
+          "id": "P8-08",
+          "title": "Content Refresh and Update Strategy for Maintaining AI Citations",
+          "url": "https://gujianjun.net/geo/content-refresh-ai-citations/"
+        },
+        {
+          "id": "P7-05",
+          "title": "GEO Reporting: Templates, Dashboards, and Stakeholder Communication",
+          "url": "https://gujianjun.net/geo/geo-reporting-templates/"
+        }
+      ],
+      "example_guidance": "60% GoEast workflow as the primary case study — these articles are about how Jake actually integrates GEO into daily work. 30% generalized templates/checklists any team can use. 10% WordPress-specific configs from GoEast."
+    },
+    {
+      "id": "P10-01",
+      "pillar": "Case Studies",
+      "title": "GEO Case Studies: Real Results from AI Search Optimization",
+      "slug": "geo-case-studies",
+      "url": "https://gujianjun.net/geo/geo-case-studies/",
+      "type": "Case Study",
+      "priority": 1,
+      "target_words": 4000,
+      "content_brief": "Detailed case studies showing GEO strategies and measurable results.",
+      "suggested_h2s": [
+        "Case Study 1: B2B SaaS",
+        "Case Study 2: E-Commerce",
+        "Case Study 3: Local Business",
+        "Case Study 4: Content Publisher",
+        "Lessons Learned",
+        "Common Patterns of Success"
+      ],
+      "internal_links": [
+        {
+          "id": "P0-01",
+          "title": "The Complete Guide to GEO (Generative Engine Optimization)",
+          "url": "https://gujianjun.net/geo/geo-guide/"
+        },
+        {
+          "id": "P3-01",
+          "title": "GEO Content Strategy: A Complete Framework for AI Visibility",
+          "url": "https://gujianjun.net/geo/geo-content-strategy-framework/"
+        },
+        {
+          "id": "P4-01",
+          "title": "On-Page GEO Optimization: The Complete Checklist",
+          "url": "https://gujianjun.net/geo/on-page-geo-optimization/"
+        },
+        {
+          "id": "P7-01",
+          "title": "Measuring GEO Success: KPIs, Metrics, and What Actually Matters",
+          "url": "https://gujianjun.net/geo/measuring-geo-success-kpis/"
+        },
+        {
+          "id": "P10-02",
+          "title": "GEO Before and After: Content Optimization Examples with Results",
+          "url": "https://gujianjun.net/geo/geo-before-after-examples/"
+        }
+      ],
+      "example_guidance": "GoEast as ONE of 3-4 case studies maximum. At least 2 case studies must be from completely different industries. The Shopify store can be one. Include at least one hypothetical-but-detailed case study for an industry Jake hasn't worked in."
+    },
+    {
+      "id": "P10-02",
+      "pillar": "Case Studies",
+      "title": "GEO Before and After: Content Optimization Examples with Results",
+      "slug": "geo-before-after-examples",
+      "url": "https://gujianjun.net/geo/geo-before-after-examples/",
+      "type": "Examples",
+      "priority": 1,
+      "target_words": 3500,
+      "content_brief": "Side-by-side before/after examples of content optimized for GEO with measurable impact.",
+      "suggested_h2s": [
+        "Example 1: Blog Post Optimization",
+        "Example 2: Product Page",
+        "Example 3: FAQ Page",
+        "Example 4: Technical Documentation",
+        "What Changed and Why It Worked"
+      ],
+      "internal_links": [
+        {
+          "id": "P10-01",
+          "title": "GEO Case Studies: Real Results from AI Search Optimization",
+          "url": "https://gujianjun.net/geo/geo-case-studies/"
+        },
+        {
+          "id": "P4-03",
+          "title": "Writing AI-Citable Content: Structure, Style, and Formatting",
+          "url": "https://gujianjun.net/geo/writing-ai-citable-content/"
+        },
+        {
+          "id": "P4-01",
+          "title": "On-Page GEO Optimization: The Complete Checklist",
+          "url": "https://gujianjun.net/geo/on-page-geo-optimization/"
+        },
+        {
+          "id": "P4-04",
+          "title": "Optimizing Headers, Lists, and Tables for AI Extraction",
+          "url": "https://gujianjun.net/geo/headers-lists-tables-ai/"
+        },
+        {
+          "id": "P4-06",
+          "title": "Using Statistics, Data, and Original Research to Win AI Citations",
+          "url": "https://gujianjun.net/geo/statistics-data-ai-citations/"
+        }
+      ],
+      "example_guidance": "GoEast as ONE of 3-4 case studies maximum. At least 2 case studies must be from completely different industries. The Shopify store can be one. Include at least one hypothetical-but-detailed case study for an industry Jake hasn't worked in."
+    },
+    {
+      "id": "P10-03",
+      "pillar": "Case Studies",
+      "title": "Common GEO Mistakes and How to Avoid Them",
+      "slug": "common-geo-mistakes",
+      "url": "https://gujianjun.net/geo/common-geo-mistakes/",
+      "type": "Guide",
+      "priority": 1,
+      "target_words": 3000,
+      "content_brief": "The most frequent GEO mistakes practitioners make and how to fix them.",
+      "suggested_h2s": [
+        "Blocking All AI Crawlers",
+        "Ignoring Content Structure",
+        "Over-Optimizing for One Platform",
+        "Neglecting E-E-A-T",
+        "Chasing AI Trends Without Strategy",
+        "Not Measuring Results"
+      ],
+      "internal_links": [
+        {
+          "id": "P0-01",
+          "title": "The Complete Guide to GEO (Generative Engine Optimization)",
+          "url": "https://gujianjun.net/geo/geo-guide/"
+        },
+        {
+          "id": "P5-03",
+          "title": "Should You Block or Allow AI Crawlers? A Strategic Decision Framework",
+          "url": "https://gujianjun.net/geo/block-allow-ai-crawlers/"
+        },
+        {
+          "id": "P3-07",
+          "title": "GEO Audit: How to Assess Your Current AI Search Visibility",
+          "url": "https://gujianjun.net/geo/geo-audit-guide/"
+        },
+        {
+          "id": "P10-01",
+          "title": "GEO Case Studies: Real Results from AI Search Optimization",
+          "url": "https://gujianjun.net/geo/geo-case-studies/"
+        },
+        {
+          "id": "P4-01",
+          "title": "On-Page GEO Optimization: The Complete Checklist",
+          "url": "https://gujianjun.net/geo/on-page-geo-optimization/"
+        }
+      ],
+      "example_guidance": "GoEast as ONE of 3-4 case studies maximum. At least 2 case studies must be from completely different industries. The Shopify store can be one. Include at least one hypothetical-but-detailed case study for an industry Jake hasn't worked in."
+    },
+    {
+      "id": "P10-04",
+      "pillar": "Case Studies",
+      "title": "The Future of GEO: Trends, Predictions, and What's Next",
+      "slug": "future-of-geo-trends",
+      "url": "https://gujianjun.net/geo/future-of-geo-trends/",
+      "type": "Analysis",
+      "priority": 2,
+      "target_words": 3000,
+      "content_brief": "Forward-looking analysis of where GEO is heading and how to prepare.",
+      "suggested_h2s": [
+        "Multi-Modal AI Search",
+        "Agentic Search and Task Completion",
+        "AI Search Market Consolidation",
+        "Regulation and Copyright",
+        "Preparing for the Next Wave",
+        "Building an Adaptive GEO Strategy"
+      ],
+      "internal_links": [
+        {
+          "id": "P0-01",
+          "title": "The Complete Guide to GEO (Generative Engine Optimization)",
+          "url": "https://gujianjun.net/geo/geo-guide/"
+        },
+        {
+          "id": "P1-01",
+          "title": "What is GEO? Generative Engine Optimization Explained",
+          "url": "https://gujianjun.net/geo/what-is-geo/"
+        },
+        {
+          "id": "P6-06",
+          "title": "GEO for Voice Assistants and Conversational AI",
+          "url": "https://gujianjun.net/geo/geo-voice-assistants/"
+        },
+        {
+          "id": "P8-03",
+          "title": "International and Multilingual GEO Strategy",
+          "url": "https://gujianjun.net/geo/international-multilingual-geo/"
+        },
+        {
+          "id": "P3-01",
+          "title": "GEO Content Strategy: A Complete Framework for AI Visibility",
+          "url": "https://gujianjun.net/geo/geo-content-strategy-framework/"
+        }
+      ],
+      "example_guidance": "GoEast as ONE of 3-4 case studies maximum. At least 2 case studies must be from completely different industries. The Shopify store can be one. Include at least one hypothetical-but-detailed case study for an industry Jake hasn't worked in."
+    }
+  ],
+  "publishing_phases": {
+    "phase_1": {
+      "priority": 1,
+      "description": "Core pillar pages and essential articles",
+      "articles": [
+        "P0-01",
+        "P1-01",
+        "P1-02",
+        "P1-03",
+        "P2-01",
+        "P2-02",
+        "P3-01",
+        "P3-02",
+        "P3-04",
+        "P3-05",
+        "P3-06",
+        "P3-07",
+        "P4-01",
+        "P4-02",
+        "P4-03",
+        "P5-01",
+        "P5-02",
+        "P6-01",
+        "P6-02",
+        "P6-03",
+        "P6-04",
+        "P7-01",
+        "P7-02",
+        "P7-03",
+        "P8-01",
+        "P9-01",
+        "P9-02",
+        "P9-03",
+        "P10-01",
+        "P10-02",
+        "P10-03"
+      ]
+    },
+    "phase_2": {
+      "priority": 2,
+      "description": "Supporting and deep-dive articles",
+      "articles": [
+        "P1-04",
+        "P1-05",
+        "P2-03",
+        "P2-04",
+        "P2-06",
+        "P3-03",
+        "P4-04",
+        "P4-05",
+        "P4-06",
+        "P5-03",
+        "P5-04",
+        "P5-06",
+        "P6-05",
+        "P7-04",
+        "P8-02",
+        "P8-03",
+        "P8-04",
+        "P8-05",
+        "P8-06",
+        "P8-07",
+        "P8-08",
+        "P9-04",
+        "P10-04"
+      ]
+    },
+    "phase_3": {
+      "priority": 3,
+      "description": "Niche, emerging, and supplementary content",
+      "articles": [
+        "P2-05",
+        "P2-07",
+        "P4-07",
+        "P5-05",
+        "P6-06",
+        "P7-05"
+      ]
+    }
+  }
+}
