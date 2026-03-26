@@ -1,4 +1,5 @@
 import { getAllPosts } from '@/lib/posts'
+import { getAllGeoPosts } from '@/lib/geo-posts'
 import HomeClient from '@/components/HomeClient'
 
 export const metadata = {
@@ -8,6 +9,10 @@ export const metadata = {
 }
 
 export default function HomePage() {
-  const posts = getAllPosts().slice(0, 3)
+  const regularPosts = getAllPosts().map((p) => ({ ...p, href: `/blog/${p.slug}` }))
+  const geoPosts = getAllGeoPosts().map((p) => ({ ...p, href: `/geo/${p.slug}` }))
+  const posts = [...regularPosts, ...geoPosts]
+    .sort((a, b) => (a.date < b.date ? 1 : -1))
+    .slice(0, 3)
   return <HomeClient posts={posts} />
 }

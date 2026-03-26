@@ -251,7 +251,7 @@ export default function HomeClient({ posts }: { posts: Post[] }) {
                   transition={{ duration: 0.5, delay: i * 0.1 }}
                 >
                   <Link
-                    href={`/blog/${post.slug}`}
+                    href={post.href ?? `/blog/${post.slug}`}
                     className="group flex items-center gap-6 py-5 border-b border-gray-900 hover:border-gray-700 transition-colors"
                   >
                     <span className="text-xs font-mono text-gray-600 w-24 shrink-0">
