@@ -1,20 +1,308 @@
 ---
-title: "What is GEO? Generative Engine Optimization Explained"
-date: "2026-03-25"
-excerpt: "GEO is the practice of optimizing content to appear in AI-generated answers from ChatGPT, Perplexity, and Google AI Overviews. Here's what practitioners need to know."
-tags: ["GEO", "AI Search", "SEO"]
+title: "GEO 是什么：生成式引擎优化从概念到实践"
+date: "2026-03-26"
+excerpt: "GEO（生成式引擎优化）是优化内容使其出现在 Perplexity、ChatGPT、Google AI Overviews 回答里的方法论。本文解释 RAG 机制如何决定谁被引用、GEO 和 SEO 的核心区别，以及从零开始最该先做的六件事。"
+tags: ["GEO", "生成式引擎优化", "AI搜索", "GEO入门", "Foundations"]
 pillar: "Foundations"
 articleId: "P1-01"
 ---
 
-# What is GEO?
+# GEO 是什么：生成式引擎优化从概念到实践
 
-This is a test article for the GEO route. Replace with actual content.
+**GEO（Generative Engine Optimization，生成式引擎优化）是优化内容使其被 AI 搜索引擎引用的方法论。** 当用户在 Perplexity、ChatGPT Search 或 Google AI Overviews 里提问时，AI 会从互联网上检索内容、整合成一段回答——GEO 的目标，就是让你的内容出现在这段回答里，而不是被跳过。
 
-## How GEO Differs from SEO
+传统 SEO 优化的是排名。GEO 优化的是被引用的概率。这是两件不同的事，需要不同的技巧。
 
-Traditional SEO optimizes pages. GEO optimizes information blocks.
+核心逻辑先放在这里，后面逐个展开：
 
-## The AI Search Landscape
+1. **AI搜索已经是主流** — Google AI Overviews 已覆盖超过20%的查询，大量用户在通过AI获取信息，不点进你的页面
+2. **RAG机制决定谁被引用** — AI把你的页面切成小块分别评分，被引用的是分块质量最高的内容，不是全站权重最高的页面
+3. **SEO和GEO不是替代关系** — 一部分SEO基础设施对GEO有效，另一部分不够，还有一部分GEO专属优化是SEO完全不关心的
+4. **AI爬虫权限是一切的前提** — 很多网站的robots.txt在防抓取时屏蔽了所有AI爬虫，SEO正常但在AI搜索里完全隐形
+5. **内容结构比内容质量更决定是否被引用** — 同样质量的内容，写法不同，被AI引用的概率差距可以超过两倍
 
-Content here...
+---
+
+## AI搜索已经不是边缘渠道
+
+现在不用讨论"AI搜索会不会成为主流"这个问题了。答案已经出来了。
+
+Google AI Overviews 的覆盖率从2025年初的6.49%，到年末已攀升至18–20%，现已覆盖超过20亿月活用户、200个国家（IMD 2025）。Perplexity的月活用户突破1亿，ChatGPT月活超过6亿，两者的检索功能都在持续扩张。
+
+数据更直接：Ahrefs 在2025年12月对30万个关键词的研究发现，当 Google AI Overviews 出现时，第一名有机结果的点击率下降了58%。
+
+这组数字应该让你坐立不安。你辛苦优化到第一名，有将近60%的流量在AI回答那一层就被截走了，用户不点进你的页面就已经得到了答案。
+
+不过这里有个反转：**同一研究发现，被 AI Overviews 引用的品牌，点击率反而高于未被引用的竞争对手。** 被引用等于隐性背书，而且在AI回答里获得了额外曝光。
+
+所以正确的理解不是"AI搜索在抢我的流量"，而是"不被AI引用的内容，才真的在失去流量"。
+
+电商数据更夸张：Adobe 统计，从2024年7月到2025年2月，AI驱动的零售网站流量增长了12倍。到2025年7月，同比增速达到4700%。这不是趋势预测，这是已经发生的事情。
+
+---
+
+## GEO 是什么：一个精确的定义
+
+**GEO（生成式引擎优化，Generative Engine Optimization）**：通过优化内容的结构、写法和技术配置，提升内容在 AI 搜索引擎生成回答时被引用的概率。
+
+这个定义里有三个关键词。
+
+**结构** — 内容如何组织，段落是否自包含，定义是否清晰，H2是否提供足够的语义锚点。
+
+**写法** — 第一句是否给出结论，陈述是否有具体数据支撑，还是充满"有助于"、"可以帮助"这类没有信息量的表述。
+
+**技术配置** — robots.txt是否允许AI爬虫访问，Schema标记是否帮助AI理解页面实体，页面速度是否足够让AI爬虫完整抓取内容。
+
+GEO 不是把关键词塞进标题，不是买外链，不是更新元描述。这些是SEO的事。
+
+GEO 的核心问题是：**当 AI 把你的页面切成500字的片段，单独评估每个片段时，你的片段够不够好用？**
+
+"好用"的定义很具体：脱离上下文也能独立传递完整信息，第一句就给出了结论，有具体数字或可验证的事实支撑。
+
+---
+
+## AI 是怎么决定引用谁的：理解 RAG 机制
+
+想做好 GEO，先要理解 AI 搜索引擎的底层工作方式。用一个词概括就是 RAG——检索增强生成（Retrieval-Augmented Generation）。
+
+工作流程是这样的：
+
+1. **用户提问** — Perplexity 或 ChatGPT Search 收到查询
+2. **爬取与切块（chunking）** — 系统抓取相关页面，把内容切成300–500个 token 的语义块
+3. **向量检索** — 把所有语义块转换为向量，找出与用户问题语义最相近的几个块
+4. **重排序（reranking）** — 用精度更高的模型对候选块重新打分，选出质量最优的几块
+5. **生成回答** — 把这几个高分块喂给 LLM，生成最终答案，同时标注来源
+
+整个过程里，你的页面结构几乎不存在。**没有人在读"整篇文章"。AI 评估的是一个个独立的文字片段。**
+
+这就解释了一个反直觉的现象：内容质量很高的长文，不一定比内容中等但结构清晰的短文被引用更多。决定因素不是"整篇文章有多好"，而是"被切出来的片段有多好用"。
+
+有一组学术数据可以说明结构优化的价值：KDD 2024 的研究（Aggarwal 等人，普林斯顿/Google Brain）对数千次 LLM 与网络内容的交互进行了分析，结论是针对实体清晰度、结构和上下文流进行优化的页面，在AI生成摘要中被引用的频率比未优化页面高58%。不是边际改善，是量级上的差距。
+
+想深入了解 RAG 的具体工作机制，可以参考我的另一篇文章：[RAG解析：AI搜索引擎背后的检索增强生成技术](/geo/rag-explained/)。
+
+---
+
+## GEO 和 SEO：不是替代关系，是两个不同的游戏
+
+很多人问：我已经在做 SEO 了，还需要另外做 GEO 吗？
+
+大多数情况下：需要，但不是从头再来。
+
+| 维度 | SEO | GEO |
+|------|-----|-----|
+| 目标 | 在搜索结果页排名靠前 | 在AI生成的回答里被引用 |
+| 评分对象 | 整个页面（权重、外链、内容相关性） | 单个内容片段（chunk质量） |
+| 核心算法 | PageRank + 内容相关性 | 向量相似度 + 重排序模型 |
+| 技术重叠 | robots.txt、页面速度、结构化数据 | 同左 |
+| 各自专属 | 外链建设、关键词密度、CTR优化 | 首句结论、命题式写作、AI爬虫明确放行 |
+
+**对两者都有效的技术基础设施：**
+
+- robots.txt 配置正确（对 Google + AI 爬虫都要放行）
+- 页面速度足够（爬虫都有超时机制，超时未加载的内容不会进入索引）
+- Schema 结构化数据（帮助 AI 理解实体关系）
+- 内容来源清晰、E-E-A-T 信号健全
+
+**SEO 有效但 GEO 不够用的事：** 关键词密度优化对 GEO 基本没有直接帮助——AI 看的是向量相似度，不是关键词出现频率。元描述优化、外链建设，对 AI 引用的直接影响也相当有限。
+
+**GEO 专属、SEO 完全不关心的事：** 每段话的第一句是否直接给出结论；段落能否脱离上下文独立被理解；明确放行 GPTBot、CCBot、ClaudeBot 等 AI 专用爬虫。这三点在传统 SEO 里找不到对应项。
+
+坦白讲，做了三年以上 SEO 的网站，技术基础已经能满足 GEO 的一半要求了。剩下的一半是写法和内容结构层面的调整——这部分调整比 SEO 快很多，不需要等几个月看效果，只要 AI 爬虫重新抓取，就能测试结果。
+
+想看更详细的比较，可以参考我的另一篇文章：[GEO vs SEO：核心差异、共同点与协同策略](/geo/geo-vs-seo/)。
+
+---
+
+## GEO 的五个核心概念
+
+在正式开始优化之前，有五个概念需要先想清楚。没有它们，后面的技巧都是无根之木。
+
+### AI可引用性（AI Citability）
+
+**AI可引用性：内容被单独截取后，在不依赖任何上下文的情况下，仍能完整传递信息的能力。**
+
+这是 GEO 的核心质量指标。不是"内容质量高不高"，而是"这段内容单独出现时，读者能不能立刻理解它在说什么"。
+
+检验方法只有一个：随机截取一段文字，发给一个完全不了解背景的人，他看得懂吗？看不懂，就重写。这个测试一秒钟就能做，不需要任何工具。
+
+### 知识胶囊（Knowledge Capsule）
+
+RAG 系统在切块时，每个块都是一个独立评估的单元。**知识胶囊（knowledge capsule）就是这样一个单元——自包含、自解释、有完整信息量的文字段落。**
+
+写 GEO 友好的内容，本质上是把你的页面从"一篇文章"重构成"一组知识胶囊"。每个段落、每个 H2 节，都应该能独立工作——就算被 AI 单独截出来，也能让读者得到完整信息。
+
+### 命题式写作（Propositional Writing）
+
+**命题式写作：用"X 是 Y"或"X 导致 Y"结构写出可被单独截取、单独验证的事实陈述。**
+
+普通写法："Schema标记对GEO很有帮助。"
+
+命题式写法："实施 FAQPage Schema 的页面，AI 引用率比未实施的同类页面高约2.7倍（Relixir 2025年对50个站点的研究）。"
+
+后者可以被AI直接引用为数据点。前者只是一个无法验证的表态——AI系统在评分时会明显偏好前者。
+
+### 实体清晰度（Entity Clarity）
+
+**实体清晰度：页面内人物、品牌、概念、地点之间的关系是否被明确定义和一致表达。**
+
+AI 搜索引擎在理解内容时，依赖的是实体关系网络，而不是关键词频率。同一个品牌在页面里出现三种写法（"GoEast"/"GoEast Mandarin"/"GoEast 语言学校"），会稀释实体权重——AI 不确定这三个词是不是同一个东西。
+
+KDD 2024 的研究数据支持这一点：对实体关系明确的页面，AI 引用率比实体模糊的页面高58%。
+
+### AI爬虫可访问性（AI Crawler Accessibility）
+
+这是所有 GEO 优化的前提，放在最后说不代表它不重要——恰恰相反，它最容易被忽略，修复成本却最低。
+
+**AI爬虫可访问性：你的 robots.txt 是否允许主要AI爬虫（GPTBot、CCBot、ClaudeBot、Google-Extended、PerplexityBot）抓取你的内容。**
+
+我在 GoEast 的网站上踩过这个坑——防抓取配置把所有非 Googlebot 的爬虫全局屏蔽了。Google SEO 完全正常，但在 Perplexity 和 ChatGPT 里搜 GoEast 相关内容，什么都找不到。修复 robots.txt 之后，Perplexity 的引用量在六周内出现了明显增长。
+
+Press Gazette 的研究显示，约80%的大新闻网站至少屏蔽了一个 AI 爬虫。中小型网站这个比例只会更高，因为很多人根本不清楚自己的 robots.txt 里写了什么。
+
+---
+
+## 从零开始：最高优先级的六件事
+
+如果你是第一次接触 GEO，不知道从哪里开始，按这个顺序做：
+
+**1. 检查并修复 robots.txt**
+
+打开 `yourdomain.com/robots.txt`，搜索 `Disallow`，确认以下爬虫没有被全局屏蔽：CCBot、GPTBot、ClaudeBot、Google-Extended、PerplexityBot。这是五分钟能完成的修复，也是大多数网站单次改动回报最高的 GEO 操作。
+
+**2. 审查三篇核心页面的段落结构**
+
+不用全站改写。先找三篇流量最高的文章，检查每个段落的第一句。如果第一句是背景铺垫而不是结论，把顺序调过来——这是最直接有效的 GEO 内容改动，没有之一。
+
+**3. 给最重要的页面加 FAQ**
+
+每个 FAQ 的答案，第一句直接给出结论，不要背景介绍，不要"这是一个好问题"。5–7个 FAQ，加上 FAQPage Schema 标记。数据支撑：有 FAQPage Schema 的页面，AI 引用率是没有 Schema 页面的约2.7倍（Relixir 2025）。
+
+我在 GoEast 的 HSK 备考页加了 5 个 FAQ + Schema，两周内页面开始在 Perplexity 的"如何备考HSK3"查询中出现引用。同样的逻辑适用于任何有问答需求的服务页面。
+
+**4. 加上 Article + Person Schema**
+
+给文章页加完整的 Article Schema，包括作者的 Person 实体（name + url + sameAs 指向 LinkedIn 或 About 页）。这对 Google AI Overviews 信任内容的方式有直接影响——Google 通过作者实体来验证内容的 E-E-A-T 信号。
+
+**5. 把模糊表述替换成具体数字**
+
+扫描你的核心内容，把"很多用户"换成"X%的用户（来源）"，把"提升显著"换成"提升X%（时间范围，样本量）"。没有公开数据的就用真实的内部数据，哪怕是"2024年内部统计，n=380"也比"据说"可信度高——AI 系统在向量评分时，对有具体数字的 chunk 赋予更高的语义唯一性。
+
+**6. 建立一个 GEO 能见度基线**
+
+在 Perplexity、ChatGPT Search、Google AI Overviews 里分别搜索你最核心的3–5个业务关键词，记录你的品牌是否被引用、被如何描述，用 Google Sheet 记下来。这是你六个月后衡量进展的起点。不建立基线，你就不知道优化有没有效。
+
+---
+
+## 接下来读什么
+
+- **理解AI如何检索和引用内容**：[RAG解析：AI搜索引擎背后的检索增强生成技术](/geo/rag-explained/)
+- **深入GEO vs SEO的区别**：[GEO vs SEO：核心差异、共同点与协同策略](/geo/geo-vs-seo/)
+- **内容层面的具体优化**：[GEO内容策略框架：从零建立AI可见性](/geo/geo-content-strategy-framework/)
+- **不懂的术语**：[GEO词汇表：50+核心概念速查](/geo/geo-glossary/)
+
+---
+
+## FAQ
+
+### GEO 和 SEO 可以同时做吗？
+
+可以，而且应该同时做。SEO 和 GEO 的技术基础设施高度重叠（robots.txt、页面速度、结构化数据），两者不冲突。差别在于内容策略层面：SEO 优化关键词覆盖和外链，GEO 优化段落结构和命题式写作。建议的做法是在现有 SEO 工作流里逐渐加入 GEO 检查项，而不是另起炉灶。
+
+### 做 GEO 需要多久才能看到效果？
+
+比 SEO 快，但也不是即时的。改动之后最快一到两周就能在 Perplexity 这类实时检索平台上看到引用变化，Google AI Overviews 的更新周期更慢，通常需要4–8周。我在 GoEast 的经验：修复 robots.txt 后6周 Perplexity 引用出现明显增长，加 FAQ Schema 后2周开始出现 HSK 相关查询的引用。
+
+### 我的网站内容不多，还值得做 GEO 吗？
+
+值得，而且内容少的网站反而更容易从单次改动里看到效果。关键不是内容数量，而是核心页面是否做好了。一个有3个优化过的核心页面的网站，在特定 AI 查询中的引用竞争里，比一个有200个未优化页面的网站更有优势。
+
+### GEO 对中文内容有效吗？
+
+完全有效。Perplexity、ChatGPT Search、豆包（Doubao）、Kimi 在检索中文内容时，用的是同样的 RAG 机制——向量检索、重排序、内容提取。首句法则、命题式写作、FAQ 结构这些原则与语言无关，针对的是 AI 的信息处理机制，不是语言偏好。在中国市场额外需要注意百度 AI 摘要和微信搜一搜，这两个平台的算法受百度知识图谱和微信公众号生态影响更强。
+
+### GEO 会让我的内容失去个人风格吗？
+
+不会。命题式写作和个人风格不冲突——前提是用对了比例。每个 H2 节里有1–2个有数据支撑的命题式陈述作为可引用锚点，其余内容保持你自己的叙述风格，是合理的比例。失去个人风格通常来自滥用命题式写作，不是来自 GEO 本身。
+
+---
+
+```json
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "@id": "https://gujianjun.net/geo/what-is-geo/#article",
+      "headline": "GEO 是什么：生成式引擎优化从概念到实践",
+      "description": "GEO（生成式引擎优化）是优化内容使其被AI搜索引擎引用的方法论。本文从RAG机制出发，拆解GEO与SEO的核心区别，以及从零开始的六个最高优先级操作。",
+      "datePublished": "2026-03-26",
+      "dateModified": "2026-03-26",
+      "author": {
+        "@type": "Person",
+        "name": "Jake Gu",
+        "url": "https://gujianjun.net"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "gujianjun.net"
+      },
+      "url": "https://gujianjun.net/geo/what-is-geo/",
+      "inLanguage": "zh-CN"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "首页", "item": "https://gujianjun.net" },
+        { "@type": "ListItem", "position": 2, "name": "GEO 教程系列", "item": "https://gujianjun.net/geo" },
+        { "@type": "ListItem", "position": 3, "name": "GEO 是什么", "item": "https://gujianjun.net/geo/what-is-geo/" }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "GEO 和 SEO 可以同时做吗？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "可以，而且应该同时做。SEO和GEO的技术基础设施高度重叠（robots.txt、页面速度、结构化数据），两者不冲突。建议在现有SEO工作流里逐渐加入GEO检查项，而不是另起炉灶。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "做 GEO 需要多久才能看到效果？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "比SEO快。改动后最快一到两周能在Perplexity看到引用变化，Google AI Overviews通常需要4–8周。修复robots.txt后6周Perplexity引用出现明显增长，加FAQ Schema后2周开始出现相关查询的引用。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "我的网站内容不多，还值得做 GEO 吗？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "值得。关键不是内容数量，而是核心页面是否做好了。一个有3个优化过的核心页面的网站，在特定AI查询中的引用竞争里，比一个有200个未优化页面的网站更有优势。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "GEO 对中文内容有效吗？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "完全有效。Perplexity、ChatGPT Search、豆包、Kimi在检索中文内容时，用的是同样的RAG机制——向量检索、重排序、内容提取。首句法则、命题式写作、FAQ结构这些原则与语言无关，针对的是AI的信息处理机制。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "GEO 会让我的内容失去个人风格吗？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "不会。命题式写作和个人风格不冲突——前提是用对了比例。每个H2节里有1–2个有数据支撑的命题式陈述作为可引用锚点，其余内容保持个人叙述风格，是合理的比例。"
+          }
+        }
+      ]
+    }
+  ]
+}
+```
