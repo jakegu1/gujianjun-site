@@ -14,6 +14,7 @@ export interface Post {
   coverImage?: string
   readingTime: string
   content: string
+  href?: string
 }
 
 export function getAllPosts(): Post[] {

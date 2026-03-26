@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import { getAllPosts } from '@/lib/posts'
+import { getAllGeoPosts } from '@/lib/geo-posts'
 
 export const metadata = {
   title: '文章 | 顾得',
@@ -7,7 +8,9 @@ export const metadata = {
 }
 
 export default function BlogPage() {
-  const posts = getAllPosts()
+  const regularPosts = getAllPosts().map((p) => ({ ...p, href: `/blog/${p.slug}` }))
+  const geoPosts = getAllGeoPosts().map((p) => ({ ...p, href: `/geo/${p.slug}` }))
+  const posts = [...regularPosts, ...geoPosts].sort((a, b) => (a.date < b.date ? 1 : -1))
 
   return (
     <main className="min-h-screen bg-[#0a0a0a] text-gray-100">
@@ -24,9 +27,9 @@ export default function BlogPage() {
         ) : (
           <div className="space-y-1">
             {posts.map((post) => (
-              <article key={post.slug}>
+              <article key={post.href}>
                 <Link
-                  href={`/blog/${post.slug}`}
+                  href={post.href}
                   className="group flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-6 py-6 border-b border-gray-900 hover:border-gray-700 transition-colors"
                 >
                   <span className="text-xs font-mono text-gray-600 sm:w-24 shrink-0">
