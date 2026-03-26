@@ -1,6 +1,16 @@
 import { MDXRemote } from 'next-mdx-remote/rsc'
 import Link from 'next/link'
+import remarkGfm from 'remark-gfm'
 import { getAllGeoPosts, getGeoPostBySlug } from '@/lib/geo-posts'
+
+function extractJsonLd(content: string) {
+  const match = content.match(/```json\n(\{[\s\S]*?\})\n```/)
+  if (!match) return { cleanContent: content, jsonLd: null }
+  return {
+    cleanContent: content.replace(match[0], ''),
+    jsonLd: match[1],
+  }
+}
 
 export async function generateStaticParams() {
   const posts = getAllGeoPosts()
@@ -33,6 +43,7 @@ export default async function GeoPostPage({
 }) {
   const { slug } = await params
   const post = getGeoPostBySlug(slug)
+  const { cleanContent, jsonLd } = extractJsonLd(post.content)
 
   return (
     <main className="min-h-screen bg-[#0a0a0a] text-gray-100">
@@ -81,8 +92,18 @@ export default async function GeoPostPage({
         </header>
 
         <article className="article-prose max-w-none">
-          <MDXRemote source={post.content} />
+          <MDXRemote
+            source={cleanContent}
+            options={{ mdxOptions: { remarkPlugins: [remarkGfm] } }}
+          />
         </article>
+
+        {jsonLd && (
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{ __html: jsonLd }}
+          />
+        )}
       </div>
     </main>
   )
