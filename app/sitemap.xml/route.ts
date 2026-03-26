@@ -8,9 +8,9 @@ export function GET() {
   const geoPosts = getAllGeoPosts()
 
   const staticPages = [
-    { url: '', changefreq: 'weekly', priority: '1.0' },
-    { url: '/blog', changefreq: 'weekly', priority: '0.8' },
-    { url: '/geo', changefreq: 'weekly', priority: '0.9' },
+    { url: '', lastmod: '', changefreq: 'weekly', priority: '1.0' },
+    { url: '/blog', lastmod: '', changefreq: 'weekly', priority: '0.8' },
+    { url: '/geo', lastmod: '', changefreq: 'weekly', priority: '0.9' },
   ]
 
   const blogEntries = posts.map((post) => ({
