@@ -233,6 +233,40 @@ Jake goes deep on topics he cares about (GEO strategy, RAG mechanics, Google Ads
 
 ---
 
+## 11. Article Content Quality Standards (Permanent Rules)
+
+> **These apply to every article, every time. Non-negotiable.**
+
+### Every generated article MUST itself be a GEO-optimized piece of content
+
+The articles in this series teach GEO — they must also **practice** GEO. Every article should serve as a live demonstration of the principles it describes.
+
+#### SEO requirements (every article)
+- **H1**: Contains the primary keyword naturally; matches the `title` frontmatter field
+- **Clean heading hierarchy**: Single H1, descriptive H2s, H3s only within H2 sections
+- **Excerpt / meta description**: 120–155 characters, includes primary keyword, compelling summary
+- **Slug**: Keyword-rich, hyphenated, matches `geo_agent_config.json`
+- **Internal links**: 3–7 per article, naturally placed, using "我的另一篇文章：" phrasing
+- **Content depth**: Meets or exceeds `target_words` from config
+
+#### GEO requirements (every article)
+- **Conclusion-first opening**: First paragraph gives the core answer; numbered key-points list before body begins
+- **Each section is a standalone knowledge capsule**: Can be extracted without surrounding context and still deliver complete information
+- **Propositional writing**: At least 1–2 "X is Y" or "X leads to Y" statements per H2, with data and source
+- **Specific numbers**: Replace vague claims ("many users") with concrete data ("47% of users, Ahrefs 2025")
+- **FAQ section**: Minimum 3 questions (5 preferred); every answer leads with the conclusion in the first sentence; FAQPage Schema included
+- **Schema**: Article + FAQPage + BreadcrumbList JSON-LD in every GEO article; Person author entity included
+- **Named concepts**: Any actionable technique should have a memorable name (e.g., "首句法则", "200字独立测试") — named concepts become citable GEO assets
+- **AI crawler note**: In Technical GEO or On-Page GEO articles, include a reminder to verify robots.txt allows GPTBot, CCBot, ClaudeBot, Google-Extended, PerplexityBot
+
+#### Knowledge Base usage
+- Use `GEO_Knowledge_Base.md` for industry data, academic citations, platform statistics, and crawler references
+- Use `jake-geo-cases.md` for first-person narrative examples and Jake's real project cases
+- **Do NOT treat Knowledge Base as the only source of truth** — it may be incomplete. Supplement with your own knowledge where the KB has gaps or the data may be stale
+- Select only the relevant KB sections for each article topic (don't inject the full 907-line file)
+
+---
+
 ## 10. Feedback Log
 
 > **Purpose**: Running record of feedback from article reviews. Each entry is applied to all subsequent articles. Most recent feedback takes highest priority.
@@ -256,7 +290,6 @@ Jake goes deep on topics he cares about (GEO strategy, RAG mechanics, Google Ads
 5. **H2标题要有态度**："重中之重：首先确认AI爬虫能爬你的网站" 比 "先做这件事：确认AI爬虫能爬你的网站" 更有Jake的判断力。
 6. **避免拗口的自夸**："这是我做过的回报最直接的GEO修复" → "这是最简单，也是最根本的GEO修复之一"。后者更自然，避免了"我做过的回报最直接的"这种绕口结构。
 7. **简化引用来源的措辞**："主流新闻出版商" → "大新闻网站"；"非媒体网站" → "中小型网站"。读者更容易产生画面感。
-8. **内部链接要说"我的另一篇文章"**：不要只说"可以参考"，要说"可以参考我的另一篇文章："——这是Jake在引导读者，不是搜索引擎在推荐链接。
 9. **比喻要有适度解释和小玩笑**：招聘比喻不要只停在"你会直接看工作经历的第一条"，要多一句解释和幽默："（大家应该没遇到过把兴趣爱好放第一条，工作经历放最后的吧）"。比喻的价值在于让读者会心一笑。
 10. **用"废话"二字直接点评错误示范**："第一段第一句话是废话，完全无关紧要" 比 "第一段什么都没说" 更有Jake的直接判断感。
 11. **结论先行要在文章开头也做到**：既然结论先行是GEO最有效的技巧之一，文章本身也要做到。在引言后、正文前，用编号列表把核心原则先放出来。
