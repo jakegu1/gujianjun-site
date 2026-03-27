@@ -27,6 +27,32 @@ export const metadata: Metadata = {
   },
 }
 
+const globalSchema = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'Person',
+      '@id': 'https://gujianjun.net/#person',
+      name: 'Jake Gu',
+      url: 'https://gujianjun.net',
+      sameAs: [
+        'https://www.linkedin.com/in/%E7%AE%80%E9%92%A7-%E9%A1%BE-28204b16a/',
+      ],
+      jobTitle: 'GEO & SEO Specialist',
+      knowsAbout: ['Generative Engine Optimization', 'GEO', 'SEO', 'AI Search Optimization', '数字营销'],
+      description: '上海数字营销专家，专注 SEO 与 GEO，帮助品牌在搜索结果与 AI 回答中取得领先位置。',
+    },
+    {
+      '@type': 'WebSite',
+      '@id': 'https://gujianjun.net/#website',
+      name: '顾得',
+      url: 'https://gujianjun.net',
+      author: { '@id': 'https://gujianjun.net/#person' },
+      inLanguage: 'zh-CN',
+    },
+  ],
+}
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -34,6 +60,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="zh-CN">
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(globalSchema) }}
+        />
+      </head>
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
         {children}
       </body>
