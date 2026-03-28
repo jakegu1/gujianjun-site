@@ -38,7 +38,7 @@ export default function Nav() {
           ))}
           <li>
             <a
-              href="mailto:gu@gujianjun.net"
+              href="mailto:jake.gu@foxmail.com"
               className="text-sm border border-gray-700 text-gray-300 px-4 py-1.5 rounded-full hover:border-[#f15a65] hover:text-[#f15a65] transition-colors"
             >
               联系

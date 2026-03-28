@@ -101,7 +101,7 @@ export default function HomeClient({ posts }: { posts: Post[] }) {
               阅读文章 →
             </Link>
             <a
-              href="mailto:gu@gujianjun.net"
+              href="mailto:jake.gu@foxmail.com"
               className="inline-flex items-center gap-2 border border-gray-700 text-gray-300 px-6 py-3 rounded-full font-medium hover:border-[#f15a65] hover:text-[#f15a65] transition-colors"
             >
               联系我
@@ -297,7 +297,7 @@ export default function HomeClient({ posts }: { posts: Post[] }) {
             无论是 SEO 咨询、GEO 策略还是内容规划，欢迎联系探讨。
           </p>
           <a
-            href="mailto:gu@gujianjun.net"
+            href="mailto:jake.gu@foxmail.com"
             className="inline-flex items-center gap-2 bg-[#f15a65] text-white px-8 py-4 rounded-full font-medium text-lg hover:bg-[#e04a55] transition-colors"
           >
             发邮件给我 →
