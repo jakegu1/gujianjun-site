@@ -27,7 +27,18 @@ export function GET() {
     priority: '0.8',
   }))
 
-  const allEntries = [...staticPages, ...blogEntries, ...geoEntries]
+  const allTags = new Set<string>()
+  for (const p of posts) p.tags.forEach((t) => allTags.add(t))
+  for (const p of geoPosts) p.tags.forEach((t) => allTags.add(t))
+
+  const tagEntries = Array.from(allTags).map((tag) => ({
+    url: `/tag/${encodeURIComponent(tag)}`,
+    lastmod: '',
+    changefreq: 'weekly' as const,
+    priority: '0.5',
+  }))
+
+  const allEntries = [...staticPages, ...blogEntries, ...geoEntries, ...tagEntries]
 
   const xml = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">

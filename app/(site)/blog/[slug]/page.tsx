@@ -60,12 +60,13 @@ export default async function PostPage({
           {/* Tags */}
           <div className="flex flex-wrap gap-2 mb-4">
             {post.tags.map((tag) => (
-              <span
+              <Link
                 key={tag}
-                className="text-xs bg-[#f15a65]/10 text-[#f15a65] border border-[#f15a65]/20 px-2 py-1 rounded"
+                href={`/tag/${encodeURIComponent(tag)}`}
+                className="text-xs bg-[#f15a65]/10 text-[#f15a65] border border-[#f15a65]/20 px-2 py-1 rounded hover:bg-[#f15a65]/20 transition-colors"
               >
                 {tag}
-              </span>
+              </Link>
             ))}
           </div>
 
