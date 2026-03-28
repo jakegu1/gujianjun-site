@@ -29,7 +29,7 @@ articleId: "P1-01"
 
 Google AI Overviews 的覆盖率从2025年初的6.49%，到年末已攀升至18–20%，现已覆盖超过20亿月活用户、200个国家（IMD 2025）。Perplexity的月活用户突破1亿，ChatGPT月活超过6亿，两者的检索功能都在持续扩张。
 
-数据更直接：Ahrefs 在2025年12月对30万个关键词的研究发现，当 Google AI Overviews 出现时，第一名有机结果的点击率下降了58%。
+数据更直接：[Ahrefs 在2025年12月对30万个关键词的研究](https://ahrefs.com/blog/ai-overviews-reduce-clicks-update/)发现，当 Google AI Overviews 出现时，第一名有机结果的点击率下降了58%。
 
 这组数字应该让你坐立不安。你辛苦优化到第一名，有将近60%的流量在AI回答那一层就被截走了，用户不点进你的页面就已经得到了答案。
 
@@ -37,7 +37,7 @@ Google AI Overviews 的覆盖率从2025年初的6.49%，到年末已攀升至18�
 
 所以正确的理解不是"AI搜索在抢我的流量"，而是"不被AI引用的内容，才真的在失去流量"。
 
-电商数据更夸张：Adobe 统计，从2024年7月到2025年2月，AI驱动的零售网站流量增长了12倍。到2025年7月，同比增速达到4700%。这不是趋势预测，这是已经发生的事情。
+电商数据更夸张：[Adobe 统计](https://business.adobe.com/blog/the-explosive-rise-of-generative-ai-referral-traffic)，从2024年7月到2025年2月，AI驱动的零售网站流量增长了12倍。到2025年7月，同比增速达到4700%。这不是趋势预测，这是已经发生的事情。
 
 ---
 
@@ -77,7 +77,7 @@ GEO 的核心问题是：**当 AI 把你的页面切成500字的片段，单独�
 
 这就解释了一个反直觉的现象：内容质量很高的长文，不一定比内容中等但结构清晰的短文被引用更多。决定因素不是"整篇文章有多好"，而是"被切出来的片段有多好用"。
 
-有一组学术数据可以说明结构优化的价值：KDD 2024 的研究（Aggarwal 等人，普林斯顿/Google Brain）对数千次 LLM 与网络内容的交互进行了分析，结论是针对实体清晰度、结构和上下文流进行优化的页面，在AI生成摘要中被引用的频率比未优化页面高58%。不是边际改善，是量级上的差距。
+有一组学术数据可以说明结构优化的价值：[KDD 2024 的研究（Aggarwal 等人，普林斯顿/Google Brain）](https://arxiv.org/abs/2311.09735)对数千次 LLM 与网络内容的交互进行了分析，结论是针对实体清晰度、结构和上下文流进行优化的页面，在AI生成摘要中被引用的频率比未优化页面高58%。不是边际改善，是量级上的差距。
 
 想深入了解 RAG 的具体工作机制，可以参考我的另一篇文章：[RAG解析：AI搜索引擎背后的检索增强生成技术](/geo/rag-explained/)。
 
@@ -138,7 +138,7 @@ RAG 系统在切块时，每个块都是一个独立评估的单元。**知识�
 
 普通写法："Schema标记对GEO很有帮助。"
 
-命题式写法："实施 FAQPage Schema 的页面，AI 引用率比未实施的同类页面高约2.7倍（Relixir 2025年对50个站点的研究）。"
+命题式写法："实施 FAQPage Schema 的页面，AI 引用率比未实施的同类页面高约2.7倍（[Relixir, 2025，50个站点研究](https://relixir.ai/blog/schema-markup-boost-geo-performance-2025-data)）。"
 
 后者可以被AI直接引用为数据点。前者只是一个无法验证的表态——AI系统在评分时会明显偏好前者。
 
@@ -148,7 +148,7 @@ RAG 系统在切块时，每个块都是一个独立评估的单元。**知识�
 
 AI 搜索引擎在理解内容时，依赖的是实体关系网络，而不是关键词频率。同一个品牌在页面里出现三种写法（"GoEast"/"GoEast Mandarin"/"GoEast 语言学校"），会稀释实体权重——AI 不确定这三个词是不是同一个东西。
 
-KDD 2024 的研究数据支持这一点：对实体关系明确的页面，AI 引用率比实体模糊的页面高58%。
+[KDD 2024 的研究](https://arxiv.org/abs/2311.09735)数据支持这一点：对实体关系明确的页面，AI 引用率比实体模糊的页面高58%。
 
 ### AI爬虫可访问性（AI Crawler Accessibility）
 
@@ -158,7 +158,7 @@ KDD 2024 的研究数据支持这一点：对实体关系明确的页面，AI �
 
 我在 GoEast 的网站上踩过这个坑——防抓取配置把所有非 Googlebot 的爬虫全局屏蔽了。Google SEO 完全正常，但在 Perplexity 和 ChatGPT 里搜 GoEast 相关内容，什么都找不到。修复 robots.txt 之后，Perplexity 的引用量在六周内出现了明显增长。
 
-Press Gazette 的研究显示，约80%的大新闻网站至少屏蔽了一个 AI 爬虫。中小型网站这个比例只会更高，因为很多人根本不清楚自己的 robots.txt 里写了什么。
+[Press Gazette 的研究](https://pressgazette.co.uk/platforms/eight-in-ten-of-worlds-biggest-news-websites-now-block-ai-training-bots/)显示，约80%的大新闻网站至少屏蔽了一个 AI 爬虫。中小型网站这个比例只会更高，因为很多人根本不清楚自己的 robots.txt 里写了什么。
 
 ---
 
@@ -176,7 +176,7 @@ Press Gazette 的研究显示，约80%的大新闻网站至少屏蔽了一个 AI
 
 **3. 给最重要的页面加 FAQ**
 
-每个 FAQ 的答案，第一句直接给出结论，不要背景介绍，不要"这是一个好问题"。5–7个 FAQ，加上 FAQPage Schema 标记。数据支撑：有 FAQPage Schema 的页面，AI 引用率是没有 Schema 页面的约2.7倍（Relixir 2025）。
+每个 FAQ 的答案，第一句直接给出结论，不要背景介绍，不要"这是一个好问题"。5–7个 FAQ，加上 FAQPage Schema 标记。数据支撑：有 FAQPage Schema 的页面，AI 引用率是没有 Schema 页面的约2.7倍（[Relixir, 2025](https://relixir.ai/blog/schema-markup-boost-geo-performance-2025-data)）。
 
 我在 GoEast 的 HSK 备考页加了 5 个 FAQ + Schema，两周内页面开始在 Perplexity 的"如何备考HSK3"查询中出现引用。同样的逻辑适用于任何有问答需求的服务页面。
 

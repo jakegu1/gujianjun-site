@@ -248,6 +248,7 @@ The articles in this series teach GEO — they must also **practice** GEO. Every
 - **Slug**: Keyword-rich, hyphenated, matches `geo_agent_config.json`
 - **Internal links**: 3–7 per article, naturally placed, using "我的另一篇文章：" phrasing
 - **Content depth**: Meets or exceeds `target_words` from config
+- **External source links**: Every cited stat, study, or specific data point must include a hyperlink to the original source. Format: `[Author/Publication, Year](URL)` inline. Use only real, verified URLs — never fabricate links. If a URL cannot be confirmed, use text attribution only (no link). Search for the source URL before writing the citation.
 
 #### GEO requirements (every article)
 - **Conclusion-first opening**: First paragraph gives the core answer; numbered key-points list before body begins
