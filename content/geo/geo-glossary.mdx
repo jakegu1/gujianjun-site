@@ -1,0 +1,386 @@
+---
+title: "GEO 术语表：从业者必须搞懂的 50+ 个概念"
+date: "2026-03-30"
+excerpt: "RAG、向量嵌入、Chunking、Share of Model……GEO涉及的术语横跨AI技术和搜索营销两个领域。这份术语表用大白话解释每个概念，附带实操场景，方便随时查阅。"
+tags: ["GEO", "术语表", "AI搜索", "RAG", "SEO", "Foundations"]
+pillar: "Foundations"
+articleId: "P1-05"
+---
+
+# GEO 术语表：从业者必须搞懂的 50+ 个概念
+
+GEO（生成式引擎优化）横跨两个领域：AI 技术和搜索营销。做 GEO 的人，经常要看 AI 论文里的技术概念，也要跟 SEO 老手解释为什么传统指标不够用了。两边的术语混在一起，很多人第一反应是懵的。
+
+这篇文章就是帮大家解决这个问题的。我把 GEO 相关的核心术语整理成一份查阅手册，按英文字母排序，每个词都用大白话解释清楚，带上实际使用场景。不管你是刚入门的 GEO 新手，还是做了几年 SEO 正在转型的老手，遇到不懂的词回来查就行。
+
+几个使用建议：
+
+1. **不需要从头读到尾**——这是一份工具文档，按需查阅效率最高
+2. **重点关注带 ⭐ 标记的术语**——这些是 GEO 实操中出现频率最高的概念
+3. **每个术语都附了一句"一句话记住"**——方便你快速回忆
+4. **技术术语会标注你需要理解到什么程度**——有些只需要知道是什么，有些需要动手操作
+
+如果你还不太了解 GEO 的整体概念，建议先看[《GEO 是什么》](/geo/what-is-geo/)，再回来查术语。
+
+---
+
+## A – E
+
+### AAIO（Agentic AI Optimization，智能体搜索优化）
+AI 智能体不只回答问题，还能自主浏览网页、比较产品、完成购买。AAIO 就是针对这种「AI 代替用户做事」的场景做优化。比如 OpenAI 的 Operator（2026年1月上线），能帮用户自动比价下单。这意味着你的产品页面不只要让人看懂，还得让 AI 代理看懂并执行操作——清晰的价格表、结构化的功能对比、明确的购买流程。
+
+一句话记住：**让 AI 代替用户操作时，也能找到并理解你的内容。**
+
+### AI Mode（Google AI Mode）
+Google 搜索里的一个独立标签页（google.com/aimode），跟 AI Overviews 不同。AI Mode 支持多轮对话，能做多次检索和整合，更像一个搜索助手。它选择引用来源的逻辑和传统排名差别很大——URL 重合度不到 30%。对内容的深度要求更高。
+
+一句话记住：**Google 的深度 AI 搜索，比 AI Overviews 更看重内容深度和内链结构。**
+
+### AI Overviews ⭐
+Google 在搜索结果顶部生成的 AI 摘要。它从多个来源提取关键信息，合成一段完整回答。在信息类查询中触发率高达 99.2%。出现时，排名第一的网站点击率暴跌 61%（[Seer Interactive, 2025](https://www.seerinteractive.com/insights/aio-impact-on-google-ctr-september-2025-update)）。但被引用的网站，点击率反而比没有 AI Overviews 时还高 35%。详细数据分析见[《流量都被 AI 截走了？零点击搜索时代怎么办》](/geo/zero-click-search-ai-answers/)。
+
+一句话记住：**Google 搜索的 AI 摘要，是目前影响自然流量最大的 AI 功能。**
+
+### BM25
+一种经典的文本检索算法，根据关键词在文档中出现的频率和位置来计算相关性。RAG 系统通常会用 BM25 做第一轮粗筛（速度快），再用向量搜索或 reranker 做精排。你不需要自己写 BM25，但理解它能帮你明白为什么关键词在 GEO 里依然重要——AI 检索的第一步还是在找关键词。
+
+一句话记住：**AI 搜索的第一步筛选，本质上还是在匹配关键词。**
+
+### Branded Search Lift（品牌词搜索量提升）⭐
+你的品牌被 AI 引用之后，用户会主动用 Google 搜你的品牌名。这个品牌词搜索量的增长就是 Branded Search Lift。通常在 AI 开始引用你之后两周左右出现。这是 AI 时代最重要的漏斗顶部指标之一。
+
+一句话记住：**AI 引用带来的间接效果：用户听到你的名字，回头来搜你。**
+
+### CCBot
+Common Crawl 项目的爬虫，用于构建开放的互联网数据集。很多 AI 训练数据来自 Common Crawl。有些公司会选择在 robots.txt 里屏蔽 CCBot，但这只影响训练数据，不影响 AI 搜索引用。
+
+一句话记住：**训练数据爬虫，屏蔽它不影响 AI 搜索结果里的引用。**
+
+### ChatGPT Search
+OpenAI 的联网搜索功能。ChatGPT 每天处理约 25 亿次查询。它的引用偏好跟 Google 很不一样——Wikipedia 占了 47.9% 的高频引用来源，90% 的引用来自 Google 自然搜索前 20 名之外的网站。要被 ChatGPT 引用，你需要的不是 Google 排名，而是内容的全面性和百科式深度。
+
+一句话记住：**ChatGPT 不看 Google 排名，它看内容的百科式深度和可信度。**
+
+### Chunking（内容分块）⭐
+AI 系统处理网页内容时，不会整页读取。它会把内容切成几百个 token 的小块（chunk），然后分别处理和存储。这就是为什么 GEO 强调「每个段落都要能独立表达完整信息」——因为 AI 可能只取走你的一个 chunk，如果那个 chunk 脱离上下文就不完整，AI 就不会引用它。
+
+一句话记住：**AI 是一段一段读你的内容的，每段都要能独立成立。**
+
+### Citation（引用）⭐
+AI 在生成回答时引用你的网站作为信息来源，通常会附上链接。这是 GEO 的核心目标。Perplexity 平均每个回答引用 21.87 个来源（所有平台中最多），ChatGPT 引用数较少但每个引用权重更高。
+
+一句话记住：**GEO 的终极目标，就是让 AI 在回答里引用你。**
+
+### Citation Drift（引用漂移）
+AI 平台的引用来源不是固定的。40%–60% 的引用来源每月都在变，只有 20% 的来源能在同一查询的五次连续回答中持续出现。这意味着 GEO 不是一次性工作，你需要持续更新内容来保住引用位置。
+
+一句话记住：**AI 的引用来源每个月都在洗牌，不更新就会被替换。**
+
+### Content Citability（内容可引用性）⭐
+你的内容有多容易被 AI 提取和引用。包括：结论是否前置、段落是否独立完整、有没有具体数据、是否使用了结构化格式（列表、表格）。结构化数据格式的内容被引用的概率是纯段落的 3 倍。详细优化方法见[《如何写出 AI 愿意引用的内容》](/geo/writing-ai-citable-content/)。
+
+一句话记住：**AI 引不引用你，取决于你的内容有多方便被它"拿走"。**
+
+### Cross-Encoder Reranker（交叉编码器重排序器）
+RAG 系统的精排阶段用的模型。粗筛（BM25 或向量搜索）拿到一批候选文档后，Cross-Encoder 会把查询和每个文档放在一起精细打分，选出最相关的几个。你不需要懂底层算法，但要知道：AI 在选引用来源时有一个精挑细选的过程，不是随机的。
+
+一句话记住：**AI 不是随便引用的——它有一个精排阶段来选最好的来源。**
+
+### E-E-A-T（Experience, Expertise, Authoritativeness, Trustworthiness）⭐
+Google 的内容质量评估框架：经验、专业度、权威性、可信度。在 GEO 里，E-E-A-T 的作用从「排名加分项」变成了「引用门槛」——96% 的 AI Overview 引用来自 E-E-A-T 信号强的来源。不是加分，是门票。具体来说：要有真实案例（经验）、作者身份明确（专业度）、第三方提及（权威性）、内容有时间戳和来源链接（可信度）。
+
+一句话记住：**在 AI 搜索里，E-E-A-T 不是加分项，是入场券。**
+
+### Embedding / Vector Embedding（向量嵌入）⭐
+把文字转换成一串数字（向量），让 AI 能用数学方法计算两段内容之间的「语义距离」。语义相近的内容，向量距离就近。这是 AI 搜索理解「你的内容是否回答了用户问题」的核心技术。你不需要自己做 embedding，但要知道：AI 匹配内容靠的不是关键词完全一致，而是语义相似。
+
+一句话记住：**AI 判断内容相关性不是靠关键词匹配，是靠语义距离。**
+
+### Entity（实体）
+在知识图谱里，实体就是一个可以被明确识别的「东西」——一个品牌、一个人、一个地点、一个概念。Google Knowledge Graph 里有超过 5000 亿个实体。AI 引用你的时候，它需要确认你是「谁」。Schema markup 里的 Organization、Person 等类型，就是在帮 AI 识别你的实体身份。
+
+一句话记住：**AI 得先知道你是谁，才会引用你。Entity 就是你在 AI 世界的身份证。**
+
+### Entity Authority（实体权威）
+跟传统 SEO 的 Domain Authority（域名权威）不同。实体权威是你的品牌在整个互联网上的可信度——不只是网站本身强不强，还包括第三方平台（Reddit、Quora、行业媒体）有没有提到你。85% 的 AI 引用来自第三方来源，只有 15% 来自品牌自己的网站。
+
+一句话记住：**AI 看的不是你网站有多强，而是别人有没有在提你。**
+
+---
+
+## F – K
+
+### FAQPage Schema ⭐
+一种 JSON-LD 结构化数据格式，专门标记页面上的问答内容。在所有 Schema 类型中，FAQPage 对 GEO 的影响最大——它跟 AI 的对话式查询模式天然契合。FAQ 里的每个 Q&A 都是一个现成的「知识胶囊」，AI 可以直接提取使用。
+
+一句话记住：**FAQ + Schema 是最快见效的 GEO 优化手段。**
+
+### Featured Snippet（精选摘要）
+Google 在搜索结果顶部展示的内容摘要框。AI Overviews 出现之前，它是零点击搜索的主要形式。它只摘录一个来源的一小段内容，而 AI Overviews 能整合多个来源。
+
+一句话记住：**AI Overviews 的前身，单一来源的零点击搜索。**
+
+### GEO（Generative Engine Optimization，生成式引擎优化）⭐
+通过优化内容结构、技术配置和在线形象，提升网站在 AI 搜索（ChatGPT、Perplexity、Google AI Overviews 等）回答中被引用的可能性。这个概念最早由 Aggarwal 等人在 2023 年的学术论文中提出（[arXiv: 2311.09735](https://arxiv.org/abs/2311.09735)），2024 年在 ACM SIGKDD 大会发表。关于 GEO 和 SEO 的区别，见[《GEO vs SEO：核心区别与协作逻辑》](/geo/geo-vs-seo/)。
+
+一句话记住：**让 AI 在回答用户问题时引用你的内容——这就是 GEO。**
+
+### GEO-bench
+Aggarwal 等人在 GEO 论文中提出的基准测试数据集，包含 10,000 个多领域查询。研究用它测试了 9 种优化方法的效果，发现最佳方法能带来 40% 的可见性提升。
+
+一句话记住：**GEO 领域第一个学术基准测试，证明了优化确实有效。**
+
+### Google-Extended
+Google 的 AI 爬虫标识，用于 Gemini 相关的 AI 功能。在 robots.txt 里用 `User-agent: Google-Extended` 控制。屏蔽它不影响 Google 搜索排名，但会影响 Gemini 能不能用你的内容。
+
+一句话记住：**Google 的 AI 专用爬虫，跟 Googlebot 是两回事。**
+
+### GPTBot
+OpenAI 的爬虫。很多网站以为它只用于模型训练就屏蔽了，但实际上屏蔽 GPTBot 也会影响 ChatGPT Search 能不能访问你的内容。这是目前最常见的 GEO 失误之一。
+
+一句话记住：**别轻易屏蔽——屏蔽 GPTBot 等于让你的内容从 ChatGPT 搜索里消失。**
+
+### Grounding（事实锚定）
+AI 生成回答时，把内容跟可验证的来源对应起来的过程。「有 grounding 的回答」意味着 AI 说的每句话都有来源支撑，不是凭空编造。AI 平台的引用链接就是 grounding 的外在表现。
+
+一句话记住：**AI 的回答不是凭空编的——grounding 就是把回答锚定到真实来源上。**
+
+### Hallucination（幻觉）
+AI 生成了看起来合理但实际上是错误的内容。这是 AI 搜索最大的可信度问题。对做 GEO 的人来说，需要注意两个方向：（1）确保自己的内容事实准确，减少被 AI 错误引用的风险；（2）监控 AI 对你品牌的描述有没有事实错误。
+
+一句话记住：**AI 编造的看似合理但完全错误的内容。你要监控它有没有「胡说」你的品牌。**
+
+### Hybrid Search（混合搜索）
+把 BM25（关键词匹配）和向量搜索（语义匹配）结合起来的检索方法。大多数 AI 搜索平台都用混合搜索，因为单靠关键词容易遗漏语义相关的内容，单靠语义又可能漏掉精确匹配。对你的启示：内容里既要有核心关键词，也要用自然语言充分展开主题。
+
+一句话记住：**AI 搜索同时用关键词和语义来找内容，两个都不能偏废。**
+
+### Impression Gap（展示缺口）⭐
+Search Console 里展示次数的增速和点击量增速之间的差值。展示在涨但点击没跟上，说明有一部分流量被 AI Overviews 截走了。这个指标比单看点击量下降更灵敏，是判断 AI 影响的早期信号。
+
+一句话记住：**展示涨、点击不涨——这个背离就是 AI 在截你的流量。**
+
+### JSON-LD（JavaScript Object Notation for Linked Data）⭐
+在网页上添加结构化数据的推荐格式。AI 爬虫解析 JSON-LD 比解析 HTML 高效得多。带 Schema 的页面被 AI 引用的概率高 30%–40%。用 `@graph` 可以在一个代码块里叠加多种 Schema（Article + FAQPage + BreadcrumbList），叫做 Schema Stacking。Google 官方文档：[developers.google.com](https://developers.google.com/search/docs/appearance/structured-data)。
+
+一句话记住：**结构化数据的首选格式。AI 爬虫最容易读懂的「说明书」。**
+
+### Knowledge Graph（知识图谱）
+一个由实体和关系组成的结构化数据库。Google Knowledge Graph 包含超过 5000 亿个实体。AI 在回答问题时，会参考知识图谱来验证和补充信息。你的品牌在知识图谱里存不存在、信息准不准确，直接影响 AI 引用你的意愿。
+
+一句话记住：**AI 的「常识数据库」。你的品牌在里面有没有条目，很重要。**
+
+---
+
+## L – R
+
+### LLM（Large Language Model，大语言模型）⭐
+ChatGPT、Gemini、Claude 这些 AI 系统的底层技术。LLM 通过海量文本训练，学会理解和生成自然语言。GEO 的本质就是让 LLM 在生成回答时引用你的内容。
+
+一句话记住：**AI 搜索的大脑。GEO 就是让这个大脑记住你、引用你。**
+
+### llms.txt
+2024 年 9 月由 Jeremy Howard 提出的一种网站文件规范，放在网站根目录（/llms.txt），用 Markdown 格式告诉 AI 系统这个网站有什么内容。超过 84 万个网站已经部署。坦白讲，目前的实际效果存疑——统计分析显示 llms.txt 和引用频率之间没有显著相关性。但部署成本极低，当作「买个保险」就好。
+
+一句话记住：**给 AI 的网站说明书。效果有争议，但部署成本为零，不妨先加上。**
+
+### Multimodal GEO（多模态 GEO）
+针对图片、视频、音频等非文本内容做的 GEO 优化。AI 平台现在能同时处理文字、图片、视频。YouTube 是 Google AI Overviews 引用的第二大平台（18.8%）。具体手段包括：给图片写实体驱动的 alt 文本、给视频提供完整字幕文稿、用 VideoObject Schema 标记嵌入视频。
+
+一句话记住：**AI 不只看文字。图片、视频也是被引用的入口。**
+
+### OAI-SearchBot
+OpenAI 的搜索专用爬虫，驱动 ChatGPT Search 的搜索结果。跟 GPTBot（也用于训练）不同，OAI-SearchBot 只用于搜索。在 robots.txt 里应该允许。
+
+一句话记住：**ChatGPT 搜索的专用爬虫，务必在 robots.txt 里允许。**
+
+### Parametric Knowledge（参数化知识）
+LLM 在训练过程中「记住」的知识，存储在模型的参数里。跟 Retrieved Knowledge（检索知识）相对。参数化知识的问题是有截止日期、可能过时、可能出错。RAG 系统通过引入检索知识来补充和校正参数化知识。
+
+一句话记住：**AI 的「记忆」——训练时学到的东西，可能过时也可能出错。**
+
+### PerplexityBot
+Perplexity AI 的爬虫。Perplexity 平均每个回答引用 21.87 个来源，是所有平台中最多的。而且它有强烈的新鲜度偏好——超过 6 个月的内容，引用率急剧下降。
+
+一句话记住：**Perplexity 的爬虫。这个平台最看重内容新鲜度。**
+
+### Pillar Page（支柱页面）
+围绕一个核心话题写的综合性长页面，作为整个主题集群的入口。比如一篇「GEO 完全指南」就是支柱页，下面链接到各个子话题（术语表、实操方法、案例分析等）。对 AI 来说，支柱页能帮助它理解你网站上哪个话题的内容最全面、最权威。
+
+一句话记住：**一个话题的「总部」页面，帮 AI 理解你在这个话题上的全面性。**
+
+### Propositional Writing（命题式写作）⭐
+用「X 是 Y」或「X 导致 Y」这种结构写作。比如「AI Overviews 出现时，排名第一的点击率下降 61%」就是一个命题。AI 在提取信息时特别偏好这种结构清晰、可以直接引用的陈述。每个 H2 下至少写 1–2 个这样的命题式陈述，是提升 GEO 可见性最直接的写作方法。
+
+一句话记住：**把信息写成 AI 可以直接「拿走」的陈述句。**
+
+### RAG（Retrieval-Augmented Generation，检索增强生成）⭐
+AI 搜索的核心工作流程。LLM 自己的知识可能过时或不准确，RAG 系统先去互联网检索相关内容，然后把检索到的信息喂给 LLM 生成回答。Perplexity、ChatGPT Search、Google AI Overviews 都是 RAG 系统。GEO 的本质就是优化你的内容在 RAG 流程中被检索和被选中的概率。详细解释见[《AI 搜索引擎怎么工作》](/geo/how-ai-search-engines-work/)。
+
+一句话记住：**先搜索、再生成——AI 搜索的核心流程。GEO 就是让你被它搜到。**
+
+### Reranking（重排序）
+RAG 系统在粗筛之后，用更精细的模型对候选来源重新排序的步骤。第一轮筛选（BM25 或向量搜索）可能返回上百个结果，reranker 会用 Cross-Encoder 等模型精挑出最相关的 5–10 个来源，最终进入 AI 的回答。
+
+一句话记住：**AI 从海量候选里精选来源的过程。你的内容要经得起精挑。**
+
+### robots.txt ⭐
+网站根目录下的一个文件，用来告诉爬虫哪些页面可以抓取、哪些不行。在 GEO 里，robots.txt 的配置至关重要——35% 的网站不小心屏蔽了 AI 爬虫，导致 SEO 正常但在 AI 搜索里完全隐形。需要允许的关键爬虫：OAI-SearchBot、ChatGPT-User、ClaudeBot、PerplexityBot、Google-Extended。
+
+一句话记住：**检查 robots.txt 是 GEO 最基础也最容易被忽略的一步。**
+
+---
+
+## S – Z
+
+### Schema Markup（结构化数据标记）⭐
+用 JSON-LD 格式在网页代码里添加的机器可读信息。告诉 AI 爬虫「这是一篇文章」「作者是谁」「这段是 FAQ」。带 Schema 的页面被 AI 引用的概率高 30%–40%。GEO 最重要的 Schema 类型：Article、FAQPage、Organization、Person、BreadcrumbList。
+
+一句话记住：**给 AI 的「说明书」——让它一眼看懂你的内容是什么、谁写的。**
+
+### Schema Stacking（Schema 叠加）
+在同一个页面上部署多种 Schema 类型的做法。用 `@graph` 把 Article + FAQPage + BreadcrumbList 放在一个 JSON-LD 代码块里。叠加的 Schema 能给 AI 提供更丰富的上下文信号。
+
+一句话记住：**一个页面上放多个 Schema，给 AI 更多信号。**
+
+### Share of Model / SoM（模型份额）⭐
+你的品牌在 AI 回答中被提及的频率。相当于传统 SEO 里「Share of Voice（搜索份额）」的 AI 版本。平均品牌在 17.2% 的相关查询中出现，头部品牌能到 56.7%。目前没有全自动工具，需要手动监测。
+
+一句话记住：**AI 搜索版的品牌曝光率。你的品牌被 AI 提了多少次。**
+
+### SERP（Search Engine Results Page，搜索结果页）
+用户搜索后看到的结果页面。在 GEO 语境下，SERP 的结构正在发生剧变——AI Overviews 出现在传统结果之上，改变了用户的点击行为。
+
+一句话记住：**搜索结果页。AI Overviews 正在重新定义它的样子。**
+
+### Standalone Section（独立内容块）⭐
+一段脱离上下文也能表达完整信息的内容。这是 GEO 内容写作的核心原则。因为 AI 系统是按 chunk 提取内容的，如果你的段落必须依赖前后文才能看懂，AI 就不会引用它。87% 被引用的页面只有一个 H1，说明结构清晰是基本功。
+
+一句话记住：**每个段落都要能单独拎出来，还是一段完整的回答。**
+
+### Token（词元）
+AI 处理文本的最小单位。不等于一个字或一个词——中文大约 1.5–2 个字对应一个 token，英文大约 4 个字符对应一个 token。Chunking 时说的「500 token 的块」，中文大概就是 300–400 字左右。
+
+一句话记住：**AI 切分文本的最小单位。中文大约两个字 = 一个 token。**
+
+### Topical Authority（主题权威）⭐
+你的网站在某个特定话题上的内容覆盖深度和全面性。AI 在选择引用来源时，更偏好在某个话题上有大量高质量内容的网站，而不是零星提过一次的网站。建立主题权威的方法：围绕核心话题建立内容集群（pillar page + 子话题文章），用内链串联起来。
+
+一句话记住：**在一个话题上写得够深、够全，AI 才会优先引用你。**
+
+### Vector Search（向量搜索）
+用向量嵌入计算语义相似度来检索内容。跟 BM25 的关键词匹配不同，向量搜索能找到意思相近但用词不同的内容。比如用户问「怎么让 AI 引用我的网站」，向量搜索能匹配到「提升 AI 搜索可见性的方法」。AI 搜索平台通常把向量搜索和 BM25 结合使用（Hybrid Search）。
+
+一句话记住：**按语义找内容，不需要关键词完全一致也能匹配上。**
+
+### Zero-Click Search（零点击搜索）⭐
+用户在搜索结果页上就得到了答案，不需要点进任何网站。SparkToro 的数据显示超过 58% 的 Google 搜索属于零点击。AI Overviews 加剧了这个趋势——Gartner 预测到 2026 年底，传统搜索量下降 25%。但零点击不等于零商业价值——被 AI 引用能驱动品牌词搜索量增长和高质量转化。
+
+一句话记住：**用户搜了但没点——AI 时代的新常态。应对方法不是阻止它，是被 AI 引用。**
+
+---
+
+## 常见问题
+
+**这些术语我都需要掌握吗？**
+
+不需要全部掌握。如果你是内容创作者或营销人员，重点关注带 ⭐ 标记的术语就够了——大概有 20 个左右。技术类术语（BM25、Cross-Encoder、Token 等）只需要理解大概原理，不需要深入技术细节。
+
+**GEO 的术语和 SEO 有多大区别？**
+
+大约一半是共享的（E-E-A-T、Schema、robots.txt、SERP 等），另一半是 GEO 特有的（RAG、Chunking、Share of Model、Citation Drift 等）。如果你有 SEO 基础，学 GEO 的术语门槛其实不高。核心差异见[《GEO vs SEO：核心区别与协作逻辑》](/geo/geo-vs-seo/)。
+
+**做 GEO 需要懂 AI 技术吗？**
+
+不需要写代码，但需要理解 AI 搜索的基本工作流程（RAG）。知道 AI 是怎么找到你的内容（检索）、怎么选择引用来源（重排序）、怎么生成回答（LLM），就足够指导你的内容策略了。详细解释见[《AI 搜索引擎怎么工作》](/geo/how-ai-search-engines-work/)。
+
+**这些术语会不会很快过时？**
+
+GEO 是一个快速发展的领域，新术语确实会不断出现（比如 AAIO 就是 2026 年才开始流行的）。但核心概念（RAG、Chunking、Citation、E-E-A-T）在可预见的未来不会过时——因为 AI 搜索的底层架构没有根本改变。我会持续更新这份术语表。
+
+**有没有中文的 GEO 术语翻译标准？**
+
+目前没有官方标准。行业里比较通用的翻译包括：生成式引擎优化（GEO）、检索增强生成（RAG）、向量嵌入（Embedding）、模型份额（Share of Model）。但很多术语大家还是直接用英文，因为中文翻译反而容易造成误解。本文采用的是「英文术语 + 中文解释」的格式，方便你在两种语境下都能对上。
+
+```json
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "headline": "GEO 术语表：从业者必须搞懂的 50+ 个概念",
+      "description": "RAG、向量嵌入、Chunking、Share of Model……GEO涉及的术语横跨AI技术和搜索营销两个领域。这份术语表用大白话解释每个概念，附带实操场景。",
+      "datePublished": "2026-03-30",
+      "dateModified": "2026-03-30",
+      "author": {
+        "@type": "Person",
+        "@id": "https://gujianjun.net/#jake",
+        "name": "顾得 Jake Gu",
+        "url": "https://gujianjun.net",
+        "sameAs": ["https://www.linkedin.com/in/jakegu/"],
+        "jobTitle": "SEO & GEO Consultant",
+        "knowsAbout": ["GEO", "Generative Engine Optimization", "SEO", "AI Search", "RAG", "Vector Embeddings"]
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "gujianjun.net"
+      },
+      "url": "https://gujianjun.net/geo/geo-glossary/",
+      "inLanguage": "zh-CN"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "首页", "item": "https://gujianjun.net" },
+        { "@type": "ListItem", "position": 2, "name": "GEO 教程系列", "item": "https://gujianjun.net/geo" },
+        { "@type": "ListItem", "position": 3, "name": "GEO 术语表", "item": "https://gujianjun.net/geo/geo-glossary/" }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "GEO 术语都需要掌握吗？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "不需要全部掌握。内容创作者和营销人员重点关注带⭐标记的20个左右核心术语即可。技术类术语只需理解大概原理，不需要深入技术细节。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "做 GEO 需要懂 AI 技术吗？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "不需要写代码，但需要理解AI搜索的基本工作流程（RAG）。知道AI怎么找到你的内容、怎么选择引用来源、怎么生成回答，就足够指导内容策略了。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "GEO 的术语和 SEO 有多大区别？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "大约一半是共享的（E-E-A-T、Schema、robots.txt等），另一半是GEO特有的（RAG、Chunking、Share of Model、Citation Drift等）。有SEO基础的人学GEO术语门槛不高。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "这些 GEO 术语会很快过时吗？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "核心概念（RAG、Chunking、Citation、E-E-A-T）在可预见的未来不会过时，因为AI搜索的底层架构没有根本改变。但新术语会不断出现，如AAIO是2026年才开始流行的概念。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "有没有中文的 GEO 术语翻译标准？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "目前没有官方标准。通用翻译包括生成式引擎优化（GEO）、检索增强生成（RAG）、向量嵌入（Embedding）、模型份额（Share of Model），但很多术语大家还是直接用英文。"
+          }
+        }
+      ]
+    }
+  ]
+}
+```
