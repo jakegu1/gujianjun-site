@@ -8,7 +8,7 @@ export async function generateStaticParams() {
   const allTags = new Set<string>()
   for (const p of regularPosts) p.tags.forEach((t) => allTags.add(t))
   for (const p of geoPosts) p.tags.forEach((t) => allTags.add(t))
-  return Array.from(allTags).map((tag) => ({ tag: encodeURIComponent(tag) }))
+  return Array.from(allTags).map((tag) => ({ tag }))
 }
 
 export async function generateMetadata({
@@ -17,10 +17,9 @@ export async function generateMetadata({
   params: Promise<{ tag: string }>
 }) {
   const { tag } = await params
-  const decoded = decodeURIComponent(tag)
   return {
-    title: `标签: ${decoded} | Jake Gu`,
-    description: `所有标记为「${decoded}」的文章`,
+    title: `标签: ${tag} | Jake Gu`,
+    description: `所有标记为「${tag}」的文章`,
   }
 }
 
@@ -30,14 +29,13 @@ export default async function TagPage({
   params: Promise<{ tag: string }>
 }) {
   const { tag } = await params
-  const decoded = decodeURIComponent(tag)
 
   const regularPosts = getAllPosts()
-    .filter((p) => p.tags.includes(decoded))
+    .filter((p) => p.tags.includes(tag))
     .map((p) => ({ ...p, href: `/blog/${p.slug}`, source: 'blog' as const }))
 
   const geoPosts = getAllGeoPosts()
-    .filter((p) => p.tags.includes(decoded))
+    .filter((p) => p.tags.includes(tag))
     .map((p) => ({ ...p, href: `/geo/${p.slug}`, source: 'geo' as const }))
 
   const posts = [...regularPosts, ...geoPosts].sort((a, b) =>
@@ -58,7 +56,7 @@ export default async function TagPage({
           <span className="text-xs font-mono text-[#f15a65] tracking-widest uppercase">
             Tag
           </span>
-          <h1 className="text-4xl font-bold mt-2">{decoded}</h1>
+          <h1 className="text-4xl font-bold mt-2">{tag}</h1>
           <p className="text-gray-500 mt-2">
             {posts.length} 篇文章
           </p>
