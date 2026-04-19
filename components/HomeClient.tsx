@@ -3,15 +3,7 @@
 import { motion } from 'framer-motion'
 import Link from 'next/link'
 import type { Post } from '@/lib/posts'
-
-const fadeUp = {
-  hidden: { opacity: 0, y: 32 },
-  show: (i: number) => ({
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.6, delay: i * 0.12, ease: [0.22, 1, 0.36, 1] as [number, number, number, number] },
-  }),
-}
+import HeroFinal from './hero/HeroFinal'
 
 const skills = [
   { name: 'SEO 搜索引擎优化', level: 95 },
@@ -32,98 +24,7 @@ export default function HomeClient({ posts }: { posts: Post[] }) {
   return (
     <div className="min-h-screen bg-[#0a0a0a] text-gray-100 overflow-x-hidden">
       {/* ── Hero ── */}
-      <section className="relative min-h-screen flex items-center justify-center px-6">
-        {/* Background grid */}
-        <div
-          className="absolute inset-0 opacity-[0.03]"
-          style={{
-            backgroundImage:
-              'linear-gradient(#f15a65 1px, transparent 1px), linear-gradient(90deg, #f15a65 1px, transparent 1px)',
-            backgroundSize: '60px 60px',
-          }}
-        />
-        {/* Glow */}
-        <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[400px] bg-[#f15a65]/10 rounded-full blur-[120px] pointer-events-none" />
-
-        <div className="relative max-w-4xl w-full">
-          <motion.div
-            custom={0}
-            variants={fadeUp}
-            initial="hidden"
-            animate="show"
-            className="text-sm font-mono text-[#f15a65] mb-4 tracking-widest uppercase"
-          >
-            Shanghai · Digital Marketing
-          </motion.div>
-
-          <motion.h1
-            custom={1}
-            variants={fadeUp}
-            initial="hidden"
-            animate="show"
-            className="text-7xl md:text-9xl font-bold tracking-tight mb-6 leading-none"
-          >
-            顾<span className="text-[#f15a65]">得</span>
-          </motion.h1>
-
-          <motion.p
-            custom={2}
-            variants={fadeUp}
-            initial="hidden"
-            animate="show"
-            className="text-xl md:text-2xl text-gray-300 mb-4 font-light"
-          >
-            SEO &amp; GEO Specialist
-          </motion.p>
-
-          <motion.p
-            custom={3}
-            variants={fadeUp}
-            initial="hidden"
-            animate="show"
-            className="text-base text-gray-500 max-w-xl mb-12 leading-relaxed"
-          >
-            专注于搜索引擎优化与 AI 生成引擎优化，帮助品牌在搜索结果与 AI 回答中占据第一位。
-            6 年实战经验，多个自然流量增长 300% 的案例。
-          </motion.p>
-
-          <motion.div
-            custom={4}
-            variants={fadeUp}
-            initial="hidden"
-            animate="show"
-            className="flex flex-wrap gap-4"
-          >
-            <Link
-              href="/blog"
-              className="inline-flex items-center gap-2 bg-[#f15a65] text-white px-6 py-3 rounded-full font-medium hover:bg-[#e04a55] transition-colors"
-            >
-              阅读文章 →
-            </Link>
-            <a
-              href="mailto:jake.gu@foxmail.com"
-              className="inline-flex items-center gap-2 border border-gray-700 text-gray-300 px-6 py-3 rounded-full font-medium hover:border-[#f15a65] hover:text-[#f15a65] transition-colors"
-            >
-              联系我
-            </a>
-          </motion.div>
-        </div>
-
-        {/* Scroll indicator */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 1.5 }}
-          className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-gray-600 text-xs"
-        >
-          <span>向下滚动</span>
-          <motion.div
-            animate={{ y: [0, 6, 0] }}
-            transition={{ repeat: Infinity, duration: 1.5 }}
-            className="w-px h-8 bg-gradient-to-b from-gray-600 to-transparent"
-          />
-        </motion.div>
-      </section>
+      <HeroFinal />
 
       {/* ── Skills ── */}
       <section className="py-24 px-6 border-t border-gray-900">
