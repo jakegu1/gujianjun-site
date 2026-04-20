@@ -1,0 +1,18 @@
+{
+  "$schema": "https://agentskills.io/schemas/v0.2.0/index.json",
+  "version": "0.2.0",
+  "site": {
+    "name": "顾得 · gujianjun.net",
+    "origin": "https://www.gujianjun.net",
+    "contact": "jake.gu@foxmail.com"
+  },
+  "skills": [
+    {
+      "name": "markdown-negotiation",
+      "type": "content-negotiation",
+      "description": "HTTP content negotiation — request any /blog/{slug} or /geo/{slug} page with `Accept: text/markdown` to receive the raw Markdown source of the article. Response includes `Content-Type: text/markdown` and `x-markdown-tokens`.",
+      "url": "https://www.gujianjun.net/.well-known/agent-skills/markdown-negotiation/SKILL.md",
+      "sha256": "96a5182511d091dbb5a2bcbe6ae38f6f5f2777ed73117461994fbbc4db84b205"
+    }
+  ]
+}
