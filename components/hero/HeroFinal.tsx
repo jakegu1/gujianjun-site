@@ -4,6 +4,7 @@ import { motion, AnimatePresence, animate, useMotionValue, useSpring, useTransfo
 import Link from 'next/link'
 import { useEffect, useRef, useState } from 'react'
 import { createPortal } from 'react-dom'
+import ContactModal from '@/components/ContactModal'
 
 /* ── Tools / Platforms (Row 1: scrolls left, faster) ── */
 const TOOLS = [
@@ -47,18 +48,33 @@ const METHODS = [
   { en: 'PROMPT ENGINEERING',  zh: '提示词工程' },
 ]
 
-/* ── Custom glowing cursor ── */
+/* ── Custom glowing cursor (desktop / fine-pointer only) ── */
 function CustomCursor({ hovering }: { hovering: boolean }) {
   const x = useMotionValue(-100)
   const y = useMotionValue(-100)
   const sx = useSpring(x, { stiffness: 500, damping: 40, mass: 0.5 })
   const sy = useSpring(y, { stiffness: 500, damping: 40, mass: 0.5 })
+  const [enabled, setEnabled] = useState(false)
 
   useEffect(() => {
+    // Only enable on devices with a hoverable, fine pointer (i.e. real mouse).
+    // Touch devices report `hover: none` and `pointer: coarse`.
+    if (typeof window === 'undefined' || !window.matchMedia) return
+    const mq = window.matchMedia('(hover: hover) and (pointer: fine)')
+    setEnabled(mq.matches)
+    const onChange = (e: MediaQueryListEvent) => setEnabled(e.matches)
+    mq.addEventListener?.('change', onChange)
+    return () => mq.removeEventListener?.('change', onChange)
+  }, [])
+
+  useEffect(() => {
+    if (!enabled) return
     const onMove = (e: MouseEvent) => { x.set(e.clientX); y.set(e.clientY) }
     window.addEventListener('mousemove', onMove)
     return () => window.removeEventListener('mousemove', onMove)
-  }, [x, y])
+  }, [x, y, enabled])
+
+  if (!enabled) return null
 
   return (
     <>
@@ -906,9 +922,10 @@ function SpacingPanel({ spacing, setSpacing }: { spacing: Spacing; setSpacing: R
 export default function HeroFinal() {
   const [hover, setHover] = useState(false)
   const [spacing, setSpacing] = useState<Spacing>(DEFAULT_SPACING)
+  const [contactOpen, setContactOpen] = useState(false)
 
   return (
-    <section className="relative h-screen bg-[#050505] text-gray-100 overflow-hidden flex flex-col" style={{ cursor: 'none' }}>
+    <section className="relative h-screen bg-[#050505] text-gray-100 overflow-hidden flex flex-col [@media(hover:hover)_and_(pointer:fine)]:[cursor:none]">
       <HeroBackground />
       <FilmGrain />
       {/* Scan lines */}
@@ -953,20 +970,21 @@ export default function HeroFinal() {
             className="flex gap-4"
           >
             <Magnetic>
-              <Link
-                href="/blog"
-                className="inline-flex items-center gap-2 bg-[#f15a65] text-white px-5 py-2.5 rounded-full text-sm font-medium shadow-[0_0_30px_rgba(241,90,101,0.4)]"
+              <button
+                type="button"
+                onClick={() => setContactOpen(true)}
+                className="inline-flex items-center gap-2 bg-[#f15a65] text-white px-5 py-2.5 rounded-full text-sm font-medium shadow-[0_0_30px_rgba(241,90,101,0.4)] hover:shadow-[0_0_40px_rgba(241,90,101,0.55)] transition-shadow cursor-pointer"
               >
-                阅读文章 →
-              </Link>
+                联系我 →
+              </button>
             </Magnetic>
             <Magnetic>
-              <a
-                href="mailto:jake.gu@foxmail.com"
-                className="inline-flex items-center gap-2 border border-white/15 text-gray-200 px-5 py-2.5 rounded-full text-sm font-medium backdrop-blur-md bg-white/[0.03]"
+              <Link
+                href="/blog/goeast-mandarin-case-study"
+                className="inline-flex items-center gap-2 border border-white/15 text-gray-200 px-5 py-2.5 rounded-full text-sm font-medium backdrop-blur-md bg-white/[0.03] hover:border-[#f15a65]/40 hover:text-white hover:bg-white/[0.06] transition-colors"
               >
-                联系我
-              </a>
+                了解我
+              </Link>
             </Magnetic>
           </motion.div>
 
@@ -990,6 +1008,8 @@ export default function HeroFinal() {
           <CategoryMarquee tags={METHODS} reverse={true} speed={75} labelEn="METHODS" labelZh="方法论" />
         </div>
       </div>
+
+      <ContactModal open={contactOpen} onClose={() => setContactOpen(false)} />
     </section>
   )
 }
