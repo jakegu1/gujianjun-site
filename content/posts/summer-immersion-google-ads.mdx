@@ -1,0 +1,131 @@
+---
+title: "夏令营 Google Ads：$400 预算两周测试，从零搭 campaign"
+description: "GoEast 每年夏天运营面向国际学员的中文沉浸式夏令营。$400 的测试预算、两周时间，我从零设计了完整的 campaign 结构。这篇文章记录选词逻辑、ad group 划分、广告文案策略，以及有限预算下怎么做取舍。"
+date: "2026-04-20"
+tags: ["GoEast", "case-study", "google-ads"]
+category: "case-study"
+client: "GoEast Mandarin"
+---
+
+中文夏令营是 GoEast 每年一次的季节性业务。面向的是有一定意愿、主动搜"中文沉浸式学习体验"的国际学员——不是随便浏览的人，是已经有了明确想法、在比较选项的人。
+
+这个受众特征意味着 Google Search Ads 是对的渠道：有需求、主动搜索、愿意为特定体验付费。
+
+但 $400 的预算、两周的测试周期，给了很少的容错空间。在这个约束下，选择比努力更重要——每一分钱花在哪里，必须是想清楚之后的决定，不能靠「先跑跑看」来探索。
+
+---
+
+## 第一步：想清楚目标受众是谁
+
+在选词之前，我先把目标用户描述清楚。
+
+GoEast 夏令营的核心受众：
+
+- **年龄**：18 岁以上的成年人，以及部分 14-18 岁有家长陪同决策的青少年
+- **背景**：在海外生活的华裔后代（想找回文化连接）；对中国文化有浓厚兴趣的外籍人士；计划去中国工作或学习的语言学习者
+- **决策特征**：通常已经有一定了解，在比较不同的沉浸式项目；时间窗口明确（夏季），会提前 2-3 个月搜索
+
+这个用户画像直接影响选词策略：不应该追「learn Chinese」这类宽泛词——竞争大，意图不明确，$400 的预算根本撑不住。应该追「Chinese immersion program」「Mandarin summer camp adults」「study Chinese in Shanghai」这类明确指向「沉浸式」「营地」「上海」的词——搜索量小，但意图极其清晰。
+
+---
+
+## Campaign 结构设计
+
+$400 预算，两周，我把结构设计得尽量简单，不设多余的层级。
+
+### 一个 campaign，三个 ad group
+
+**Ad Group 1 — 沉浸式项目搜索**
+
+核心关键词：
+- `"Chinese immersion program"` (phrase)
+- `"Mandarin immersion summer"` (phrase)
+- `[Chinese immersion program adults]` (exact)
+- `[learn Chinese immersive program]` (exact)
+
+这组词直接对应「我想找一个中文沉浸式项目」的搜索意图，匹配度最高，预算优先级最高。
+
+**Ad Group 2 — 上海 / 中国留学类搜索**
+
+核心关键词：
+- `"study Chinese in Shanghai"` (phrase)
+- `"learn Mandarin in China summer"` (phrase)
+- `"Chinese language school Shanghai"` (phrase)
+
+这组词针对已经想好「去中国学中文」的用户，GoEast 上海实体校区是重要的差异化因素，广告文案里直接强调上海本地教学环境。
+
+**Ad Group 3 — 夏令营 / 营地类搜索**
+
+核心关键词：
+- `"Chinese summer camp"` (phrase)
+- `"Mandarin camp for adults"` (phrase)
+- `"Chinese language camp"` (phrase)
+
+这组词的搜索量比前两组大，但竞争也更高，预算分配相对保守。
+
+### Negative keywords（从一开始就要设好）
+
+预算有限的情况下，negative keyword list 比 keyword 本身更重要。一条无效点击就是浪费。
+
+我在 campaign 开始前就设置了这些 negative：
+- 所有「free」相关词：`free Chinese lessons`、`free Mandarin course` 等
+- 儿童向：`kids`、`children`、`for kids`、`elementary`（夏令营 campaign 针对成人和青少年，不和 Kids Camp 混淆）
+- 自学工具：`app`、`youtube`、`duolingo`、`software`
+- 不相关地区：如果发现有大量非目标国家的点击，对应地区加进 negative
+
+---
+
+## 广告文案策略
+
+两周测试，每个 ad group 写了 2 条 RSA（Responsive Search Ads），覆盖不同的强调点。
+
+**核心信息层级：**
+
+1. **沉浸式体验本身**：「Live, study, and speak Mandarin in Shanghai」「Full immersion — classes, culture, and daily life in Chinese」
+2. **GoEast 的差异化**：「Native-speaker teachers, small groups, real Shanghai life」「Not a classroom — a Mandarin immersion experience」
+3. **具体的项目信息**：「2-week intensive programs」「Flexible start dates, summer 2025」
+4. **CTA**：「Check availability」「View program details」「Limited spots — apply now」
+
+一个观察：「Limited spots」这类稀缺性 CTA 在夏令营这个品类里效果不错，因为它是真实的——夏令营确实有人数上限，用户对这个信息的反应比对「立即报名」更积极。但前提是这个说法是真实的，不能为了 CTR 瞎写。
+
+**Landing page 对应关系：**
+
+三个 ad group 指向的 landing page 是同一个，但 URL parameter 里带了 ad group 标识，方便在 GA4 里分别追踪各组的表现。如果预算更充裕，理想情况是为「上海留学」和「沉浸式营地」分别做 landing page，但在 $400 的测试阶段，一个 landing page 已经足够验证基础假设。
+
+---
+
+## 预算分配：$400 怎么花
+
+两周 $400，日均 ~$28。
+
+这个预算在竞争激烈的关键词上每天可能只买到 5-10 次点击。所以预算分配要极其保守：
+
+- Ad Group 1（沉浸式项目）：日均 $15，优先保证意图最强的词有曝光
+- Ad Group 2（上海/中国留学）：日均 $8，次要优先级
+- Ad Group 3（夏令营/营地）：日均 $5，主要用于收集数据，看哪些词真正在产生转化
+
+Bidding 策略用 Manual CPC，不用 Smart Bidding——原因是两周的预算太少，Smart Bidding 的学习期就要消耗大量数据，在测试阶段手动控制更可靠。
+
+地理定向：主要针对北美（美国、加拿大）、欧洲（英国、德国）、澳大利亚，这是 GoEast 成人学员的主要来源地区。时区设置跟随各地区本地时间。
+
+---
+
+## 两周测试的核心问题
+
+这次测试的目标不是"跑出漂亮的 ROI"，而是验证几个假设：这些关键词在 Google 上有真实的搜索量和点击意愿吗？GoEast 的 landing page 对这类用户有说服力吗？（用 bounce rate 和 time on page 评估）哪个 ad group 的 CPL 更低、lead 质量更高？
+
+两周数据出来之后，再决定是否加大预算、哪个方向值得继续投入。这是测试阶段正确的心态——不是为了证明广告有效，而是为了找到哪里有效。
+
+---
+
+## 和其他两条业务线的关系
+
+夏令营、成人在线课程、Kids Camp 是 GoEast 三条独立的 Google Ads 业务线，但有几个地方是共用的：Negative keyword list 的通用部分（如 free、app 等）可以在 account 级别设置，对所有 campaign 生效；Conversion tracking 的基础设施（GA4 事件、Google Ads import）是共用的；Landing page 的设计原则是相通的——关于成人课程 landing page 重建的思路：[成人课程 Google Ads：$5 的 CPL 挺好看，但问题在后面](/blog/goeast-online-course-google-ads)。
+
+三条业务线的 campaign 独立管理，但互相不打架——通过地理定向、关键词定向和受众定向的差异化，各自服务不同的用户群。
+
+关于 Kids Camp 的 campaign 结构和 conversion tracking 修复，详见：[Kids Chinese Camp Google Ads 重构](/blog/kids-chinese-camp-google-ads)。
+
+---
+
+这篇文章是 [GoEast Mandarin 全案复盘](/blog/goeast-mandarin-case-study) 的一部分。

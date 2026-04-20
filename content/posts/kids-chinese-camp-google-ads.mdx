@@ -1,0 +1,108 @@
+---
+title: "Kids Camp Google Ads：conversion tracking 一直是错的，我们用错误数据优化了很久"
+description: "GoEast 儿童中文营的 Google Ads 跑了很长时间，数据看着还行。直到我发现 Acuity 预约的 booking confirmation 从来没被正确捕获——我们一直在用错误的数据做优化决策。这篇文章记录发现问题、修复链路、重构 campaign 的完整过程。"
+date: "2026-04-20"
+tags: ["GoEast", "case-study", "google-ads"]
+category: "case-study"
+client: "GoEast Mandarin"
+---
+
+有一种错误比"广告跑得差"更危险：广告看着还行，但评估基准本身就是错的。
+
+GoEast Kids Chinese Camp 的 Google Ads 就是这种情况。
+
+我接手的时候，账户里有数据、有 conversion，报告里的数字说得过去。但有一天我核对 Acuity 后台的实际预约数量和 Google Ads 里记录的 conversion 数量，发现两边对不上——差距不是一点点，大部分真实预约根本没被 Google Ads 计入。
+
+这意味着我们的 campaign 优化，长期以来都在追一个错误的信号。
+
+---
+
+## 问题在哪：Acuity 和 Google Ads 之间的断层
+
+GoEast 用 Acuity Scheduling 做预约管理。家长感兴趣的时候，在网站上点"Book a Trial"，跳转到 Acuity 的预约页面，填信息，完成预约，看到 confirmation 页面。
+
+问题出在这里：Acuity 的预约流程在独立的子域名或 iframe 里完成，不在 GoEast 主站的域名下。Google Ads 的 conversion tracking 默认追踪主站的事件，到了 Acuity 这边就断了。
+
+换句话说：用户点了广告，花了预算，完成了预约，但这次 conversion 没被记录。Google Ads 的算法不知道这次点击有价值，于是在 bidding 和 audience 优化上，把这类用户的信号丢掉了。
+
+长期累积下来，campaign 的优化方向是偏的。它在优化"点击"和"到达主站"，而不是"完成预约"。
+
+修复这个问题是重构的第一步，也是最重要的一步。关于具体的技术接入方式，我在另一篇文章里做了详细记录：[Acuity + Google Ads 转化追踪接入方法](/blog/acuity-google-ads-conversion-tracking)。
+
+---
+
+## 修复之后：重新建立评估基准
+
+conversion tracking 修复并稳定运行大约两三周之后，我才开始动 campaign 结构。
+
+这个顺序很重要。数据还不准的时候就大幅调整 campaign，后续很难判断效果变化是因为 campaign 改动，还是因为数据追踪更准了。等 conversion 数据稳定之后，才有可靠的基准做对比。
+
+修复后的数据显示了几个之前看不到的情况：
+- 部分关键词的真实 conversion rate 比原来估计的高很多——之前因为数据缺失，这些词被低估了
+- 部分关键词点击量不少，但实际预约率很低——原来因为没有准确的 conversion 数据，这些词一直在花预算
+- 不同时段的预约行为有明显差异——周末点击量高，但平日的 conversion rate 反而更高（家长在工作日更可能认真填写预约信息）
+
+这些洞察都是数据修复之后才冒出来的。
+
+---
+
+## Campaign 结构重构
+
+有了可靠的 conversion 数据之后，我对 campaign 结构做了系统性整理。
+
+### 按年龄段和项目类型拆分 ad group
+
+原来的 ad group 划分比较粗，不同年龄段（3-6 岁、7-12 岁）和不同项目类型（学期课、暑期营、周末班）混在一起，关键词和广告文案之间的匹配度不够高。
+
+重构之后，每个 ad group 对应一个具体的受众场景：
+
+- **幼儿中文课（3-6 岁）**：关键词围绕「Mandarin for toddlers」「Chinese class preschool」；广告文案强调趣味性和游戏化学习
+- **小学中文课（7-12 岁）**：关键词围绕「Chinese lessons kids」「Mandarin after school」；广告文案强调课程体系和进度追踪
+- **Kids Chinese Camp**：关键词围绕「Chinese summer camp」「Mandarin immersion program kids」；广告文案强调沉浸式体验和营地氛围
+- **试听课**：专门针对搜索「free trial Chinese class」「try Mandarin lesson」的用户，直接引导预约
+
+每个 ad group 有对应的 landing page，而不是所有广告都指向同一个页面。这个改动对 Quality Score 和实际 conversion rate 都有帮助。
+
+### 关键词匹配类型调整
+
+原来账户里有大量 broad match 关键词，流量大但不精准。重构之后，核心关键词改用 phrase match 和 exact match，broad match 保留少量用于发现新词，但设置了更严格的 search term 审查频率。
+
+每两周审查一次 search term 报告，把不相关的词加进 negative keyword list。Kids Camp 的 campaign 经常会触发一些跟学校课程、成人中文课无关的搜索词，定期清理很有必要。
+
+### Bidding 策略
+
+修复 conversion tracking 之后，才有条件切换到 Smart Bidding。
+
+我把主要 ad group 从 Manual CPC 切换到了 Maximize Conversions，先跑 2-3 周让算法收集足够的 conversion 数据，然后再设 Target CPA。Target CPA 的初始值设得比较保守——略高于实际平均 CPA，给算法足够空间，随着数据积累再逐步调整。
+
+---
+
+## 一个关于时机的判断
+
+Kids Camp 业务有强烈的季节性。暑期营的报名高峰在 3 月到 5 月，秋季学期的需求高峰在 8 月到 9 月。
+
+这意味着 campaign 的预算分配不应该全年平均，而应该在报名高峰前 4-6 周开始加大投入，高峰过后逐步收缩。
+
+同时 conversion window 也要注意：家长从第一次搜索到实际预约，决策周期可能有 1-3 周。Google Ads 的 conversion window 如果设得太短（比如错误地设成 7 天），会丢掉一部分"迟到的转化"，导致数据低估。
+
+---
+
+## 重构之后的变化
+
+重构完成后跑了一个完整的季度，有几个可观察到的变化：
+
+- conversion tracking 修复后，Google Ads 后台记录的 conversion 数量和 Acuity 后台的实际预约数量基本对齐
+- Smart Bidding 接管后，CPA 有所改善（在流量不减少的前提下，单次获客成本下降）
+- 分 ad group 的结构让 Quality Score 整体提升，部分关键词的 CPC 下降
+
+更重要的是，我们终于有了一个能被信任的数据基准。从这个基准出发做优化，方向才对。
+
+---
+
+这篇文章是 [GoEast Mandarin 全案复盘](/blog/goeast-mandarin-case-study) 的一部分。
+
+关于成人在线课程的 Google Ads 优化思路，两条业务线有很多可以互相参考的地方：[成人课程 Google Ads：诊断 lead quality 问题](/blog/goeast-online-course-google-ads)。
+
+关于 Acuity 转化追踪的具体技术方案：[Acuity + Google Ads 转化追踪接入方法](/blog/acuity-google-ads-conversion-tracking)。
+
+关于 leads 进入 CRM 之后的处理流程：[Salesforce + Brevo + Zapier：全链路 CRM 搭建](/blog/salesforce-brevo-zapier-crm)。

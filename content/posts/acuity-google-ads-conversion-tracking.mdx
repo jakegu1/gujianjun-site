@@ -1,0 +1,109 @@
+---
+title: "Acuity + Google Ads 转化追踪：让预约数据真正被计入广告归因"
+description: "Acuity Scheduling 的预约流程在独立子域名下完成，默认情况下 Google Ads 和 GA4 都追踪不到这个 conversion。这篇文章记录如何用 GTM 的自定义触发器打通这条链路，让每一个真实预约都被正确归因到对应的广告。"
+date: "2026-04-20"
+tags: ["GoEast", "case-study", "martech", "google-ads"]
+category: "case-study"
+client: "GoEast Mandarin"
+---
+
+GoEast 用 Acuity Scheduling 处理所有的在线预约——试听课、咨询、Kids Camp 体验课都走这套系统。
+
+用户的路径是：看到广告 → 点击 → 到达 GoEast landing page → 点"Book a Trial"→ 跳转到 Acuity 的预约页面 → 填信息 → 完成预约 → 看到 confirmation 页面。
+
+从广告投放的角度，真正有价值的 conversion 发生在最后一步：用户完成预约。
+
+但在我修复之前，这一步从来没被 Google Ads 记录到。
+
+---
+
+## 问题的本质：跨域追踪断层
+
+Acuity 的预约界面不在 GoEast 主站的域名下。GoEast 的域名是 `goeastmandarin.com`，而 Acuity 的预约页面在 `app.acuityscheduling.com` 下（或者 GoEast 的自定义子域名，取决于配置方式）。
+
+Google Ads 的 conversion tracking tag 默认只在同一域名下工作。用户离开 `goeastmandarin.com` 跳转到 Acuity 的时候，追踪链路就断了——Google Ads 不知道这个用户后来完成了预约，只知道他点了广告、访问了 GoEast 的页面，然后就消失了。
+
+结果是：Google Ads 的 bidding 算法在优化时，把"点击广告后访问 landing page"当成了有价值的行为，而不是"最终完成预约"。两者之间差距很大——很多人看了页面但没预约，算法把这类行为也当成正向信号来学习。
+
+---
+
+## 方案选择
+
+打通 Acuity 和 Google Ads 之间的 conversion tracking，有几种思路：
+
+**方案一：Acuity 内置的 Google Analytics 集成**
+
+Acuity 有一个设置，可以在 confirmation 页面触发 Google Analytics 的事件。但这个集成是 GA Universal（旧版），对 GA4 和 Google Ads 的支持不够直接，需要额外的配置才能让 Google Ads 正确识别。
+
+**方案二：GTM 的跨域追踪**
+
+用 GTM 配置跨域追踪，让 Acuity 页面上的用户行为和原始的 Google Ads click ID 关联起来。这需要 Acuity 页面也安装了 GTM，或者 Acuity 提供了可以注入自定义代码的入口。
+
+**方案三：Acuity 的 confirmation 页面重定向**
+
+把 Acuity 的 confirmation 页面重定向回 GoEast 主站的一个专用感谢页面（`goeastmandarin.com/thank-you`），然后在这个页面触发 Google Ads conversion tag。用户完成预约 → 看到 Acuity 的 confirmation → 被重定向到 GoEast 的 thank-you 页面 → conversion 被记录。
+
+我选了方案三，原因是它最稳定、依赖最少：不需要在第三方页面注入代码，不需要处理复杂的跨域 cookie，只需要一个重定向 URL 和一个 thank-you 页面。
+
+---
+
+## 具体实现
+
+**第一步：在 GoEast 主站建 thank-you 页面。** 建一个简单的页面 `/booking-confirmed`，内容是预约确认的信息和 next steps。这个页面的 URL 是 conversion tag 的触发点。
+
+**第二步：在 Acuity 里配置 confirmation 重定向。** Acuity 支持在预约完成后重定向到自定义 URL。在 Acuity 的设置里，把 confirmation redirect 设为：
+
+```
+https://goeastmandarin.com/booking-confirmed
+```
+
+同时保留 Acuity 原有的 confirmation 邮件发送，重定向只影响页面跳转，不影响邮件通知。
+
+**第三步：在 GTM 里配置 conversion trigger**
+
+在 GoEast 的 GTM 容器里，新建一个触发器：
+
+- 触发器类型：Page View
+- 触发条件：Page URL 包含 `/booking-confirmed`
+
+然后建一个 Google Ads Conversion Tracking tag，绑定到这个触发器：
+
+- Tag 类型：Google Ads Conversion Tracking
+- Conversion ID 和 Conversion Label：从 Google Ads 后台的 Conversion Actions 里获取
+- Conversion Value：可以设置固定值，或者根据预约类型动态赋值
+
+**第四步：GA4 同步记录**
+
+同时建一个 GA4 Event tag，在同一个触发器上也触发 `booking_confirmed` 事件，让 GA4 也有这条转化数据。GA4 的数据可以导入到 Google Ads 作为辅助 conversion 信号，也可以在 Looker Studio 的仪表盘里独立展示。
+
+---
+
+## 验证
+
+配置完之后，验证步骤很重要——不能假设它能跑，得实际测试。
+
+用 GTM 的 Preview 模式打开 GoEast 网站，完成一次真实的 Acuity 预约；确认被重定向到 `/booking-confirmed` 页面；在 GTM Preview 面板里确认 conversion tag 被触发；在 Google Ads 的 conversion tracking 报告里确认测试 conversion 出现在记录里（通常有 1-3 小时延迟）；和 Acuity 后台的实际预约数量对比，确认追踪率在合理范围内。
+
+对比 Acuity 后台数量和 Google Ads conversion 数量的时候，不会 100% 一致——有些预约来自直接访问（不经过广告），有些来自其他渠道。但比例应该合理，如果 Google Ads conversion 明显少于实际预约，说明追踪还有漏洞。
+
+---
+
+## 修复之后的影响
+
+conversion tracking 打通之后，最直接的变化是 Smart Bidding 有了真实的优化信号。
+
+之前算法在用"点击 + 到达 landing page"来学习什么样的用户有价值。打通之后，算法知道了"完成预约"才是真正有价值的行为，它会自动开始偏向那些历史上完成预约概率更高的用户和时段。
+
+这个效果不是立竿见影的——Smart Bidding 需要一段学习期，通常是 2-3 周，积累了足够的 conversion 数据之后才会开始明显优化。但方向是对的，而且这个改动是一次性的基础设施投入，之后会持续发挥作用。
+
+两条有预约功能的业务线——Kids Camp 和成人在线课程——都因此受益。
+
+---
+
+这篇文章是 [GoEast Mandarin 全案复盘](/blog/goeast-mandarin-case-study) 的一部分。
+
+Kids Camp Google Ads 的整体重构背景：[Kids Chinese Camp Google Ads 重构](/blog/kids-chinese-camp-google-ads)。
+
+成人在线课程的广告优化思路：[成人课程 Google Ads：诊断 lead quality 问题](/blog/goeast-online-course-google-ads)。
+
+预约数据进入 CRM 的后续流程：[Salesforce + Brevo + Zapier：给 GoEast 搭一条从 lead 到成单的 CRM 管道](/blog/salesforce-brevo-zapier-crm)。

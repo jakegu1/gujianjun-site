@@ -1,0 +1,115 @@
+---
+title: "成人在线课程 Google Ads：$5 的 CPL 之后，我们发现了真正的问题"
+description: "广告跑出了 ~$5 的 CPL，对语言教育行业来说几乎是异常好的数字。但 lead 数量好看，销售转化率偏低——这让我意识到，优化方向从一开始就找错了。这篇文章记录诊断 lead quality 问题、重构 landing page、调整 campaign 策略的完整过程。"
+date: "2026-04-20"
+tags: ["GoEast", "case-study", "google-ads"]
+category: "case-study"
+client: "GoEast Mandarin"
+---
+
+做付费广告有一个常见的陷阱：把 CPL 当成最终目标。
+
+CPL 低，皆大欢喜。广告团队有好看的数字，管理层觉得钱花得值，整条链路看起来运转正常。
+
+GoEast 成人在线课程的 Google Ads 在早期就是这个状态。~$5 的 CPL，对语言教育行业来说确实是很低的获客成本。我当时也很满意。
+
+但后来销售团队反馈，这批 leads 里真正有购买意愿的比例偏低——很多人填了表单，接到跟进电话，但就是推进不下去。
+
+这个反馈让我开始重新想一件事：**我们优化的到底是什么？**
+
+---
+
+## lead 数量 vs lead 质量
+
+$5 的 CPL 是真的很低。但如果一个 lead 的购课转化率只有 5%，那实际获客成本是 $100；如果转化率能提到 15%，同样预算获客成本就降到 $33。
+
+CPL 只是漏斗入口的指标。更重要的问题是：进来的 leads 质量怎么样？
+
+我开始从两个方向诊断：**广告端（进来的是什么人）** 和 **landing page 端（页面在筛选用户还是放大用户）**。
+
+---
+
+## 广告端：进来的人不对
+
+成人在线中文课的目标受众很明确：有一定学习动机、愿意为质量付费的成年人，主要是在职人士、有移居中国计划的外籍人士、或者对中国文化有长期兴趣的学习者。
+
+但广告在触达谁？
+
+我做了一次仔细的 search term 审查，发现有相当比例的点击来自以下几类搜索：
+- 「free Chinese lessons」「learn Chinese free online」——明确寻找免费资源，购买意愿几乎为零
+- 「Chinese for beginners」（过于宽泛）——覆盖的用户从认真学习者到随便看看的都有
+- 带有「app」「youtube」「self-study」等词的搜索——偏向自学工具，而不是付费课程
+
+这些词带来了点击，带来了表单填写，但带来的不是对的人。
+
+**处理方式：**
+
+首先把明确不匹配的词加进 negative keyword list。「free」类词汇、纯自学工具类词汇、竞品品牌词（不做竞品投放策略时）全部排除。
+
+然后把核心关键词的匹配类型收紧，减少 broad match 的比例，让广告更精准地触达有付费意愿的用户。
+
+同时测试了几组 audience signal：有在线学习购买历史的用户、访问过竞品网站的用户、与现有转化用户相似的 lookalike audience。Smart Bidding 开启之后，这些 audience signal 可以帮助算法更快学会「哪类用户更可能转化」。
+
+---
+
+## 诊断二：landing page 的问题
+
+广告端的问题处理之后，我开始看 landing page。
+
+GoEast 成人在线课程的 landing page 是典型的"介绍型"页面：课程特点、教师资质、学员故事、价格区间，信息齐全，但有几个问题。
+
+**页面没有回答"为什么是现在"。** 对于价格不低的在线语言课程，用户的决策过程不短。他们可能比较了五六家，看了很多内容。一个只介绍课程的 landing page，在决策过程里没有足够的差异化——跟竞品的页面结构几乎一样。
+
+**表单太短，筛选功能几乎为零。** 原来的表单只问了名字、邮件、电话。任何人 30 秒就能填完。摩擦力极低，所以填写率高，但同时对用户意图没有任何筛选——连"你的中文水平是什么""你想学多久"都没问。
+
+**CTA 只有一个：填表。** 所有用户被推向同一个转化动作，不管他们处于决策的哪个阶段。一个刚了解 GoEast 的用户，和一个已经比较了几家准备下单的用户，看到的是同一个页面，被要求做同一件事。
+
+---
+
+## 重建 landing page
+
+我把 landing page 的重建分了几层。
+
+**强化差异化定位。** GoEast 有一个真实的差异化优势：老师全部是受过专业培训的母语者，课程是完全定制化的一对一或小班，不是录播课。这个优势得在页面前三屏就讲清楚，不能埋在中间某个模块里。
+
+同时加入了更多真实的学员故事——不是"某某来自美国，学了一年很满意"这种模糊描述，而是具体的："Abdulrahman 从零基础到通过 HSK 4 级，用了 14 个月，每周上 3 节课"。具体细节让 social proof 有说服力。
+
+**在表单里加入筛选问题。** 填联系信息之前，先问几个问题：你的中文水平（完全零基础 / 有一些基础 / 中级）、主要学习目标（日常交流 / 工作需要 / 考试备考 / 了解文化）、期望的上课频率（每周 1 节 / 2-3 节 / 更多）。
+
+这几个问题有双重作用：给销售团队提供背景信息，让 follow-up 更有针对性；同时填写需要多 30-60 秒，意愿不强的用户会在这里自然流失。
+
+**增加中间层 CTA。** 表单之外，加了"下载课程手册""预约 15 分钟咨询""查看学员故事"等低摩擦的转化动作。这些 CTA 服务于还没准备好填主表单的用户，让他们有其他方式跟 GoEast 建立联系，同时也给 Google Ads 提供了更多可追踪的 conversion 事件。
+
+---
+
+## Campaign 策略调整
+
+landing page 和 audience 的问题解决之后，campaign 层面也做了相应调整。
+
+**从 Maximize Conversions 向 Target CPA 过渡。** 初期用 Maximize Conversions 跑出足够的 conversion 数据之后，设置 Target CPA，让算法在成本约束内优化质量。Target CPA 的初始值设得比历史平均 CPA 稍高，给算法空间，之后逐步下调。
+
+**按意图强度分 campaign。** 把关键词按搜索意图强度拆成两个 campaign：
+- 高意图（「online Mandarin lessons」「hire Chinese tutor」「one on one Chinese class」）：预算占比更高，Target CPA 更积极
+- 探索意图（「best way to learn Mandarin」「how long to learn Chinese」）：预算占比较低，主要用于品牌曝光和再营销 audience 积累
+
+再营销在这条业务线上特别有用——看过 landing page 但没填表的用户，通过 Display 或 Search 再营销二次触达，conversion rate 比首次访问高很多。
+
+---
+
+## 结果和没解决的问题
+
+调整之后，lead 质量的改善是可感知的——销售团队反馈跟进效率更高，无效 leads 的比例下降了。CPL 有所上升（从 ~$5 涨到了更高一点），但这是预期内的：更精准意味着流量减少，CPL 自然会上升。
+
+更重要的是，这条业务线的广告优化方向从"降低 CPL"变成了"提升 lead 质量和最终购课转化率"。这个方向的转变，比任何单一数据改善都更根本。
+
+但有一个问题到我离开时还没完全解决：landing page 的重建是个持续的过程。我做了结构上的改造，但 A/B test 的积累需要时间，很多假设还没被数据充分验证。这需要留给后来人来解决了。
+
+---
+
+这篇文章是 [GoEast Mandarin 全案复盘](/blog/goeast-mandarin-case-study) 的一部分。
+
+Kids Camp 业务的 Google Ads 有类似的 conversion tracking 问题，处理思路可以互相参考：[Kids Chinese Camp Google Ads 重构](/blog/kids-chinese-camp-google-ads)。
+
+关于 leads 进入 CRM 之后的处理和 Brevo 邮件 nurture：[Salesforce + Brevo + Zapier：全链路 CRM 搭建](/blog/salesforce-brevo-zapier-crm)。
+
+关于 Acuity 转化追踪的接入，两条业务线都涉及：[Acuity + Google Ads 转化追踪接入方法](/blog/acuity-google-ads-conversion-tracking)。

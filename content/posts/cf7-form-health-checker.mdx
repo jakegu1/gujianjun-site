@@ -1,0 +1,129 @@
+---
+title: "CF7 表单健康检查器：用 WP-Cron 做自动化监控"
+description: "表单是网站 lead 的入口，但它的状态从来没有人主动去监控。我写了一个 mu-plugin，每天用 WP-Cron 扫描所有 CF7 表单，有问题就推送通知。这篇文章记录思路和实现。"
+date: "2026-04-20"
+tags: ["GoEast", "case-study", "wordpress", "martech"]
+category: "case-study"
+client: "GoEast Mandarin"
+---
+
+那次双发件人插件的 bug 让网站表单中断了一段时间。
+
+中断期间，填了表单的用户没有收到确认邮件，内部团队也没有收到通知，leads 静默丢失。等我们意识到问题，是因为销售团队觉得「最近询盘怎么变少了」——不是因为有任何监控触发了告警。
+
+这件事让我意识到一个盲区：GoEast 有多张 CF7 表单分布在不同页面，但没有任何机制主动检查它们是否正常工作。表单出了问题，只能等人发现。
+
+我需要一个自动化的健康检查机制。
+
+---
+
+## 需要检查什么
+
+CF7 表单出问题，常见原因有这几类：
+
+**配置层面**
+- Mail 收件人地址写错或者不存在
+- Mail 2 没有正确配置（该开的没开，或者配置了错误的条件）
+- 表单 shortcode 被删除但页面还挂着旧配置
+
+**发送层面**
+- WordPress 的 SMTP 配置失效（证书过期、密码变更等）
+- 发件人地址被邮件服务商列入限制
+- 某封测试邮件触发了速率限制
+
+**集成层面**
+- Zapier webhook 地址失效（Zapier Zap 被暂停或 URL 变更）
+- Flamingo 数据库写入异常
+
+我不需要检查所有可能的问题，只需要检查最常见、影响最大的那几项，并且让通知足够清晰，收到告警的人能立刻知道去哪里排查。
+
+---
+
+## 实现：WP-Cron + 邮件通知
+
+WordPress 的 WP-Cron 可以注册定时任务，在指定间隔执行自定义函数。我把健康检查设置为每天早上 8 点运行一次。
+
+```php
+// 注册定时任务
+if ( ! wp_next_scheduled( 'goeast_cf7_health_check' ) ) {
+    wp_schedule_event( strtotime( 'tomorrow 08:00:00' ), 'daily', 'goeast_cf7_health_check' );
+}
+
+add_action( 'goeast_cf7_health_check', 'goeast_run_cf7_health_check' );
+```
+
+检查逻辑的核心是遍历所有 CF7 表单，对每张表单运行一组检查函数：
+
+```php
+function goeast_run_cf7_health_check() {
+    $forms   = WPCF7_ContactForm::find();
+    $issues  = [];
+
+    foreach ( $forms as $form ) {
+        $form_issues = [];
+
+        // 检查 Mail 收件人是否有效
+        $mail = $form->prop( 'mail' );
+        if ( empty( $mail['recipient'] ) || ! is_email( $mail['recipient'] ) ) {
+            $form_issues[] = 'Mail 收件人地址无效或为空';
+        }
+
+        // 检查 Mail 2 是否启用且配置完整
+        $mail2 = $form->prop( 'mail_2' );
+        if ( $mail2['active'] && empty( $mail2['recipient'] ) ) {
+            $form_issues[] = 'Mail 2 已启用但收件人为空';
+        }
+
+        // 检查关联的 Zapier webhook（如果有配置）
+        // 这里用 wp_remote_get 做一次轻量 ping 检测
+        $webhook_url = get_post_meta( $form->id(), '_goeast_zapier_webhook', true );
+        if ( $webhook_url ) {
+            $response = wp_remote_get( $webhook_url, [ 'timeout' => 5 ] );
+            if ( is_wp_error( $response ) ) {
+                $form_issues[] = 'Zapier webhook 无响应：' . $response->get_error_message();
+            }
+        }
+
+        if ( ! empty( $form_issues ) ) {
+            $issues[ $form->title() ] = $form_issues;
+        }
+    }
+
+    // 有问题就发通知
+    if ( ! empty( $issues ) ) {
+        goeast_send_cf7_alert( $issues );
+    }
+}
+```
+
+通知邮件的格式刻意设计得很简单：哪张表单、有什么问题、建议去哪里检查。不需要漂亮，需要清晰。
+
+---
+
+## Flamingo 收件箱的显示修复
+
+做这个插件的过程中，我顺便修复了一个 Flamingo 的显示问题。
+
+Flamingo 是 CF7 配套的消息存档插件，所有表单提交都会保存在 Flamingo 的 Inbound Messages 里。但 GoEast 有几张表单的提交在 Flamingo 后台显示时，中文字段的内容出现了乱码或截断。
+
+原因是这几张表单的字段 name 属性用了中文或特殊字符，Flamingo 在存储和展示时没有正确处理 encoding。修复方式是把所有表单字段的 name 统一改成小写英文加连字符（如 `student-name`、`learning-goal`），同时确保数据库 collation 是 `utf8mb4_unicode_ci`。
+
+这个改动不影响表单的前端显示，但让 Flamingo 后台的数据可读性大幅提升，销售团队不再需要从乱码里猜用户填的是什么。
+
+---
+
+## 一个小但重要的运维习惯
+
+这个健康检查器本身不复杂，代码量不大，但它解决的问题是真实的：**关键业务链路需要主动监控，不能依赖人来发现问题。**
+
+GoEast 的表单是 leads 进入系统的入口。如果这个入口出了问题，后面的 CRM 流程、邮件 nurture、销售跟进全都是空的。
+
+我后来把这个逻辑延伸到了其他地方：Zapier Zap 的运行状态、Brevo 的发件记录、Salesforce 的同步日志——有条件的地方都加了某种形式的异常通知。不需要每天盯着仪表盘，只需要有问题的时候被告知。
+
+---
+
+这篇文章是 [GoEast Mandarin 全案复盘](/blog/goeast-mandarin-case-study) 的一部分。
+
+双发件人插件的实现和那次 bug 的完整过程：[CF7 双发件人 mu-plugin](/blog/cf7-dual-sender-email-plugin)。
+
+表单数据进入 CRM 之后的完整链路：[Salesforce + Brevo + Zapier：全链路 CRM 搭建](/blog/salesforce-brevo-zapier-crm)。

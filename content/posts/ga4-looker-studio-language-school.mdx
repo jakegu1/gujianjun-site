@@ -1,0 +1,110 @@
+---
+title: "GA4 + Looker Studio 仪表盘：让数据从「有」变成「可用」"
+description: "GoEast 有三条完全不同的业务线——在线成人课程、上海线下校区、儿童中文课。把它们的数据混在一起看，等于什么都没看。这篇文章记录我如何用 GA4 + Looker Studio 搭建一套真正能支撑决策的 analytics 体系。"
+date: "2026-04-20"
+tags: ["GoEast", "case-study", "seo"]
+category: "case-study"
+client: "GoEast Mandarin"
+---
+
+大多数网站都有 Google Analytics。但"有数据"和"能用数据做决策"之间，有一段很长的距离。
+
+我刚加入 GoEast 的时候，GA 是已经连接好了，数据在跑，但几乎没人在看。不是因为没人关心，而是那些数字没办法直接回答任何业务问题。
+
+问题不在数据少，在数据没有被正确切分。
+
+---
+
+## 三条业务线混在一张报告里
+
+GoEast 同时运营三个方向差异极大的业务：**在线成人课程**（面向全球学员，英语为主，leads 来自 Google Ads 和 SEO，关键转化是表单提交）、**上海线下校区**（徐汇 + 中山公园，本地学员，中英混合，关键转化是预约试听）、**儿童中文课 K12**（家长决策，以 Kids Camp 和学期课为主，季节性很强）。
+
+这三条业务线的用户、页面、转化路径、广告投放全都不一样。但在默认的 GA4 报告里，流量全部加在一起——一个总数，什么都能说明，又什么都说明不了。
+
+要让数据真正有用，第一步是把这三条线拆开。
+
+---
+
+## 方案：用 regex 在 GA4 里切分流量
+
+GA4 的"自定义维度"和 Looker Studio 的"正则表达式过滤器"结合起来，可以按 URL 结构拆分流量，不需要额外的追踪代码，也不需要改网站。
+
+GoEast 的 URL 结构有一定规律：儿童课程相关页面的 path 里通常包含 `/kids/` 或 `/chinese-for-children/`；上海线下校区的页面集中在 `/shanghai/` 路径下；成人在线课程覆盖剩余的主要页面。
+
+在 Looker Studio 里，我为每条业务线建了独立的数据过滤器：
+
+```
+在线成人课程：
+排除包含 /kids/、/chinese-for-children/、/shanghai/ 的 URL
+
+上海线下校区：
+仅包含 /shanghai/ 的 URL
+
+儿童中文课：
+仅包含 /kids/ 或 /chinese-for-children/ 的 URL
+```
+
+这样三个 segment 的流量就完全独立，可以分别追踪各自的用户量、来源、转化路径。
+
+---
+
+## 仪表盘结构：按决策需求设计，不按数据维度设计
+
+很多人搭 analytics 仪表盘的思路是"把能展示的数据都放上去"，结果是一张密密麻麻的报告，每次打开都要花时间找自己需要的数字。
+
+我的原则是：每个模块只回答一个问题。
+
+**模块 1 — 整体流量健康**
+> 这周/这月的自然搜索流量和上期比怎么样？哪个 channel 有异常？
+
+包含：总 sessions 趋势、channel 拆分（Organic / Paid / Direct / Referral）、周环比变化。
+
+**模块 2 — SEO 表现（按业务线）**
+> 每条业务线的 organic 流量分别在增长还是下降？
+
+三个 segment 各自的 organic sessions 趋势，独立展示。这样一眼就能看出是整体流量波动，还是某条业务线的单独问题。
+
+**模块 3 — Google Ads 归因**
+> 每条广告 campaign 带来了多少表单提交？CPL 是多少？
+
+GA4 的 conversion tracking 和 Google Ads 的 conversion import 打通，配合 Acuity 预约事件的追踪（这部分单独是一个工程，详见：[Acuity + Google Ads 转化追踪](/blog/acuity-google-ads-conversion-tracking)）。
+
+**模块 4 — GSC 关键词监控**
+> 哪些关键词的排名在提升？哪些在下滑？CTR 和 impressions 的变化趋势如何？
+
+通过 Looker Studio 的 Search Console 数据源直接接入，可以按 query、按 URL 查看 impressions、clicks、CTR、position 的变化，不需要每次进 GSC 手动查。
+
+**模块 5 — 内容表现**
+> 哪些博客文章带来了最多的 organic 流量？哪些页面的跳出率异常高？
+
+按 landing page 维度展示 organic sessions 和 bounce rate，帮助判断哪些内容需要优化、哪些选题值得继续做。
+
+---
+
+## 几个让仪表盘真正被用起来的细节
+
+**日期对比默认开启。** 我把 Looker Studio 的默认日期范围设成「最近 28 天 vs 上期 28 天」，打开就能直接看到环比变化，不需要每次手动调整。
+
+**颜色编码有意义。** 增长用绿色，下降用红色，持平用灰色。听起来很基础，但很多报告的颜色只是装饰，没有信息含量。
+
+**关键指标放第一屏。** CEO Emily 在加拿大，她不会每天花时间研究报告。我把最重要的 3 到 5 个数字——本月 organic sessions、Top 10 关键词数量、本月表单提交总数——做成大字 scorecard 放在最顶部，15 秒能看完的信息。
+
+**有异常就主动说。** 仪表盘本身是被动的，它不会提醒你什么。我的习惯是每周花 10 分钟看一遍数据，如果有明显波动，主动在飞书里写一段说明——数字是什么、可能的原因是什么、需要做什么。这个习惯让数据真正进入了工作流，而不只是挂在那里的一张图。
+
+---
+
+## analytics 体系和 SEO 策略的关系
+
+这套仪表盘不只是「汇报工具」，它是 SEO 决策的基础。
+
+比如，我发现某条业务线的 organic traffic 在某段时间停止增长，但其他业务线在继续涨——这说明是选题方向的问题，而不是技术或外链的问题。如果数据都混在一起，这个信号就被平均掉了。
+
+再比如，GSC 数据里某个关键词的 impressions 在快速上升但 CTR 很低——这通常意味着排名在第一页底部，title 或 meta description 需要优化来提升点击率。这类洞察只有在持续盯着数据的情况下才能发现。
+
+---
+
+这篇文章是 [GoEast Mandarin 全案复盘](/blog/goeast-mandarin-case-study) 的一部分。
+
+关于 SEO 增长策略本身，详见：[GoEast SEO 增长：从 10K 到 30K+ 自然点击](/blog/goeast-seo-organic-growth)。
+
+关于 GEO 和 AI 引用追踪，我在 analytics 体系里也加入了 AI 来源的监测，详见：[GEO AI 引用追踪：我如何衡量内容在 AI 搜索里的可见度](/blog/geo-ai-citation-tracking)。

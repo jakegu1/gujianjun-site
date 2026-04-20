@@ -1,0 +1,111 @@
+---
+title: "CF7 双发件人 mu-plugin：让表单同时给用户和内部发不同的邮件"
+description: "Contact Form 7 原生只支持一个发件逻辑。我需要让同一个表单提交后，给用户发一封确认邮件、给内部团队发一封格式完全不同的通知邮件。这篇文章记录实现方案，以及那个差点让网站表单全线中断的 bug。"
+date: "2026-04-20"
+tags: ["GoEast", "case-study", "wordpress", "martech"]
+category: "case-study"
+client: "GoEast Mandarin"
+---
+
+GoEast 的网站表单有一个很具体的需求：同一个表单提交之后，需要同时发出两封邮件。
+
+一封发给填表的用户——格式友好，内容是"我们收到了你的信息，会在 X 小时内联系你，这是你填写的内容摘要"。
+
+另一封发给内部团队——格式紧凑，内容是完整的表单数据，方便销售直接跟进，不用从 Flamingo 后台一条条去翻。
+
+Contact Form 7 原生不支持这个。它有一个 Mail 配置和一个 Mail 2 配置，但两个发件逻辑是串行的，格式上也没法做到真正独立。
+
+解决方案是写一个 mu-plugin，hook 进 WordPress 的邮件发送流程，在 CF7 提交时拦截并分别处理两封邮件的发送。
+
+---
+
+## 实现思路
+
+CF7 提交时会触发 `wpcf7_before_send_mail` 这个 action hook，之后走 WordPress 的 `phpmailer` 发送流程。
+
+最直接的思路是 hook 进 `phpmailer_init`，在这里检查当前是哪个 CF7 表单在发送，然后根据不同的表单 ID 设不同的收件人、标题和正文。
+
+```php
+add_action( 'phpmailer_init', function( $phpmailer ) {
+    // 判断当前是用户确认邮件还是内部通知邮件
+    // 修改 $phpmailer->AddAddress()、Subject、Body
+} );
+```
+
+方向是对的，但有一个关键问题：**在 `phpmailer_init` 里，你已经脱离了 CF7 的上下文。**
+
+---
+
+## 那次让表单全线中断的 bug
+
+`phpmailer_init` 是一个 WordPress 核心 hook，在邮件即将发出的时候触发。这时候 CF7 的表单对象（`WPCF7_Submission`）理论上还在内存里，可以通过 `WPCF7_Submission::get_instance()` 拿到。
+
+我最初的实现里，在 `phpmailer_init` 里调用了 `get_instance()` 来读 CF7 的 mail component 配置，判断当前是第一封邮件还是第二封。
+
+这段代码在本地测试环境完全正常。但上线之后，GoEast 的网站表单全线中断，所有提交都没有邮件发出，Flamingo 里也没有记录。
+
+我花了一个下午定位这个问题。
+
+根本原因在于：`WPCF7_Submission::get_instance()` 在某些情况下会触发 CF7 内部的状态检查，而这个状态检查在 `phpmailer_init` 的时机里会导致 CF7 认为当前提交出现了异常，进而中止整个发送流程。
+
+也就是说：在 `phpmailer_init` 里读取 CF7 的 mail component state，会干扰 CF7 自己的发送状态管理，最终让表单提交静默失败。
+
+**解决方案：在 CF7 自己的 hook 里提前把需要的信息存起来，不在 `phpmailer_init` 里依赖 CF7 的状态。**
+
+---
+
+## 正确的实现方式
+
+用一个 static 变量做临时缓冲区，在 CF7 的 `wpcf7_before_send_mail` 阶段把表单 ID 和邮件序号存下来，`phpmailer_init` 里只读这个缓冲区，不再碰 CF7 的实例。
+
+```php
+// 在 CF7 上下文里存好信息
+add_action( 'wpcf7_before_send_mail', function( $contact_form, &$abort, $submission ) {
+    // 记录当前表单 ID 和发送序号
+    GoEast_CF7_Mailer::set_context( $contact_form->id(), $submission );
+}, 10, 3 );
+
+// phpmailer_init 里只读缓冲区，不碰 CF7
+add_action( 'phpmailer_init', function( $phpmailer ) {
+    $ctx = GoEast_CF7_Mailer::get_context();
+    if ( ! $ctx ) return;
+
+    if ( $ctx['is_user_mail'] ) {
+        $phpmailer->clearAllRecipients();
+        $phpmailer->addAddress( $ctx['user_email'] );
+        $phpmailer->Subject = '我们收到了你的信息';
+        $phpmailer->Body    = $ctx['user_body'];
+    } else {
+        $phpmailer->clearAllRecipients();
+        $phpmailer->addAddress( GOEAST_INTERNAL_EMAIL );
+        $phpmailer->Subject = '[新询盘] ' . $ctx['form_title'];
+        $phpmailer->Body    = $ctx['internal_body'];
+    }
+} );
+```
+
+关键是 `wpcf7_before_send_mail` 和 `phpmailer_init` 之间用 static 变量传递信息，两个 hook 的职责完全分开。
+
+这个版本上线之后稳定运行，没再出现过表单中断。
+
+---
+
+## 为什么做成 mu-plugin 而不是普通插件
+
+GoEast 网站上有其他插件，普通插件的加载顺序不能保证。mu-plugin（必须使用插件）在所有普通插件之前加载，确保 hook 注册在 CF7 初始化之前完成，不会因为加载顺序问题出现偶发性失效。
+
+另外，mu-plugin 不会被意外停用。GoEast 的 WordPress 后台有多人可以访问，普通插件有被不小心停用的风险，表单是业务核心链路，不能冒这个风险。
+
+---
+
+## 配套：表单健康检查器
+
+这次 bug 之后，我意识到网站表单的状态需要有主动监控——不能等用户反馈"我发了表单但没收到确认邮件"才发现问题。
+
+于是我写了另一个 mu-plugin，每天用 WP-Cron 自动扫描所有 CF7 表单的配置和发送状态，有异常就推送通知给管理员。
+
+详见：[CF7 表单健康检查器：用 WP-Cron 做自动化监控](/blog/cf7-form-health-checker)。
+
+---
+
+这篇文章是 [GoEast Mandarin 全案复盘](/blog/goeast-mandarin-case-study) 的一部分。
