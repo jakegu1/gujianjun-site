@@ -107,6 +107,115 @@ export default function HomeClient({ posts }: { posts: Post[] }) {
         </div>
       </section>
 
+      {/* ── Featured Case Study ── */}
+      <section className="py-24 px-6 border-t border-gray-900 relative overflow-hidden">
+        {/* ambient glow */}
+        <div
+          className="absolute inset-0 pointer-events-none opacity-60"
+          style={{
+            background:
+              'radial-gradient(ellipse at 20% 50%, rgba(241,90,101,0.08) 0%, transparent 50%), radial-gradient(ellipse at 80% 50%, rgba(90,127,241,0.05) 0%, transparent 50%)',
+          }}
+        />
+        <div className="relative max-w-4xl mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="mb-10"
+          >
+            <span className="text-xs font-mono text-[#f15a65] tracking-widest uppercase">
+              Featured Case Study
+            </span>
+            <h2 className="text-3xl md:text-4xl font-bold mt-2">在 GoEast 的三年</h2>
+            <p className="text-gray-500 text-sm mt-2">
+              一个人，从零搭建一套完整的数字营销体系
+            </p>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 24 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+          >
+            <Link
+              href="/blog/goeast-mandarin-case-study"
+              className="group block rounded-2xl border border-white/[0.08] bg-gradient-to-br from-white/[0.03] to-white/[0.01] backdrop-blur-sm p-8 md:p-10 hover:border-[#f15a65]/40 hover:from-[#f15a65]/[0.06] hover:to-white/[0.02] transition-all duration-500"
+            >
+              <div className="flex flex-col lg:flex-row gap-8 lg:gap-12">
+                {/* Left: narrative */}
+                <div className="flex-1 min-w-0">
+                  <div className="flex items-center gap-3 mb-4">
+                    <span className="inline-flex items-center gap-1.5 text-[11px] font-mono text-[#f15a65]/90 tracking-widest uppercase border border-[#f15a65]/25 rounded-full px-3 py-1 bg-[#f15a65]/[0.06]">
+                      <span className="w-1.5 h-1.5 rounded-full bg-[#f15a65] animate-pulse" />
+                      2023 – 2026
+                    </span>
+                    <span className="text-xs text-gray-500">GoEast Mandarin</span>
+                  </div>
+
+                  <h3 className="text-2xl md:text-3xl font-bold text-white leading-tight mb-4 group-hover:text-[#ff8a65] transition-colors">
+                    从零搭建一套数字营销体系
+                  </h3>
+
+                  <p className="text-[15px] text-gray-400 leading-relaxed mb-6">
+                    独立负责 SEO、GEO、Google Ads 和整套 MarTech 基础设施。
+                    没有团队、没有前任文档——三年里我把它做成了一个真正可靠的系统。
+                    这篇不只是成果汇报，更是对这段经历的真实回顾：学到了什么、搞砸过什么、以及为什么它是我职业生涯里最重要的阶段。
+                  </p>
+
+                  <div className="flex flex-wrap gap-2 mb-6">
+                    {['SEO', 'GEO', 'Google Ads', 'MarTech', 'Lead Gen'].map((t) => (
+                      <span
+                        key={t}
+                        className="text-xs text-gray-400 bg-white/[0.04] border border-white/[0.06] px-2.5 py-1 rounded"
+                      >
+                        {t}
+                      </span>
+                    ))}
+                  </div>
+
+                  <span className="inline-flex items-center gap-2 text-[#f15a65] font-medium text-sm group-hover:gap-3 transition-all">
+                    阅读完整 Case Study
+                    <span className="transition-transform group-hover:translate-x-1">→</span>
+                  </span>
+                </div>
+
+                {/* Right: metrics */}
+                <div className="lg:w-72 shrink-0 grid grid-cols-2 gap-4 content-start">
+                  {[
+                    { v: '3×', l: '自然点击增长', s: '10K → 30K+' },
+                    { v: '65', l: '关键词 Top 10', s: 'Google SERP' },
+                    { v: '60', l: 'GEO 文章矩阵', s: '~199K 词' },
+                    { v: '$5', l: '成人课 CPL', s: 'Google Ads' },
+                  ].map((m, i) => (
+                    <motion.div
+                      key={m.l}
+                      initial={{ opacity: 0, scale: 0.9 }}
+                      whileInView={{ opacity: 1, scale: 1 }}
+                      viewport={{ once: true }}
+                      transition={{ duration: 0.5, delay: 0.2 + i * 0.08 }}
+                      className="rounded-lg border border-white/[0.06] bg-white/[0.02] p-4 group-hover:border-[#f15a65]/20 transition-colors"
+                    >
+                      <div className="text-2xl md:text-3xl font-bold bg-gradient-to-r from-[#f15a65] to-[#ff8a65] bg-clip-text text-transparent leading-none mb-1.5">
+                        {m.v}
+                      </div>
+                      <div className="text-[11px] text-gray-300 font-medium leading-tight">
+                        {m.l}
+                      </div>
+                      <div className="text-[10px] text-gray-600 font-mono mt-0.5">
+                        {m.s}
+                      </div>
+                    </motion.div>
+                  ))}
+                </div>
+              </div>
+            </Link>
+          </motion.div>
+        </div>
+      </section>
+
       {/* ── Featured Articles ── */}
       <section className="py-24 px-6 border-t border-gray-900">
         <div className="max-w-4xl mx-auto">
