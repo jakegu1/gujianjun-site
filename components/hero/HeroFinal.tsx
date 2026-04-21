@@ -954,7 +954,7 @@ export default function HeroFinal() {
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ duration: 1, delay: 1.6 }}
+            transition={{ duration: 0.8, delay: 0.7 }}
             style={{ marginTop: spacing.guToSub }}
             className="text-[13px] md:text-[14px] text-white/65 max-w-2xl text-center leading-[1.65] font-light space-y-1"
           >
@@ -965,7 +965,7 @@ export default function HeroFinal() {
           <motion.div
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1, delay: 1.9 }}
+            transition={{ duration: 0.8, delay: 1.2 }}
             style={{ marginTop: spacing.subToCTA }}
             className="flex gap-4"
           >
