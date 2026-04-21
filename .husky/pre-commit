@@ -1,0 +1,14 @@
+# Validate YAML frontmatter of staged .md / .mdx files under content/.
+# Catches bugs like unescaped ASCII quotes inside double-quoted YAML values
+# which break `next build` and silently roll back Vercel deploys.
+
+staged=$(git diff --cached --name-only --diff-filter=ACMR -- 'content/**/*.md' 'content/**/*.mdx')
+
+if [ -n "$staged" ]; then
+  # shellcheck disable=SC2086
+  node scripts/check-frontmatter.mjs $staged || {
+    echo ""
+    echo "✖ commit aborted: fix the frontmatter issue(s) above, then \`git add\` and retry."
+    exit 1
+  }
+fi
