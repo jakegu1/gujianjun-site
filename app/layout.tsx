@@ -61,6 +61,8 @@ export default function RootLayout({
   return (
     <html lang="zh-CN" suppressHydrationWarning>
       <head suppressHydrationWarning>
+        {/* impact.com 站点所有权验证 */}
+        <meta name="impact-site-verification" value="e79075e8-a7fb-439b-9b93-a622afc2e859" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(globalSchema) }}
