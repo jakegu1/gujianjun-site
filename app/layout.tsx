@@ -53,6 +53,13 @@ const globalSchema = {
   ],
 }
 
+// impact.com 站点所有权验证。impact 要求的是非标准的 value= 属性（不是 content=），
+// React 的 meta 类型里没有 value，所以这里断言后展开。
+const impactVerification = {
+  name: 'impact-site-verification',
+  value: 'e79075e8-a7fb-439b-9b93-a622afc2e859',
+} as React.MetaHTMLAttributes<HTMLMetaElement>
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -61,8 +68,7 @@ export default function RootLayout({
   return (
     <html lang="zh-CN" suppressHydrationWarning>
       <head suppressHydrationWarning>
-        {/* impact.com 站点所有权验证 */}
-        <meta name="impact-site-verification" value="e79075e8-a7fb-439b-9b93-a622afc2e859" />
+        <meta {...impactVerification} />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(globalSchema) }}
