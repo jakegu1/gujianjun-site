@@ -57,7 +57,7 @@ const globalSchema = {
 // React 的 meta 类型里没有 value，所以这里断言后展开。
 const impactVerification = {
   name: 'impact-site-verification',
-  value: 'e79075e8-a7fb-439b-9b93-a622afc2e859',
+  value: 'b80ac170-00e1-4bfb-b9be-6dba9485aa94',
 } as React.MetaHTMLAttributes<HTMLMetaElement>
 
 export default function RootLayout({
