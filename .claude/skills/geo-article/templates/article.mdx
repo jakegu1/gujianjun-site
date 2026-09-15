@@ -1,0 +1,92 @@
+---
+title: "中文标题：含主关键词，有 Jake 的判断，不是 config 英文标题的直译，不用「完全指南」"
+date: "YYYY-MM-DD"
+excerpt: "一句话摘要，含主关键词，读者在搜索结果里看到的就是它。值里不能出现英文双引号。"
+tags: ["GEO", "标签2", "标签3", "支柱名"]
+pillar: "支柱名（必须是 pillarOrder 里的 11 个之一）"
+articleId: "P0-00"
+---
+
+# 与 title 完全一致的 H1
+
+**第一句就是结论，命题式（X 是 Y / X 导致 Y），带数据和可打开的来源链接。** 第二三句说为什么这件事值得读者花时间。
+
+核心要点先放在这里，后面逐个展开：
+
+1. **要点一** — 一句话说清
+2. **要点二** — 一句话说清
+3. **要点三** — 一句话说清
+
+---
+
+## 有态度的 H2（含关键词）
+
+首句直接给这一节的结论。然后是证据：数据、对比、代码、或"我测过"的经历。
+
+**改写前**（错误示范）：……
+
+**改写后**（正确示范）：……
+
+这一节结束前，告诉读者接下来该做什么。
+
+## 下一个 H2
+
+……
+
+## 常见问题
+
+### 问题一？
+
+第一句就是答案。再补 1–3 句支撑，答案要能脱离上下文独立成立。
+
+### 问题二？
+
+……
+
+### 问题三？
+
+……
+
+```json
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "@id": "https://gujianjun.net/geo/{slug}/#article",
+      "headline": "与 title 一致",
+      "description": "与 excerpt 一致",
+      "datePublished": "YYYY-MM-DD",
+      "dateModified": "YYYY-MM-DD",
+      "author": {
+        "@type": "Person",
+        "@id": "https://gujianjun.net/#person",
+        "name": "Jake Gu",
+        "url": "https://gujianjun.net",
+        "sameAs": ["https://www.linkedin.com/in/%E7%AE%80%E9%92%A7-%E9%A1%BE-28204b16a/"],
+        "jobTitle": "GEO & SEO Specialist",
+        "knowsAbout": ["Generative Engine Optimization", "GEO", "SEO", "AI Search Optimization", "数字营销"]
+      },
+      "publisher": { "@type": "Organization", "name": "gujianjun.net" },
+      "url": "https://gujianjun.net/geo/{slug}/",
+      "inLanguage": "zh-CN"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "首页", "item": "https://gujianjun.net" },
+        { "@type": "ListItem", "position": 2, "name": "GEO 教程系列", "item": "https://gujianjun.net/geo" },
+        { "@type": "ListItem", "position": 3, "name": "本文短标题", "item": "https://gujianjun.net/geo/{slug}/" }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        { "@type": "Question", "name": "问题一？", "acceptedAnswer": { "@type": "Answer", "text": "与正文 FAQ 完全一致的答案。" } },
+        { "@type": "Question", "name": "问题二？", "acceptedAnswer": { "@type": "Answer", "text": "……" } },
+        { "@type": "Question", "name": "问题三？", "acceptedAnswer": { "@type": "Answer", "text": "……" } }
+      ]
+    }
+  ]
+}
+```

@@ -8,7 +8,13 @@
     "start": "next start",
     "lint": "next lint",
     "check:frontmatter": "node scripts/check-frontmatter.mjs",
-    "prepare": "husky"
+    "prepare": "husky",
+    "geo:status": "node scripts/geo-status.mjs",
+    "geo:brief": "node scripts/geo-brief.mjs",
+    "geo:lint": "node scripts/geo-lint.mjs",
+    "geo:publish": "node scripts/geo-publish.mjs",
+    "docs:owner": "node scripts/owner.mjs --write",
+    "docs:check": "node scripts/docs-check.mjs"
   },
   "dependencies": {
     "@keystatic/core": "^0.5.48",
