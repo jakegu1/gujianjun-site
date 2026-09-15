@@ -99,7 +99,7 @@ This is the core methodology. The articles in this series should themselves be e
 ### Content Layer (What the words say)
 
 6. **Propositional writing**: Make definitive claims backed by evidence. "Schema markup increases AI citation probability by making entity relationships machine-readable" > "Schema markup is helpful for GEO."
-7. **Include quotable statistics**: At least 2-3 per article. If exact data isn't available, use realistic estimates with clear attribution: "According to [Source], approximately X% of..."
+7. **Include quotable statistics**: At least 2-3 per article, each with its 口径 (time range + data source) and a real, verified link. If exact data isn't available, do NOT estimate and do NOT invent a source: write `【待补：what is missing】` or drop the claim. (Rule changed 2026-09-15 — the old "use realistic estimates" wording violated the zero-fabrication 铁律 in docs/BRIEF.md.)
 8. **FAQ section**: Every article MUST end with a dedicated FAQ section containing 3-5 Q&As. Each answer should be 2-4 sentences, self-contained, and directly answer the question. Format using proper FAQ structure.
 9. **Comparison tables**: Include at least one comparison table per article where relevant (tools, approaches, platforms, before/after).
 10. **Definition boxes**: When introducing a key term for the first time, give it a clear, standalone definition that could be extracted as a snippet.
