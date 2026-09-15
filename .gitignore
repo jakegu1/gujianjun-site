@@ -42,3 +42,9 @@ next-env.d.ts
 
 # tina cms
 .tina/__generated__
+
+# personal / private material — never belongs in this public repo
+/*.pdf
+/*.txt
+*.private.md
+CLAUDE.local.md
