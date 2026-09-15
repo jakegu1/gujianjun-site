@@ -12,3 +12,14 @@ if [ -n "$staged" ]; then
     exit 1
   }
 fi
+
+# Ledger / instrument changes: generated pages must regenerate identically, gates must not be
+# overdue, personal files must stay ignored. Runs only when the relevant paths are staged.
+docs_staged=$(git diff --cached --name-only --diff-filter=ACMR -- 'docs/*' 'scripts/*' 'AGENTS.md' 'CLAUDE.md' '.claude/*' '.hermes/*' 'app/*')
+if [ -n "$docs_staged" ]; then
+  node scripts/docs-check.mjs || {
+    echo ""
+    echo "docs-check failed (see above). If a generated page differs, run: node scripts/owner.mjs --write, then git add docs/OWNER.md docs/STATUS.md and retry."
+    exit 1
+  }
+fi
