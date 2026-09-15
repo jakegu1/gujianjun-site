@@ -79,7 +79,7 @@ export default function BlogPage() {
                     { v: '3×', l: '自然点击' },
                     { v: '65', l: 'Top 10 关键词' },
                     { v: '2K+', l: 'AI 月引荐' },
-                    { v: '60', l: 'GEO 文章' },
+                    { v: String(geoPosts.length), l: 'GEO 文章' },
                   ].map((m) => (
                     <div
                       key={m.l}

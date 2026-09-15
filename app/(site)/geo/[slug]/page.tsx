@@ -3,6 +3,10 @@ import Link from 'next/link'
 import remarkGfm from 'remark-gfm'
 import { getAllGeoPosts, getGeoPostBySlug } from '@/lib/geo-posts'
 
+// Unknown slugs must 404, not 500: getGeoPostBySlug reads the file without a guard.
+// With this flag Next only serves the params from generateStaticParams (rebuilt on every push).
+export const dynamicParams = false
+
 function extractJsonLd(content: string) {
   const match = content.match(/```json\n(\{[\s\S]*?\})\n```/)
   if (!match) return { cleanContent: content, jsonLd: null }

@@ -3,6 +3,10 @@ import Link from 'next/link'
 import remarkGfm from 'remark-gfm'
 import { getAllPosts, getPostBySlug } from '@/lib/posts'
 
+// Unknown slugs must 404, not 500: getPostBySlug reads the file without a guard.
+// With this flag Next only serves the params from generateStaticParams (rebuilt on every push).
+export const dynamicParams = false
+
 function extractJsonLd(content: string) {
   const match = content.match(/```json\n(\{[\s\S]*?\})\n```/)
   if (!match) return { cleanContent: content, jsonLd: null }
