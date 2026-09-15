@@ -43,8 +43,12 @@
 将以下内容按顺序组合成完整 prompt：
 
 1. **System prompt**：读取 `geo/geo-article-prompt-template.md` 中 ` ``` ` 代码块内的完整 system prompt
-2. **风格指南**：读取 `geo/jake-writing-style-guide.md` 全文，作为 system prompt 的补充上下文
-3. **变量替换**：用 Step 1 提取的文章数据，替换 prompt 中的所有 `{{变量}}`：
+2. **风格指南**：读取 `geo/jake-writing-style-guide.md` 全文，作为 system prompt 的补充上下文（含 Feedback Log，最新反馈优先级最高）
+3. **案例库**：读取 `geo/jake-geo-cases.md`，根据文章主题搜索对应模块，提取相关案例。案例使用规则：
+   - 🔵 Jake 实测案例 → 第一人称叙述，优先使用
+   - 🟡 行业案例 → 第三方视角，补充 Jake 没有直接经验的领域
+   - 🟢 数据/研究 → 命题式陈述的支撑弹药，引用时注意文件中的 ⚠️ 注释
+4. **变量替换**：用 Step 1 提取的文章数据，替换 prompt 中的所有 `{{变量}}`：
    - `{{title}}` → 文章标题
    - `{{url}}` → 文章 URL
    - `{{content_brief}}` → 内容摘要
@@ -150,7 +154,8 @@ git push
 |------|------|
 | 文章配置（60篇数据） | `geo/geo_agent_config.json` |
 | Prompt 模板 | `geo/geo-article-prompt-template.md` |
-| 写作风格指南 | `geo/jake-writing-style-guide.md` |
+| 写作风格指南（含反馈日志） | `geo/jake-writing-style-guide.md` |
+| 实测案例与行业案例库 | `geo/jake-geo-cases.md` |
 | 文章保存目录 | `content/geo/` |
 | 图片保存目录 | `public/images/posts/` |
 
@@ -174,4 +179,4 @@ A：在文章中用 `![alt text](/images/posts/filename.png)` 占位。实际图
 A：没有严格限制，但建议复用这些常见标签：GEO, SEO, AI搜索, RAG, 内容策略, 技术SEO, Schema Markup, Perplexity, ChatGPT, Google AI Overview
 
 **Q：文章语言是中文还是英文？**
-A：英文。这是面向国际读者的 GEO 教程系列。参考 jake-writing-style-guide.md 中的双语模式——主体英文，偶尔自然地使用中文术语。
+A：中文。这是面向国际读者的 GEO 教程系列。参考 jake-writing-style-guide.md 中的双语模式——主体中文，偶尔自然地使用中英文术语。
