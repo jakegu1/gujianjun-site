@@ -1,8 +1,8 @@
 # gujianjun.net · 主人页
 
-<!-- generated: 2026-09-15T06:51:42.390Z by scripts/owner.mjs (OWNER) — do not edit; regenerate with: node scripts/owner.mjs --write -->
+<!-- generated: 2026-11-11T17:23:49.280Z by scripts/owner.mjs (OWNER) — do not edit; regenerate with: node scripts/owner.mjs --write -->
 
-生成于 2026-09-15。这一页是脚本从仓库算出来的，不是手写的：改了源头就跑 `node scripts/owner.mjs --write`，手改会被 `node scripts/docs-check.mjs` 打回。
+生成于 2026-11-11。这一页是脚本从仓库算出来的，不是手写的：改了源头就跑 `node scripts/owner.mjs --write`，手改会被 `node scripts/docs-check.mjs` 打回。
 
 ## 1. 这是什么，现在最要紧的一个问题
 
@@ -14,18 +14,18 @@
 
 | ID | 事项 | 截止 | 还剩 | 为什么是这个日期 | 做完的标志 | 卡在哪 | 如果你什么都不做 |
 |---|---|---|---|---|---|---|---|
-| W1 | 提供素材包：在 `docs/facts/` 里放你的真实数据，每条带口径（时间范围 + 来源）和"可公开 / 脱敏"标记 | 2026-09-22 | 7 天 | 下一篇文章（P0-01）和 T5 复查都要它；晚一周，写作就停一周 | `docs/facts/` 至少有一个文件，`docs/BRIEF.md` §5 第 1 条不再写"尚不存在" | 不卡 | 新文章要么满是【待补】要么只能复述旧文；18 篇案例的口径复查（T5）无法进行 |
-| W2 | 逐条确认已上线的商业绝对值可不可以公开：`$5 CPL`、`$400 预算`、三天 1,500 封邮箱、10K→30K 自然点击、65 个 Top 10 词、2K+ AI 月引荐 | 2026-09-22 | 7 天 | 这些已经挂在线上；铁律 4 说没标"可公开"的绝对值不该出现 | 每个数字在素材包里有"可公开"或"改相对值"标记；T5 据此改写 | 不卡 | 线上继续挂着可能违反保密要求的数字，而且被追问时你没有口径 |
-| W5 | 确认或改写门槛 G1（2026-10-31：≥ 6 篇新 GEO 文章且断链为 0，否则把计划从 60 缩到 Phase 1 的 31 篇） | 2026-09-22 | 7 天 | 门槛只能在到期前改，而且只能改严 | `docs/STRATEGY.md` 的 G1 行"结论"格之前的"问题"格前面加上"（Jake 已确认 日期）" | 不卡 | 到期那天 docs-check 变红，逼你当天回答；规则是我定的不是你定的 |
-| W3 | 决定规范域名：`www.gujianjun.net`（推荐，Vercel 现在把不带 www 的 307 跳到它）还是不带 www | 2026-09-30 | 15 天 | 之后每篇文章的 JSON-LD 都按这个写，越晚改越多 | `AGENTS.md` 写明规范域名；T6 做完后全站只剩一种写法 | 不卡 | 17 篇文章的 url 和 @id 与实际域名不一致，实体信号打折 |
-| W4 | 决定实体命名：JSON-LD 的 `name` 用 Jake Gu 还是顾简钧，"顾得"要不要作为 alternateName | 2026-09-30 | 15 天 | GEO 的实体一致性规则（案例库 C-1）是你自己总结的，现在站上三种写法混用 | `app/layout.tsx` 的 Person 有 name + alternateName + sameAs，所有文章的 author 一致（T7） | 不卡 | AI 可能把 Jake Gu / 顾得 / 顾简钧 当三个人，实体建立不起来 |
-| W6 | 新开 session，贴 kick-start 提示词，让它修已发布文章（T1–T5） | 2026-09-30 | 15 天 | 这些问题线上可见，且每篇新文章都会继续链向它们 | `docs/STATUS.md` 里断链 0、"有机"0、lint FAIL 0 | T5 卡在 W1 / W2 | 断链和误译照旧；新文章只能少放内链 |
+| W1 | 提供素材包：在 `docs/facts/` 里放你的真实数据，每条带口径（时间范围 + 来源）和"可公开 / 脱敏"标记 | 2026-09-22 | 已过 50 天 | 下一篇文章（P0-01）和 T5 复查都要它；晚一周，写作就停一周 | `docs/facts/` 至少有一个文件，`docs/BRIEF.md` §5 第 1 条不再写"尚不存在" | 不卡 | 新文章要么满是【待补】要么只能复述旧文；18 篇案例的口径复查（T5）无法进行 |
+| W2 | 逐条确认已上线的商业绝对值可不可以公开：`$5 CPL`、`$400 预算`、三天 1,500 封邮箱、10K→30K 自然点击、65 个 Top 10 词、2K+ AI 月引荐 | 2026-09-22 | 已过 50 天 | 这些已经挂在线上；铁律 4 说没标"可公开"的绝对值不该出现 | 每个数字在素材包里有"可公开"或"改相对值"标记；T5 据此改写 | 不卡 | 线上继续挂着可能违反保密要求的数字，而且被追问时你没有口径 |
+| W5 | 确认或改写门槛 G1（2026-10-31：≥ 6 篇新 GEO 文章且断链为 0，否则把计划从 60 缩到 Phase 1 的 31 篇） | 2026-09-22 | 已过 50 天 | 门槛只能在到期前改，而且只能改严 | `docs/STRATEGY.md` 的 G1 行"结论"格之前的"问题"格前面加上"（Jake 已确认 日期）" | 不卡 | 到期那天 docs-check 变红，逼你当天回答；规则是我定的不是你定的 |
+| W3 | 决定规范域名：`www.gujianjun.net`（推荐，Vercel 现在把不带 www 的 307 跳到它）还是不带 www | 2026-09-30 | 已过 42 天 | 之后每篇文章的 JSON-LD 都按这个写，越晚改越多 | `AGENTS.md` 写明规范域名；T6 做完后全站只剩一种写法 | 不卡 | 17 篇文章的 url 和 @id 与实际域名不一致，实体信号打折 |
+| W4 | 决定实体命名：JSON-LD 的 `name` 用 Jake Gu 还是顾简钧，"顾得"要不要作为 alternateName | 2026-09-30 | 已过 42 天 | GEO 的实体一致性规则（案例库 C-1）是你自己总结的，现在站上三种写法混用 | `app/layout.tsx` 的 Person 有 name + alternateName + sameAs，所有文章的 author 一致（T7） | 不卡 | AI 可能把 Jake Gu / 顾得 / 顾简钧 当三个人，实体建立不起来 |
+| W6 | 新开 session，贴 kick-start 提示词，让它修已发布文章（T1–T5） | 2026-09-30 | 已过 42 天 | 这些问题线上可见，且每篇新文章都会继续链向它们 | `docs/STATUS.md` 里断链 0、"有机"0、lint FAIL 0 | T5 卡在 W1 / W2 | 断链和误译照旧；新文章只能少放内链 |
 
 ## 3. 决定去留的日期
 
 | 门槛 | 日期 | 还剩 | 问题 | 现在的读数 | 若否 | 结论 |
 |---|---|---|---|---|---|---|
-| G1 | 2026-10-31 | 46 天 | 从 2026-09-15 到 10-31，是否发布了至少 6 篇新的 GEO 文章（含 P0-01），并且断链为 0？ | 自 2026-09-15 起新发布 0 篇（目标 ≥ 6），断链 30 处（目标 0） | 把计划从 60 篇缩到 Phase 1 的 31 篇；Phase 2、3 停写并移入待办的"否决"表；把精力转到 18 篇案例的复查和 W1 素材包 | （到期当天写） |
+| G1 | 2026-10-31 | 已过 11 天 | 从 2026-09-15 到 10-31，是否发布了至少 6 篇新的 GEO 文章（含 P0-01），并且断链为 0？ | 自 2026-09-15 起新发布 0 篇（目标 ≥ 6），断链 30 处（目标 0） | 把计划从 60 篇缩到 Phase 1 的 31 篇；Phase 2、3 停写并移入待办的"否决"表；把精力转到 18 篇案例的复查和 W1 素材包 | 2026-11-12 答：未达标（自 2026-09-15 起新发 0 篇、断链 30 处）。按规则把计划缩到 Phase 1 的 31 篇，Phase 2、3 停写；精力转到 18 篇案例复查和 W1 素材包。 |
 
 规则写在代码里（`scripts/docs-lib.mjs` 的 `gateRules`），到期前只能改严，到期未答 docs-check 会变红。
 
@@ -40,7 +40,7 @@
 | 已发布 GEO 文章里 lint 零 FAIL 的 | 5 / 17 | scripts/geo-lint.mjs | 能 |
 | lint FAIL 按规则（篇数） | jsonld 2，links 12，wording 4 | scripts/geo-lint.mjs | 能 |
 | "有机"误译残留 | 16 处，5 个文件 | grep content/ | 能 |
-| 博客 / 案例文章 | 17 篇（其中无 frontmatter 0 篇） | content/posts | 能 |
+| 博客 / 案例文章 | 18 篇（其中无 frontmatter 0 篇） | content/posts | 能 |
 | AI 平台引用 gujianjun.net 的次数 | 无数据：还没接入引用追踪表（BACKLOG T8） | — | 不能，只有外部世界能 |
 | 招聘方 / 客户主动联系 | 无数据：没有记录渠道 | — | 不能 |
 
@@ -52,23 +52,19 @@
 
 ## 6. 最近 14 天改了什么（git log，最多 20 条）
 
-- 2026-09-15 72352fa docs(rules): fold the seven iron rules into the writing rules; retire the realistic-estimates clause
-- 2026-09-15 852fa0d chore: cross-tool project setup (AGENTS.md, geo-article skill, geo scripts)
-- 2026-09-15 0544096 chore: ignore personal material at the repo root and *.private.md
-- 2026-09-15 f18def8 fix(site): unknown /geo and /blog slugs return 404 instead of 500; pinned card shows the real GEO article count
-- 2026-09-15 eb1c5d1 chore(content): move goeast-case-study-link-map.md out of content/posts
-- 2026-09-15 dd1cdd8 chore: rename QCLAW_INSTRUCTIONS.md to OPENCLAW_INSTRUCTIONS.md
+这 14 天没有提交。
 
 ## 7. 我搞错过什么
 
 | 日期 | 我当时的说法 | 实际情况 | 怎么发现的 |
 |---|---|---|---|
+| 2026-11-12 | 昨天把 docs/OWNER.md、docs/STATUS.md 重新生成过，就以为文章可以随时发布 | docs-check 还是红的：G1 过期未答、MISTAKES 57 天没更新。只要把生成的 docs 页和文章一起提交，pre-commit 就会拦下 | 发布前跑 node scripts/docs-check.mjs，看到 2 项红 |
 | 2026-09-15 | 已发布文章里有 33 处内链指向未写文章 | 30 处 | 手数的；写了 `geo-status` 生成脚本一跑是 30，重新逐篇加总也是 30。数字进文件前就该先让脚本算 |
 | 2026-09-15 | 14 篇已发布文章的 FAQ 少于 3 题（lint 报 FAIL） | 17 篇全部有 3–5 题。是 lint 错了两次：JS 的 `\b` 在中文后面不成立，漏掉 `## 常见问题`；后 14 篇的问题是加粗行不是 `###` | 用 lint 扫 17 篇已发布文章，14 篇同时报同一个错，明显是工具的错不是文章的错 |
 | 2026-09-15 | AGENTS.md 初稿把两个个人文件按原文件名写进"绝不提交"清单 | 文件名本身就泄露求职信息，而 AGENTS.md 要进公开仓库 | 提交前自查发现，改成泛称 |
 | 2026-09-15 | 一开始把断链问题描述成"线上 404" | 线上是 500，比 404 更糟（页面直接 readFileSync 抛异常） | 一条 curl 命令 |
 
-最新一条：2026-09-15。超过 14 天没有新条目，docs-check 会变红；那时我必须写明"这两周检查过，没发现错误"并署日期，这句话本身以后也可能被证明是错的。
+最新一条：2026-11-12。超过 14 天没有新条目，docs-check 会变红；那时我必须写明"这两周检查过，没发现错误"并署日期，这句话本身以后也可能被证明是错的。
 
 ## 8. 不读代码怎么检查我
 

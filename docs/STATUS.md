@@ -1,8 +1,8 @@
 # gujianjun.net · 内容状态
 
-<!-- generated: 2026-09-15T06:51:42.390Z by scripts/owner.mjs (STATUS) — do not edit; regenerate with: node scripts/owner.mjs --write -->
+<!-- generated: 2026-11-11T17:23:49.280Z by scripts/owner.mjs (STATUS) — do not edit; regenerate with: node scripts/owner.mjs --write -->
 
-生成于 2026-09-15。GEO 系列已发布 17 / 60，未写 43。终端版：`node scripts/geo-status.mjs`。
+生成于 2026-11-11。GEO 系列已发布 17 / 60，未写 43。终端版：`node scripts/geo-status.mjs`。
 
 ## 按阶段
 
@@ -169,7 +169,7 @@
 - slug 与 config 不一致：无
 - pillar 与 config 不一致：无
 
-## 博客 / 案例文章（content/posts）：17 篇
+## 博客 / 案例文章（content/posts）：18 篇
 
 | 日期 | slug | 标题 | tags | 汉字 |
 |---|---|---|---|---|
@@ -190,3 +190,4 @@
 | 2026-04-20 | kids-chinese-camp-google-ads | Kids Camp Google Ads：conversion tracking 一直是错的，我们用错误数据优化了很久 | GoEast，case-study，google-ads | 1394 |
 | 2026-04-20 | salesforce-brevo-zapier-crm | Salesforce + Brevo + Zapier：给 GoEast 搭一条从 lead 到成单的 CRM 管道 | GoEast，case-study，martech | 1458 |
 | 2026-04-20 | summer-immersion-google-ads | 夏令营 Google Ads：$400 预算两周测试，从零搭 campaign | GoEast，case-study，google-ads | 1357 |
+| 2026-11-12 | supervised-delivery-ai-workflow | AI 协作开发怎么验收：一次交清、固定候选、独立复验 | case-study，process，AI 协作 | 3699 |
