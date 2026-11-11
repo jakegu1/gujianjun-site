@@ -1,6 +1,6 @@
 # gujianjun.net · 主人页
 
-<!-- generated: 2026-11-11T17:23:49.280Z by scripts/owner.mjs (OWNER) — do not edit; regenerate with: node scripts/owner.mjs --write -->
+<!-- generated: 2026-11-11T17:27:06.756Z by scripts/owner.mjs (OWNER) — do not edit; regenerate with: node scripts/owner.mjs --write -->
 
 生成于 2026-11-11。这一页是脚本从仓库算出来的，不是手写的：改了源头就跑 `node scripts/owner.mjs --write`，手改会被 `node scripts/docs-check.mjs` 打回。
 
@@ -52,7 +52,7 @@
 
 ## 6. 最近 14 天改了什么（git log，最多 20 条）
 
-这 14 天没有提交。
+- 2026-11-12 d878806 feat: add supervised-delivery-ai-workflow - AI 协作开发怎么验收
 
 ## 7. 我搞错过什么
 
